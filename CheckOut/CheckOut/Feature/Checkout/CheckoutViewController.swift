@@ -34,9 +34,14 @@ class CheckoutViewController: UIViewController {
         
         tableView.tableFooterView = UIView()
         
-        ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result in
+        ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result, error  in
             DispatchQueue.main.async { [unowned self] in
-                self.configuration = result
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    self.configuration = result
+                }
             }
         }
     }

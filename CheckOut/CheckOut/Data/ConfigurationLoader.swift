@@ -10,7 +10,7 @@ import Foundation
 
 public final class ConfigurationLoader {
     
-    class func parseConfiguration(with name: String, completion: @escaping (Configuration?)->()) {
+    class func parseConfiguration(with name: String, completion: @escaping (Configuration?, Error?)->()) {
         
         let queue = DispatchQueue(label: "configuration-loader-queue")
         var config: Configuration? = nil
@@ -24,10 +24,12 @@ public final class ConfigurationLoader {
                     print(jsonResult)
                     
                     config = try JSONDecoder().decode(Configuration.self, from: data)
-                    completion(config)
+                    
+                    completion(config, nil)
+                    
                     print(config ?? "failed")
                 } catch {
-                    completion(nil)
+                    completion(config, error)
                 }
             }
         }
