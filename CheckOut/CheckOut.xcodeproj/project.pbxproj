@@ -24,6 +24,7 @@
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
 		F3053C94242CE91E00CBB27A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* CustomCell.swift */; };
+		F380E8F5242CEA6600874DE6 /* ConfigurationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F3053C93242CE91E00CBB27A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F3053C55242CC22100CBB27A /* AppDelegate.swift */,
+				F380E8F6242CEADD00874DE6 /* Data */,
 				F3053C8F242CE89B00CBB27A /* Feature */,
 				F3053C90242CE8A400CBB27A /* Extentensions */,
 				F3053C91242CE8BD00CBB27A /* LaunchScreen */,
@@ -191,6 +194,14 @@
 				F3053C89242CCAFF00CBB27A /* CellPresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F380E8F6242CEADD00874DE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				F3053C85242CCA1100CBB27A /* SubmitButtonCell.swift in Sources */,
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
 				F3053C56242CC22100CBB27A /* AppDelegate.swift in Sources */,
+				F380E8F5242CEA6600874DE6 /* ConfigurationLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

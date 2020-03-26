@@ -34,32 +34,9 @@ class CheckoutViewController: UIViewController {
         
         tableView.tableFooterView = UIView()
         
-        parseConfiguration(with: "experiences_checkout") { result in
+        ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result in
             DispatchQueue.main.async { [unowned self] in
                 self.configuration = result
-            }
-        }
-    }
-    
-    func parseConfiguration(with name: String, completion: @escaping (Configuration?)->()) {
-        
-        let queue = DispatchQueue(label: "configuration-loader-queue")
-        var config: Configuration? = nil
-        
-        queue.async {
-            if let path = Bundle.main.path(forResource: name, ofType: "json") {
-                do {
-                    let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                    
-                    print(jsonResult)
-                    
-                    config = try JSONDecoder().decode(Configuration.self, from: data)
-                    completion(config)
-                    print(config ?? "failed")
-                } catch {
-                    completion(nil)
-                }
             }
         }
     }
