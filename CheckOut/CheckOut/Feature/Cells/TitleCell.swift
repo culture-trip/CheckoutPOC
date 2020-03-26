@@ -20,7 +20,7 @@ class TitleCell: UITableViewCell {
 }
 
 extension TitleCell: CellPresentable {
-    func setupCell(with configuration: CellConfigutation?, delegate: CellDelegate?) { 
+    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
         
         titleLabel.text = configuration?.title
     }

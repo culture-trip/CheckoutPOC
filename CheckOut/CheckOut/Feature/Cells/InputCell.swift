@@ -20,13 +20,13 @@ class InputCell: UITableViewCell {
 }
 
 extension InputCell: CellPresentable {
-    func setupCell(with configuration: CellConfigutation?, delegate: CellDelegate?) { 
+    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
         
-        guard let inputType = configuration?.inputType,
+        guard let CellInputType = configuration?.CellInputType,
             let title = configuration?.title else { return }
         
         inputField.placeholder = title
-        inputField.isSecureTextEntry = inputType == .secure ? true : false
+        inputField.isSecureTextEntry = CellInputType == .secure ? true : false
     }
     
     func getInformationFromCell() -> CellData? {

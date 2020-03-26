@@ -1,13 +1,13 @@
 import Foundation
 
-public enum CellType: String, CaseIterable, Decodable {
+public enum CustomCellType: String, CaseIterable, Decodable {
     
     case titleCell = "TitleCell"
     case inputCell = "InputCell"
     case submitButtonCell = "SubmitButtonCell"
 }
 
-public enum InputType: String, Decodable {
+public enum CellInputType: String, Decodable {
     
     case normal
     case name
@@ -16,15 +16,8 @@ public enum InputType: String, Decodable {
     case secure
 }
 
-public struct CellConfigutation: Decodable {
-    
-    var title: String?
-    var type: CellType?
-    var inputType: InputType?
-}
-
 public struct Configuration: Decodable {
     
     var title: String?
-    var items: [CellConfigutation]?
+    var items: [CustomCell]?
 }

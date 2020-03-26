@@ -6,12 +6,12 @@
 //  Copyright © 2020 Warrd Adlani. All rights reserved.
 //
 
+import UIKit
+
 public protocol SubmitButtonDelegate: CellDelegate {
     
     func didTapSubmit()
 }
-
-import UIKit
 
 class SubmitButtonCell: UITableViewCell {
 
@@ -32,7 +32,7 @@ class SubmitButtonCell: UITableViewCell {
 }
 
 extension SubmitButtonCell: CellPresentable {
-    func setupCell(with configuration: CellConfigutation?, delegate: CellDelegate?) {
+    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
         
         if let delegate = delegate as? SubmitButtonDelegate {
             self.delegate = delegate

@@ -101,7 +101,7 @@ extension CheckoutViewController: UITableViewDataSource {
         }
         
         // Store cells to collect their relevant data from the array
-        if !(cells.contains(cell) ?? false) {
+        if !cells.contains(cell) {
             cells.append(cell)
         }
         

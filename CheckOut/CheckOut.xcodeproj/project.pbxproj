@@ -23,6 +23,7 @@
 		F3053C88242CCABB00CBB27A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C87242CCABB00CBB27A /* Configuration.swift */; };
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
+		F3053C94242CE91E00CBB27A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		F3053C52242CC22100CBB27A /* CheckOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3053C55242CC22100CBB27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3053C59242CC22100CBB27A /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		F3053C59242CC22100CBB27A /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckoutViewController.swift; path = ../CheckoutViewController.swift; sourceTree = "<group>"; };
 		F3053C5C242CC22100CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3053C5E242CC22600CBB27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3053C61242CC22600CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +56,8 @@
 		F3053C84242CCA1100CBB27A /* SubmitButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitButtonCell.xib; sourceTree = "<group>"; };
 		F3053C87242CCABB00CBB27A /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
-		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F3053C93242CE91E00CBB27A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				F3053C55242CC22100CBB27A /* AppDelegate.swift */,
-				F3053C87242CCABB00CBB27A /* Configuration.swift */,
-				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
-				F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */,
-				F3053C8D242CE4DD00CBB27A /* Storyboard */,
-				F3053C7E242CC9E600CBB27A /* Cells */,
-				F3053C77242CC33100CBB27A /* Resources */,
+				F3053C8F242CE89B00CBB27A /* Feature */,
+				F3053C90242CE8A400CBB27A /* Extentensions */,
+				F3053C91242CE8BD00CBB27A /* LaunchScreen */,
 				F3053C5E242CC22600CBB27A /* Assets.xcassets */,
 				F3053C63242CC22600CBB27A /* Info.plist */,
 			);
@@ -130,7 +129,7 @@
 		F3053C7E242CC9E600CBB27A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C89242CCAFF00CBB27A /* CellPresentable.swift */,
+				F3053C92242CE8EC00CBB27A /* Protocols */,
 				F3053C7A242CC9E000CBB27A /* TitleCell.swift */,
 				F3053C7B242CC9E000CBB27A /* TitleCell.xib */,
 				F3053C7F242CC9F500CBB27A /* InputCell.swift */,
@@ -145,9 +144,53 @@
 			isa = PBXGroup;
 			children = (
 				F3053C5B242CC22100CBB27A /* Main.storyboard */,
-				F3053C60242CC22600CBB27A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F3053C8E242CE88A00CBB27A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C87242CCABB00CBB27A /* Configuration.swift */,
+				F3053C93242CE91E00CBB27A /* CustomCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3053C8F242CE89B00CBB27A /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C8E242CE88A00CBB27A /* Models */,
+				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
+				F3053C7E242CC9E600CBB27A /* Cells */,
+				F3053C8D242CE4DD00CBB27A /* Storyboard */,
+				F3053C77242CC33100CBB27A /* Resources */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		F3053C90242CE8A400CBB27A /* Extentensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */,
+			);
+			path = Extentensions;
+			sourceTree = "<group>";
+		};
+		F3053C91242CE8BD00CBB27A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C60242CC22600CBB27A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		F3053C92242CE8EC00CBB27A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C89242CCAFF00CBB27A /* CellPresentable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +303,7 @@
 				F3053C88242CCABB00CBB27A /* Configuration.swift in Sources */,
 				F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */,
 				F3053C5A242CC22100CBB27A /* CheckoutViewController.swift in Sources */,
+				F3053C94242CE91E00CBB27A /* CustomCell.swift in Sources */,
 				F3053C85242CCA1100CBB27A /* SubmitButtonCell.swift in Sources */,
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
 				F3053C56242CC22100CBB27A /* AppDelegate.swift in Sources */,
