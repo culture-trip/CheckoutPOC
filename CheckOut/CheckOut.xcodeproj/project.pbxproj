@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		F3053C52242CC22100CBB27A /* CheckOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3053C55242CC22100CBB27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3053C59242CC22100CBB27A /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckoutViewController.swift; path = ../CheckoutViewController.swift; sourceTree = "<group>"; };
+		F3053C59242CC22100CBB27A /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		F3053C5C242CC22100CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3053C5E242CC22600CBB27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3053C61242CC22600CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +80,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3035FEF242CEB6000E9B279 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
+				F3053C8D242CE4DD00CBB27A /* Storyboard */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		F3035FF0242CEB9300E9B279 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C92242CE8EC00CBB27A /* Protocols */,
+				F3035FF1242CEBB100E9B279 /* Cells */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F3035FF1242CEBB100E9B279 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3053C7A242CC9E000CBB27A /* TitleCell.swift */,
+				F3053C7B242CC9E000CBB27A /* TitleCell.xib */,
+				F3053C7F242CC9F500CBB27A /* InputCell.swift */,
+				F3053C80242CC9F500CBB27A /* InputCell.xib */,
+				F3053C83242CCA1100CBB27A /* SubmitButtonCell.swift */,
+				F3053C84242CCA1100CBB27A /* SubmitButtonCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F3053C49242CC22100CBB27A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +134,8 @@
 			children = (
 				F3053C55242CC22100CBB27A /* AppDelegate.swift */,
 				F380E8F6242CEADD00874DE6 /* Data */,
+				F3053C8E242CE88A00CBB27A /* Models */,
+				F3035FF0242CEB9300E9B279 /* Shared */,
 				F3053C8F242CE89B00CBB27A /* Feature */,
 				F3053C90242CE8A400CBB27A /* Extentensions */,
 				F3053C91242CE8BD00CBB27A /* LaunchScreen */,
@@ -129,20 +162,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F3053C7E242CC9E600CBB27A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F3053C92242CE8EC00CBB27A /* Protocols */,
-				F3053C7A242CC9E000CBB27A /* TitleCell.swift */,
-				F3053C7B242CC9E000CBB27A /* TitleCell.xib */,
-				F3053C7F242CC9F500CBB27A /* InputCell.swift */,
-				F3053C80242CC9F500CBB27A /* InputCell.xib */,
-				F3053C83242CCA1100CBB27A /* SubmitButtonCell.swift */,
-				F3053C84242CCA1100CBB27A /* SubmitButtonCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		F3053C8D242CE4DD00CBB27A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +182,7 @@
 		F3053C8F242CE89B00CBB27A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C8E242CE88A00CBB27A /* Models */,
-				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
-				F3053C7E242CC9E600CBB27A /* Cells */,
-				F3053C8D242CE4DD00CBB27A /* Storyboard */,
+				F3035FEF242CEB6000E9B279 /* Checkout */,
 				F3053C77242CC33100CBB27A /* Resources */,
 			);
 			path = Feature;
