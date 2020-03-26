@@ -1,0 +1,56 @@
+{
+    "title": "Experiences Checkout",
+    "header": "header",
+    "footer": "footer",
+	"items" : [
+		{
+			"type": "TitleCell",
+			"title": "First name"
+		}, 
+		{
+			"type": "InputCell",
+            "inputType": "normal",
+            "title": "Enter info"
+		},
+        {
+            "type": "TitleCell",
+            "title": "Last name"
+        },
+        {
+            "type": "InputCell",
+            "inputType": "normal",
+            "title": "Enter info"
+        },
+        {
+            "type": "TitleCell",
+            "title": "Address info"
+        },
+        {
+            "type": "InputCell",
+            "inputType": "normal",
+            "title": "Enter info"
+        },
+        {
+            "type": "TitleCell",
+            "title": "Credit info"
+        },
+        {
+            "type": "InputCell",
+            "inputType": "secure",
+            "title": "Enter info"
+        },
+        {
+            "type": "TitleCell",
+            "title": "How many children?"
+        },
+        {
+            "type": "InputCell",
+            "inputType": "normal",
+            "title": "Enter info"
+        },
+        {
+            "type": "SubmitButtonCell",
+            "title": "Submit"
+        }
+	]
+}
