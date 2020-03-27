@@ -1,56 +1,154 @@
 {
-    "title": "Experiences Checkout",
+    "content": "Experiences Checkout",
     "header": "header",
     "footer": "footer",
-	"items" : [
-		{
-			"type": "TitleCell",
-			"title": "First name"
-		}, 
-		{
-			"type": "InputCell",
-            "CellInputType": "normal",
-            "title": "Enter info"
-		},
+    "items" : [
         {
-            "type": "TitleCell",
-            "title": "Last name"
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "HeaderCell",
+            "content": "Experiences Checkout",
+            "alignment": "center"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "HeaderCell",
+            "content": "User info",
+            "alignment": "left"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "SubheaderCell",
+            "content": "First name"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
         },
         {
             "type": "InputCell",
-            "CellInputType": "normal",
-            "title": "Enter info"
+            "cellInputType": "normal",
+            "content": "Enter info"
         },
         {
-            "type": "TitleCell",
-            "title": "Address info"
+            "type": "PaddingCell",
+            "height": "medium"
         },
         {
-            "type": "InputCell",
-            "CellInputType": "normal",
-            "title": "Enter info"
+            "type": "SubheaderCell",
+            "content": "Last name"
         },
         {
-            "type": "TitleCell",
-            "title": "Credit info"
-        },
-        {
-            "type": "InputCell",
-            "CellInputType": "secure",
-            "title": "Enter info"
-        },
-        {
-            "type": "TitleCell",
-            "title": "How many children?"
+            "type": "PaddingCell",
+            "height": "medium"
         },
         {
             "type": "InputCell",
-            "CellInputType": "normal",
-            "title": "Enter info"
+            "cellInputType": "normal",
+            "content": "Enter info"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "SubheaderCell",
+            "content": "Address Information"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "BodyTextCell",
+            "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "InputCell",
+            "cellInputType": "normal",
+            "content": "Enter info"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "SubheaderCell",
+            "content": "Cancellation Policy"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "BodyTextCell",
+            "content": "This merchant uses Trust My Travel Ltd to protect and process credit card payments. All credit card payments placed through this website are protected by TMTProtects.Me. Click here for full terms of service.\n\nFor payment questions, please contact:  Tel: 44(0)17small0 43smallsmall2small.  Address: The Cedars, Ryhall PE9 4HL, United Kingdom."
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "SubheaderCell",
+            "content": "How many children?"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "InputCell",
+            "cellInputType": "normal",
+            "content": "Enter info"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "large"
+        },
+        {
+            "type": "HeaderCell",
+            "content": "Payment information"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "large"
+        },
+        {
+            "type": "SubheaderCell",
+            "content": "Credit card number"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
+        },
+        {
+            "type": "InputCell",
+            "cellInputType": "secure",
+            "content": "Enter info"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
         },
         {
             "type": "SubmitButtonCell",
-            "title": "Submit"
+            "content": "Submit"
+        },
+        {
+            "type": "PaddingCell",
+            "height": "medium"
         }
-	]
+    ]
 }

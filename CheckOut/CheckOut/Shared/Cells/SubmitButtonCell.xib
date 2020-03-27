@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqd-h9-gMo">
-                        <rect key="frame" x="16" y="8" width="288" height="44"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="44"/>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="qzd-25-A1c"/>
@@ -32,10 +32,10 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lqd-h9-gMo" secondAttribute="bottom" constant="8" id="1wv-BO-WM5"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lqd-h9-gMo" secondAttribute="bottom" id="1wv-BO-WM5"/>
                     <constraint firstAttribute="trailing" secondItem="lqd-h9-gMo" secondAttribute="trailing" constant="16" id="Bh5-pg-Gqs"/>
                     <constraint firstItem="lqd-h9-gMo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hYl-Ot-UJV"/>
-                    <constraint firstItem="lqd-h9-gMo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pab-I1-8Ys"/>
+                    <constraint firstItem="lqd-h9-gMo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pab-I1-8Ys"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

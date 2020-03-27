@@ -38,7 +38,7 @@ extension SubmitButtonCell: CellPresentable {
             self.delegate = delegate
         }
 
-        submitButton.setTitle(configuration?.title, for: .normal)
+        submitButton.setTitle(configuration?.content, for: .normal)
     }
     
     func getInformationFromCell() -> CellData? {

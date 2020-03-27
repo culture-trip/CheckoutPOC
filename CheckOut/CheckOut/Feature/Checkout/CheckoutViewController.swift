@@ -10,14 +10,13 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
-    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
     private lazy var cells: [UITableViewCell] = { [UITableViewCell]() }()
     
     private var configuration: Configuration? {
         didSet {
-            titleLabel.text = configuration?.title
+            title = configuration?.title
             tableView.reloadData()
         }
     }
@@ -28,9 +27,12 @@ class CheckoutViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(TitleCell.nib(), forCellReuseIdentifier: TitleCell.className)
+        tableView.register(HeaderCell.nib(), forCellReuseIdentifier: HeaderCell.className)
         tableView.register(InputCell.nib(), forCellReuseIdentifier: InputCell.className)
+        tableView.register(BodyTextCell.nib(), forCellReuseIdentifier: BodyTextCell.className)
         tableView.register(SubmitButtonCell.nib(), forCellReuseIdentifier: SubmitButtonCell.className)
+        tableView.register(PaddingCell.nib(), forCellReuseIdentifier: PaddingCell.className)
+        tableView.register(SubheaderCell.nib(), forCellReuseIdentifier: SubheaderCell.className)
         
         tableView.tableFooterView = UIView()
         

@@ -22,11 +22,11 @@ class InputCell: UITableViewCell {
 extension InputCell: CellPresentable {
     func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
         
-        guard let CellInputType = configuration?.CellInputType,
-            let title = configuration?.title else { return }
+        guard let cellInputType = configuration?.cellInputType,
+            let title = configuration?.content else { return }
         
         inputField.placeholder = title
-        inputField.isSecureTextEntry = CellInputType == .secure ? true : false
+        inputField.isSecureTextEntry = cellInputType == .secure ? true : false
     }
     
     func getInformationFromCell() -> CellData? {
