@@ -8,7 +8,7 @@
             "height": "medium"
         },
         {
-            "type": "HeaderCell",
+            "type": "HeaderTextCell",
             "content": "Experiences Checkout",
             "alignment": "center"
         },
@@ -17,7 +17,7 @@
             "height": "medium"
         },
         {
-            "type": "HeaderCell",
+            "type": "HeaderTextCell",
             "content": "User info",
             "alignment": "left"
         },
@@ -26,7 +26,7 @@
             "height": "medium"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "First name"
         },
         {
@@ -43,7 +43,7 @@
             "height": "medium"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "Last name"
         },
         {
@@ -60,7 +60,7 @@
             "height": "medium"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "Address Information"
         },
         {
@@ -85,7 +85,7 @@
             "height": "medium"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "Cancellation Policy"
         },
         {
@@ -101,7 +101,7 @@
             "height": "medium"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "How many children?"
         },
         {
@@ -118,7 +118,7 @@
             "height": "large"
         },
         {
-            "type": "HeaderCell",
+            "type": "HeaderTextCell",
             "content": "Payment information"
         },
         {
@@ -126,7 +126,7 @@
             "height": "large"
         },
         {
-            "type": "SubheaderCell",
+            "type": "SubHeaderTextCell",
             "content": "Credit card number"
         },
         {
@@ -143,7 +143,7 @@
             "height": "medium"
         },
         {
-            "type": "SubmitButtonCell",
+            "type": "SingleActionButtonCell",
             "content": "Submit"
         },
         {

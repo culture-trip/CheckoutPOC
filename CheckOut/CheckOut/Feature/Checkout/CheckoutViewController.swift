@@ -27,12 +27,12 @@ class CheckoutViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(HeaderCell.nib(), forCellReuseIdentifier: HeaderCell.className)
+        tableView.register(HeaderTextCell.nib(), forCellReuseIdentifier: HeaderTextCell.className)
         tableView.register(InputCell.nib(), forCellReuseIdentifier: InputCell.className)
         tableView.register(BodyTextCell.nib(), forCellReuseIdentifier: BodyTextCell.className)
-        tableView.register(SubmitButtonCell.nib(), forCellReuseIdentifier: SubmitButtonCell.className)
+        tableView.register(SingleActionButtonCell.nib(), forCellReuseIdentifier: SingleActionButtonCell.className)
         tableView.register(PaddingCell.nib(), forCellReuseIdentifier: PaddingCell.className)
-        tableView.register(SubheaderCell.nib(), forCellReuseIdentifier: SubheaderCell.className)
+        tableView.register(SubHeaderTextCell.nib(), forCellReuseIdentifier: SubHeaderTextCell.className)
         
         tableView.tableFooterView = UIView()
         

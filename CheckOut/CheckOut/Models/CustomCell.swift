@@ -11,12 +11,12 @@ public struct CustomCell: Decodable {
 
 public enum CustomCellType: String, CaseIterable, Decodable {
     
-    case headerCell = "HeaderCell"
+    case headerCell = "HeaderTextCell"
     case inputCell = "InputCell"
     case bodyTextCell = "BodyTextCell"
-    case submitButtonCell = "SubmitButtonCell"
+    case singleActionButtonCell = "SingleActionButtonCell"
     case paddinfCell = "PaddingCell"
-    case subheaderCell = "SubheaderCell"
+    case subHeaderCell = "SubHeaderTextCell"
 }
 
 public enum CellInputType: String, Decodable {

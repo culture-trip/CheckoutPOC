@@ -1,5 +1,5 @@
 //
-//  SubmitButtonCell.swift
+//  SingleActionButtonCell.swift
 //  CheckOut
 //
 //  Created by Warrd Adlani on 26/03/2020.
@@ -13,7 +13,7 @@ public protocol SubmitButtonDelegate: CellDelegate {
     func didTapSubmit()
 }
 
-class SubmitButtonCell: UITableViewCell {
+class SingleActionButtonCell: UITableViewCell {
 
     @IBOutlet weak var submitButton: UIButton!
     
@@ -31,7 +31,7 @@ class SubmitButtonCell: UITableViewCell {
     }
 }
 
-extension SubmitButtonCell: CellPresentable {
+extension SingleActionButtonCell: CellPresentable {
     func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
         
         if let delegate = delegate as? SubmitButtonDelegate {

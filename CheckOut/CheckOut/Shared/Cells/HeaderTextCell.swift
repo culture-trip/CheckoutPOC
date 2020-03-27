@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderCell: UITableViewCell {
+class HeaderTextCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -19,7 +19,7 @@ class HeaderCell: UITableViewCell {
     }
 }
 
-extension HeaderCell: CellPresentable {
+extension HeaderTextCell: CellPresentable {
     func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
         if let aligntment = configuration?.alignment {
             

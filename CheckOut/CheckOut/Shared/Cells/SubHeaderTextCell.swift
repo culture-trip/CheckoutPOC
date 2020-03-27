@@ -1,5 +1,5 @@
 //
-//  SubheaderCell.swift
+//  SubHeaderTextCell.swift
 //  CheckOut
 //
 //  Created by Warrd Adlani on 27/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubheaderCell: UITableViewCell {
+class SubHeaderTextCell: UITableViewCell {
     
     @IBOutlet private weak var subheaderLabel: UILabel!
     
@@ -19,7 +19,7 @@ class SubheaderCell: UITableViewCell {
     }
 }
 
-extension SubheaderCell: CellPresentable {
+extension SubHeaderTextCell: CellPresentable {
     
     func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
         
