@@ -17,9 +17,11 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
     public var title: String?
     public var configuration: Configuration?
     
+    private let jsonFile = "experiences_checkout"
+    
     func viewDidLoad() {
         
-        ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result, error  in
+        ConfigurationLoader.parseConfiguration(with: jsonFile) { result, error  in
             
             DispatchQueue.main.async { [weak self] in
                 
