@@ -59,6 +59,8 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
          * - Pass a customized presenter.
          * - Pass index paths for content.
          * - View Controller extracts and passes model and indexes.
+         * - Worker class creates key-value pairs
+         * - Add "customContentKey" to json for extracting and mapping
          */
         
         let customPayload = CustomPayload(content: "Custom Header from API - Please enter address below as per supplied", title: nil)
