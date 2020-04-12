@@ -22,19 +22,21 @@ class HeaderTextCell: UITableViewCell {
 extension HeaderTextCell: CellPresentable {
     
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
-        if let aligntment = viewModel?.alignment {
-            
-            switch aligntment {
-            case .left:
-                titleLabel.textAlignment = .left
-            case .right:
-                titleLabel.textAlignment = .right
-            case .center:
-                titleLabel.textAlignment = .center
-            }
+        
+        guard let viewModel = viewModel as? HeaderTextCellViewModel else { return }
+        
+        let aligntment = viewModel.alignment
+        
+        switch aligntment {
+        case .left:
+            titleLabel.textAlignment = .left
+        case .right:
+            titleLabel.textAlignment = .right
+        case .center:
+            titleLabel.textAlignment = .center
         }
         
-        titleLabel.text = viewModel?.content
+        titleLabel.text = viewModel.content
     }
     
     func getInformationFromCell() -> CellData? {

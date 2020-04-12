@@ -27,16 +27,16 @@ class PaddingCell: UITableViewCell {
 
 extension PaddingCell: CellPresentable {
     
-    func getInformationFromCell() -> CellData? {
-        return nil
-    }
-    
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        guard let viewModel = viewModel,
+        guard let viewModel = viewModel as? PaddingCellViewModel,
             let height = viewModel.height?.getValue()
               else { return }
         
         paddingHeight.constant = CGFloat(height)
+    }
+    
+    func getInformationFromCell() -> CellData? {
+        return nil
     }
 }

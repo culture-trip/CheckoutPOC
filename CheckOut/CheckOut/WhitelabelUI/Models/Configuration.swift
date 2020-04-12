@@ -3,5 +3,5 @@ import Foundation
 public struct Configuration: Decodable {
     
     let title: String?
-    let items: [CustomCellViewModel]?
+    let items: [CustomCellItem]?
 }

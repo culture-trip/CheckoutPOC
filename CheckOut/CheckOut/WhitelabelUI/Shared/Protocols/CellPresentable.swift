@@ -12,3 +12,8 @@ public protocol CellPresentable: AnyObject {
     func getInformationFromCell() -> CellData?
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?)
 }
+
+public protocol CustomCellViewModel {
+    
+    var item: CustomCellItem? { get }
+}

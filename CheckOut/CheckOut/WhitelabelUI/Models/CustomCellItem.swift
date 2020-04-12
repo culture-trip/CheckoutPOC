@@ -2,21 +2,19 @@ import Foundation
 
 // MARK: - Model
 
-public struct CustomCellViewModel: Decodable {
+public struct CustomCellItem: Decodable {
     
     let content: String?
     let height: PaddingType?
     let type: CustomCellType?
     let alignment: CellAlignmentType?
     let cellInputType: CellInputType?
-    let viewModel: CustomCellViewModel?
 }
 
-//public struct CustomCellViewModel {
-//
-//    var defaultContent: String?
-//    var customContent: String?
-//}
+public struct CustomCellContent: Decodable {
+    
+    var content: String?
+}
 
 // MARK: Cell Types
 
@@ -26,7 +24,7 @@ public enum CustomCellType: String, CaseIterable, Decodable {
     case inputCell = "InputCell"
     case bodyTextCell = "BodyTextCell"
     case singleActionButtonCell = "SingleActionButtonCell"
-    case paddinfCell = "PaddingCell"
+    case paddingCell = "PaddingCell"
     case subHeaderCell = "SubHeaderTextCell"
 }
 

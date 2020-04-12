@@ -22,8 +22,10 @@ class InputCell: UITableViewCell {
 extension InputCell: CellPresentable {
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        guard let cellInputType = viewModel?.cellInputType,
-            let title = viewModel?.content else { return }
+        guard let viewModel = viewModel as? InputCellViewModel else { return }
+        
+        guard let cellInputType = viewModel.cellInputType,
+            let title = viewModel.content else { return }
         
         inputField.placeholder = title
         inputField.isSecureTextEntry = cellInputType == .secure ? true : false

@@ -23,8 +23,15 @@
 		F3053C88242CCABB00CBB27A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C87242CCABB00CBB27A /* Configuration.swift */; };
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
-		F3053C94242CE91E00CBB27A /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* CustomCellViewModel.swift */; };
+		F3053C94242CE91E00CBB27A /* CustomCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* CustomCellItem.swift */; };
 		F380E8F5242CEA6600874DE6 /* ConfigurationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */; };
+		F38CFC542443628800D8EFEA /* CheckoutViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */; };
+		F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */; };
+		F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */; };
+		F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */; };
+		F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5F24436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift */; };
+		F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC6224436B0500D8EFEA /* BodyTextCellViewModel.swift */; };
+		F38CFC6624436B7E00D8EFEA /* PaddingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC6524436B7E00D8EFEA /* PaddingCellViewModel.swift */; };
 		F3B89D98242E0F61006049B7 /* BodyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D96242E0F61006049B7 /* BodyTextCell.swift */; };
 		F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D97242E0F61006049B7 /* BodyTextCell.xib */; };
 		F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9A242E1955006049B7 /* PaddingCell.swift */; };
@@ -65,8 +72,15 @@
 		F3053C87242CCABB00CBB27A /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
-		F3053C93242CE91E00CBB27A /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
+		F3053C93242CE91E00CBB27A /* CustomCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellItem.swift; sourceTree = "<group>"; };
 		F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationLoader.swift; sourceTree = "<group>"; };
+		F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewPresenter.swift; sourceTree = "<group>"; };
+		F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTextCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC5F24436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionButtonCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC6224436B0500D8EFEA /* BodyTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC6524436B7E00D8EFEA /* PaddingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCellViewModel.swift; sourceTree = "<group>"; };
 		F3B89D96242E0F61006049B7 /* BodyTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextCell.swift; sourceTree = "<group>"; };
 		F3B89D97242E0F61006049B7 /* BodyTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyTextCell.xib; sourceTree = "<group>"; };
 		F3B89D9A242E1955006049B7 /* PaddingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCell.swift; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
+				F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */,
 				F3053C8D242CE4DD00CBB27A /* Storyboard */,
 			);
 			path = Checkout;
@@ -117,18 +132,12 @@
 		F3035FF1242CEBB100E9B279 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C7A242CC9E000CBB27A /* HeaderTextCell.swift */,
-				F3053C7B242CC9E000CBB27A /* HeaderTextCell.xib */,
-				F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */,
-				F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */,
-				F3053C7F242CC9F500CBB27A /* InputCell.swift */,
-				F3053C80242CC9F500CBB27A /* InputCell.xib */,
-				F3053C83242CCA1100CBB27A /* SingleActionButtonCell.swift */,
-				F3053C84242CCA1100CBB27A /* SingleActionButtonCell.xib */,
-				F3B89D96242E0F61006049B7 /* BodyTextCell.swift */,
-				F3B89D97242E0F61006049B7 /* BodyTextCell.xib */,
-				F3B89D9A242E1955006049B7 /* PaddingCell.swift */,
-				F3B89D9B242E1955006049B7 /* PaddingCell.xib */,
+				F38CFC55244368E400D8EFEA /* HeaderTextCell */,
+				F38CFC5824436A0700D8EFEA /* SubHeaderTextCell */,
+				F38CFC5B24436A4000D8EFEA /* InputCell */,
+				F38CFC5E24436A9E00D8EFEA /* SingleActionButtonCell */,
+				F38CFC6124436AFB00D8EFEA /* BodyTextCell */,
+				F38CFC6424436B6F00D8EFEA /* PaddingCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -194,7 +203,7 @@
 		F3053C8E242CE88A00CBB27A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C93242CE91E00CBB27A /* CustomCellViewModel.swift */,
+				F3053C93242CE91E00CBB27A /* CustomCellItem.swift */,
 				F3053C87242CCABB00CBB27A /* Configuration.swift */,
 			);
 			path = Models;
@@ -231,6 +240,66 @@
 				F3053C89242CCAFF00CBB27A /* CellPresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F38CFC55244368E400D8EFEA /* HeaderTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */,
+				F3053C7A242CC9E000CBB27A /* HeaderTextCell.swift */,
+				F3053C7B242CC9E000CBB27A /* HeaderTextCell.xib */,
+			);
+			path = HeaderTextCell;
+			sourceTree = "<group>";
+		};
+		F38CFC5824436A0700D8EFEA /* SubHeaderTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */,
+				F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */,
+				F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */,
+			);
+			path = SubHeaderTextCell;
+			sourceTree = "<group>";
+		};
+		F38CFC5B24436A4000D8EFEA /* InputCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */,
+				F3053C7F242CC9F500CBB27A /* InputCell.swift */,
+				F3053C80242CC9F500CBB27A /* InputCell.xib */,
+			);
+			path = InputCell;
+			sourceTree = "<group>";
+		};
+		F38CFC5E24436A9E00D8EFEA /* SingleActionButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC5F24436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift */,
+				F3053C83242CCA1100CBB27A /* SingleActionButtonCell.swift */,
+				F3053C84242CCA1100CBB27A /* SingleActionButtonCell.xib */,
+			);
+			path = SingleActionButtonCell;
+			sourceTree = "<group>";
+		};
+		F38CFC6124436AFB00D8EFEA /* BodyTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC6224436B0500D8EFEA /* BodyTextCellViewModel.swift */,
+				F3B89D96242E0F61006049B7 /* BodyTextCell.swift */,
+				F3B89D97242E0F61006049B7 /* BodyTextCell.xib */,
+			);
+			path = BodyTextCell;
+			sourceTree = "<group>";
+		};
+		F38CFC6424436B6F00D8EFEA /* PaddingCell */ = {
+			isa = PBXGroup;
+			children = (
+				F38CFC6524436B7E00D8EFEA /* PaddingCellViewModel.swift */,
+				F3B89D9A242E1955006049B7 /* PaddingCell.swift */,
+				F3B89D9B242E1955006049B7 /* PaddingCell.xib */,
+			);
+			path = PaddingCell;
 			sourceTree = "<group>";
 		};
 		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
@@ -369,13 +438,20 @@
 			files = (
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F3053C7C242CC9E000CBB27A /* HeaderTextCell.swift in Sources */,
+				F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */,
 				F3053C88242CCABB00CBB27A /* Configuration.swift in Sources */,
 				F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */,
+				F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */,
 				F3053C5A242CC22100CBB27A /* CheckoutViewController.swift in Sources */,
-				F3053C94242CE91E00CBB27A /* CustomCellViewModel.swift in Sources */,
+				F3053C94242CE91E00CBB27A /* CustomCellItem.swift in Sources */,
+				F38CFC542443628800D8EFEA /* CheckoutViewPresenter.swift in Sources */,
 				F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */,
 				F3BEEEFD24435DAA00F65226 /* PaddingType.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,
+				F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */,
+				F38CFC6624436B7E00D8EFEA /* PaddingCellViewModel.swift in Sources */,
+				F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */,
+				F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */,
 				F3B89DA0242E1E57006049B7 /* SubHeaderTextCell.swift in Sources */,
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
 				F3B89D98242E0F61006049B7 /* BodyTextCell.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
+    public var presenter: CheckoutViewPresenting = CheckoutViewPresenter()
+    
     @IBOutlet private weak var tableView: UITableView!
     
     private lazy var cells: [UITableViewCell] = { [UITableViewCell]() }()
@@ -77,8 +79,8 @@ extension CheckoutViewController: UITableViewDataSource {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CellPresentable else {
             return UITableViewCell()
         }
-        
-        customCell.setupCell(with: item, delegate: self)
+
+        presenter.setupCell(customCell, item: item, indexPath: indexPath, delegate: self)
         
         guard let cell = customCell as? UITableViewCell else {
             

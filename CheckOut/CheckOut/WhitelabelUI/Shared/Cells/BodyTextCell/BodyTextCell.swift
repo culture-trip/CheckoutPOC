@@ -23,10 +23,11 @@ class BodyTextCell: UITableViewCell {
 }
 
 extension BodyTextCell: CellPresentable {
-    
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        bodyTextView.text = viewModel?.content
+        guard let viewModel = viewModel as? BodyTextCellViewModel else { return }
+        
+        bodyTextView.text = viewModel.content
     }
     
     func getInformationFromCell() -> CellData? {

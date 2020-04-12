@@ -20,10 +20,11 @@ class SubHeaderTextCell: UITableViewCell {
 }
 
 extension SubHeaderTextCell: CellPresentable {
-    
     func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        subheaderLabel.text = viewModel?.content
+        guard let viewModel = viewModel as? SubHeaderTextCellViewModel else { return }
+        
+        subheaderLabel.text = viewModel.content
     }
     
     func getInformationFromCell() -> CellData? {
