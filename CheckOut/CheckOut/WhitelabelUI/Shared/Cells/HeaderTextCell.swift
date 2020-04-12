@@ -21,8 +21,8 @@ class HeaderTextCell: UITableViewCell {
 
 extension HeaderTextCell: CellPresentable {
     
-    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
-        if let aligntment = configuration?.alignment {
+    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
+        if let aligntment = viewModel?.alignment {
             
             switch aligntment {
             case .left:
@@ -34,7 +34,7 @@ extension HeaderTextCell: CellPresentable {
             }
         }
         
-        titleLabel.text = configuration?.content
+        titleLabel.text = viewModel?.content
     }
     
     func getInformationFromCell() -> CellData? {

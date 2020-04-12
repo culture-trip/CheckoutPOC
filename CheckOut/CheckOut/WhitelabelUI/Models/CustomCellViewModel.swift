@@ -2,14 +2,21 @@ import Foundation
 
 // MARK: - Model
 
-public struct CustomCell: Decodable {
+public struct CustomCellViewModel: Decodable {
     
     let content: String?
     let height: PaddingType?
     let type: CustomCellType?
     let alignment: CellAlignmentType?
     let cellInputType: CellInputType?
+    let viewModel: CustomCellViewModel?
 }
+
+//public struct CustomCellViewModel {
+//
+//    var defaultContent: String?
+//    var customContent: String?
+//}
 
 // MARK: Cell Types
 

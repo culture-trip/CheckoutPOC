@@ -37,6 +37,7 @@ class CheckoutViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result, error  in
+            
             DispatchQueue.main.async { [unowned self] in
                 
                 if let error = error {

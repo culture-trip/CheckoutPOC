@@ -31,10 +31,10 @@ extension PaddingCell: CellPresentable {
         return nil
     }
     
-    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        guard let configuration = configuration,
-            let height = configuration.height?.getValue()
+        guard let viewModel = viewModel,
+            let height = viewModel.height?.getValue()
               else { return }
         
         paddingHeight.constant = CGFloat(height)

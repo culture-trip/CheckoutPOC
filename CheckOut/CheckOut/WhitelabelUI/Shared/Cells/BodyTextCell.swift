@@ -24,9 +24,9 @@ class BodyTextCell: UITableViewCell {
 
 extension BodyTextCell: CellPresentable {
     
-    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        bodyTextView.text = configuration?.content
+        bodyTextView.text = viewModel?.content
     }
     
     func getInformationFromCell() -> CellData? {

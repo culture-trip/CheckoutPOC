@@ -21,9 +21,9 @@ class SubHeaderTextCell: UITableViewCell {
 
 extension SubHeaderTextCell: CellPresentable {
     
-    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
-        subheaderLabel.text = configuration?.content
+        subheaderLabel.text = viewModel?.content
     }
     
     func getInformationFromCell() -> CellData? {

@@ -32,13 +32,13 @@ class SingleActionButtonCell: UITableViewCell {
 }
 
 extension SingleActionButtonCell: CellPresentable {
-    func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
         
         if let delegate = delegate as? SubmitButtonDelegate {
             self.delegate = delegate
         }
 
-        submitButton.setTitle(configuration?.content, for: .normal)
+        submitButton.setTitle(viewModel?.content, for: .normal)
     }
     
     func getInformationFromCell() -> CellData? {
