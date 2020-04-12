@@ -6,22 +6,20 @@
 //  Copyright © 2020 Warrd Adlani. All rights reserved.
 //
 
+protocol CheckoutViewing: AnyObject {
+    
+    func viewReady()
+}
+
 import UIKit
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, CheckoutViewing {
     
     public var presenter: CheckoutViewPresenting = CheckoutViewPresenter()
     
     @IBOutlet private weak var tableView: UITableView!
     
     private lazy var cells: [UITableViewCell] = { [UITableViewCell]() }()
-    
-    private var configuration: Configuration? {
-        didSet {
-            title = configuration?.title
-            tableView.reloadData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +36,15 @@ class CheckoutViewController: UIViewController {
         
         tableView.tableFooterView = UIView()
         
-        ConfigurationLoader.parseConfiguration(with: "experiences_checkout") { result, error  in
-            
-            DispatchQueue.main.async { [unowned self] in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    self.configuration = result
-                }
-            }
-        }
+        presenter.view = self
+        
+        presenter.viewDidLoad()
+    }
+    
+    public func viewReady() {
+        
+        title = presenter.title
+        tableView.reloadData()
     }
 }
 
@@ -67,12 +63,12 @@ extension CheckoutViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return configuration?.items?.count ?? 0
+        return presenter.configuration?.items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let item = configuration?.items?[indexPath.row] else { return UITableViewCell() }
+        guard let item = presenter.configuration?.items?[indexPath.row] else { return UITableViewCell() }
         
         guard let cellIdentifier = item.type?.rawValue else { return UITableViewCell() }
         
