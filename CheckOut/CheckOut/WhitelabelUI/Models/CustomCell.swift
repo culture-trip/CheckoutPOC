@@ -1,13 +1,17 @@
 import Foundation
 
+// MARK: - Model
+
 public struct CustomCell: Decodable {
     
     let content: String?
-    let height: CellHeightType?
+    let height: PaddingType?
     let type: CustomCellType?
     let alignment: CellAlignmentType?
     let cellInputType: CellInputType?
 }
+
+// MARK: Cell Types
 
 public enum CustomCellType: String, CaseIterable, Decodable {
     
@@ -19,6 +23,8 @@ public enum CustomCellType: String, CaseIterable, Decodable {
     case subHeaderCell = "SubHeaderTextCell"
 }
 
+// MARK: - Cell Input Types
+
 public enum CellInputType: String, Decodable {
     
     case normal
@@ -28,26 +34,11 @@ public enum CellInputType: String, Decodable {
     case secure
 }
 
+// MARK: - Cell Content Alignment types (not just for text)
+
 public enum CellAlignmentType: String, Decodable {
     
     case left
     case right
     case center
-}
-
-public enum CellHeightType: String, Decodable {
-    
-    case small
-    case medium
-    case large
-    case xtraLarge
-    
-    func getValue() -> Double {
-        switch self {
-        case .small: return 4.0
-        case .medium: return 8.0
-        case .large: return 16.0
-        case .xtraLarge: return 32.0
-        }
-    }
 }
