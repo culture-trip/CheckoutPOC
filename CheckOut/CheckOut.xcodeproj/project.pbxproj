@@ -152,10 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F3053C55242CC22100CBB27A /* AppDelegate.swift */,
-				F380E8F6242CEADD00874DE6 /* Data */,
-				F3053C8E242CE88A00CBB27A /* Models */,
-				F3035FF0242CEB9300E9B279 /* Shared */,
-				F3053C8F242CE89B00CBB27A /* Feature */,
+				F3053C8F242CE89B00CBB27A /* Checkout */,
+				F3BEEEFA24435BE100F65226 /* WhitelabelUI */,
 				F3053C90242CE8A400CBB27A /* Extentensions */,
 				F3053C91242CE8BD00CBB27A /* LaunchScreen */,
 				F3053C5E242CC22600CBB27A /* Assets.xcassets */,
@@ -199,13 +197,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F3053C8F242CE89B00CBB27A /* Feature */ = {
+		F3053C8F242CE89B00CBB27A /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
 				F3035FEF242CEB6000E9B279 /* Checkout */,
 				F3053C77242CC33100CBB27A /* Resources */,
 			);
-			path = Feature;
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		F3053C90242CE8A400CBB27A /* Extentensions */ = {
@@ -238,6 +236,16 @@
 				F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
+			isa = PBXGroup;
+			children = (
+				F380E8F6242CEADD00874DE6 /* Data */,
+				F3053C8E242CE88A00CBB27A /* Models */,
+				F3035FF0242CEB9300E9B279 /* Shared */,
+			);
+			path = WhitelabelUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

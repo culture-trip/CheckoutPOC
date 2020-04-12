@@ -20,6 +20,7 @@ class HeaderTextCell: UITableViewCell {
 }
 
 extension HeaderTextCell: CellPresentable {
+    
     func setupCell(with configuration: CustomCell?, delegate: CellDelegate?) { 
         if let aligntment = configuration?.alignment {
             
