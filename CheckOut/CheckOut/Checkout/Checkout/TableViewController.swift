@@ -1,5 +1,5 @@
 //
-//  CheckoutViewController.swift
+//  TableViewController.swift
 //  CheckOut
 //
 //  Created by Warrd Adlani on 26/03/2020.
@@ -13,9 +13,9 @@ protocol CheckoutViewing: AnyObject {
 
 import UIKit
 
-class CheckoutViewController: UIViewController, CheckoutViewing {
+class TableViewController: UIViewController, CheckoutViewing {
     
-    public var presenter: CheckoutViewPresenting = CheckoutViewPresenter()
+    public var presenter: TableViewPresenting = TableViewPresenter()
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -56,14 +56,14 @@ class CheckoutViewController: UIViewController, CheckoutViewing {
 }
 
 
-extension CheckoutViewController: UITableViewDelegate {
+extension TableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
-extension CheckoutViewController: UITableViewDataSource {
+extension TableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return presenter.application?.screens?.first?.sections?.count ?? 0
@@ -123,5 +123,5 @@ extension CheckoutViewController: UITableViewDataSource {
     }
 }
 
-extension CheckoutViewController: CellDelegate {}
+extension TableViewController: CellDelegate {}
 

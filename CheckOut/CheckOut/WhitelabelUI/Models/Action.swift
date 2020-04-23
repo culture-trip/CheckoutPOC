@@ -8,11 +8,6 @@
 
 import Foundation
 
-protocol Actionable {
-    
-    var action: Action? { get }
-}
-
 enum ActionType: String, Decodable {
     
     case generic

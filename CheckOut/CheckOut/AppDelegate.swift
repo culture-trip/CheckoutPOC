@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let viewController = storyboard.instantiateViewController(identifier: "CheckoutViewController")
+        let viewController = storyboard.instantiateViewController(identifier: "TableViewController")
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.title = "JSON Configured layout"
         window?.rootViewController = navigationController

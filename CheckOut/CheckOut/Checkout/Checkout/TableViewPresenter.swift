@@ -1,6 +1,6 @@
 import Foundation
 
-protocol CheckoutViewPresenting: AnyObject {
+protocol TableViewPresenting: AnyObject {
     
     var title: String? { get set }
     var application: Application? { get set }
@@ -12,7 +12,7 @@ protocol CheckoutViewPresenting: AnyObject {
     func item(at indexPath: IndexPath) -> Row?
 }
 
-class CheckoutViewPresenter: CheckoutViewPresenting {
+class TableViewPresenter: TableViewPresenting {
     
     weak var view: CheckoutViewing?
     public var title: String?

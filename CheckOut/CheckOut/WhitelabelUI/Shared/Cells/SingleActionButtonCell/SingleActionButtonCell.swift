@@ -8,12 +8,10 @@
 
 import UIKit
 
-class SingleActionButtonCell: UITableViewCell, Actionable {
+class SingleActionButtonCell: UITableViewCell {
     
     @IBOutlet weak var submitButton: UIButton!
-    
-    var action: Action?
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         

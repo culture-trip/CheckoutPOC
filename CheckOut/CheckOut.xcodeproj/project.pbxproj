@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F3053C56242CC22100CBB27A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C55242CC22100CBB27A /* AppDelegate.swift */; };
-		F3053C5A242CC22100CBB27A /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C59242CC22100CBB27A /* CheckoutViewController.swift */; };
+		F3053C5A242CC22100CBB27A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C59242CC22100CBB27A /* TableViewController.swift */; };
 		F3053C5D242CC22100CBB27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3053C5B242CC22100CBB27A /* Main.storyboard */; };
 		F3053C5F242CC22600CBB27A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3053C5E242CC22600CBB27A /* Assets.xcassets */; };
 		F3053C62242CC22600CBB27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3053C60242CC22600CBB27A /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		F37FF87C2451BC0800EB3ABA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87B2451BC0800EB3ABA /* Payload.swift */; };
 		F37FF87E2451BEB400EB3ABA /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87D2451BEB400EB3ABA /* Rows.swift */; };
 		F380E8F5242CEA6600874DE6 /* ApplicationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */; };
-		F38CFC542443628800D8EFEA /* CheckoutViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */; };
+		F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* TableViewPresenter.swift */; };
 		F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */; };
 		F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */; };
 		F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */; };
@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		F3053C52242CC22100CBB27A /* CheckOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3053C55242CC22100CBB27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3053C59242CC22100CBB27A /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		F3053C59242CC22100CBB27A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F3053C5C242CC22100CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3053C5E242CC22600CBB27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3053C61242CC22600CBB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		F37FF87B2451BC0800EB3ABA /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		F37FF87D2451BEB400EB3ABA /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
 		F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLoader.swift; sourceTree = "<group>"; };
-		F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewPresenter.swift; sourceTree = "<group>"; };
+		F38CFC532443628800D8EFEA /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
 		F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellViewModel.swift; sourceTree = "<group>"; };
 		F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTextCellViewModel.swift; sourceTree = "<group>"; };
 		F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellViewModel.swift; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 		F3035FEF242CEB6000E9B279 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C59242CC22100CBB27A /* CheckoutViewController.swift */,
-				F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */,
+				F3053C59242CC22100CBB27A /* TableViewController.swift */,
+				F38CFC532443628800D8EFEA /* TableViewPresenter.swift */,
 				F3053C8D242CE4DD00CBB27A /* Storyboard */,
 			);
 			path = Checkout;
@@ -454,11 +454,11 @@
 				F3053C88242CCABB00CBB27A /* Application.swift in Sources */,
 				F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */,
 				F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */,
-				F3053C5A242CC22100CBB27A /* CheckoutViewController.swift in Sources */,
+				F3053C5A242CC22100CBB27A /* TableViewController.swift in Sources */,
 				F3431D032450904B00597691 /* Action.swift in Sources */,
 				F37FF87E2451BEB400EB3ABA /* Rows.swift in Sources */,
 				F3053C94242CE91E00CBB27A /* Row.swift in Sources */,
-				F38CFC542443628800D8EFEA /* CheckoutViewPresenter.swift in Sources */,
+				F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */,
 				F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */,
 				F3BEEEFD24435DAA00F65226 /* PaddingType.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,
