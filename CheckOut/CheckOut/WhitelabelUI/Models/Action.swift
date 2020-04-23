@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+protocol Actionable {
+    
+    var action: Action? { get }
+}
+
+enum ActionType: String, Decodable {
+    
+    case generic
+    case submit
+    case save
+    case exit
+}
+
+struct Action: Decodable {
+    
+    let type: ActionType
+}

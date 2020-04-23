@@ -3,7 +3,7 @@ import Foundation
 struct PaddingCellViewModel: CustomCellViewModel {
     
     var payload: Payload?
-    var item: CustomCellItem?
+    var item: Row?
     var height: PaddingType? { return item?.height }
     var content: String? {
         

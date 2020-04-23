@@ -2,7 +2,7 @@ import Foundation
 
 struct BodyTextCellViewModel: CustomCellViewModel {
     var payload: Payload?
-    var item: CustomCellItem?
+    var item: Row?
     var content: String? {
         
         if let content = payload?.content {

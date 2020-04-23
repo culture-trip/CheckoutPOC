@@ -13,9 +13,11 @@ public protocol SubmitButtonDelegate: CellDelegate {
     func didTapSubmit()
 }
 
-class SingleActionButtonCell: UITableViewCell {
+class SingleActionButtonCell: UITableViewCell, Actionable {
 
     @IBOutlet weak var submitButton: UIButton!
+    
+    var action: Action?
     
     fileprivate weak var delegate: SubmitButtonDelegate?
     

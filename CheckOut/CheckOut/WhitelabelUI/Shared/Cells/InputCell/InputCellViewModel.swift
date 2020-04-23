@@ -3,7 +3,7 @@ import Foundation
 struct InputCellViewModel: CustomCellViewModel {
     
     var payload: Payload?
-    var item: CustomCellItem?
+    var item: Row?
     var cellInputType: CellInputType? { return item?.cellInputType }
     var content: String? {
         

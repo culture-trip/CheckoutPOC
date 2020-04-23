@@ -16,5 +16,5 @@ public protocol CellPresentable: AnyObject {
 public protocol CustomCellViewModel {
     
     var payload: Payload? { get set}
-    var item: CustomCellItem? { get }
+    var item: Row? { get }
 }

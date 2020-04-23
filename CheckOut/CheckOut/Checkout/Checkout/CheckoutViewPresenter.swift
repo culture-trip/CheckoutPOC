@@ -3,33 +3,34 @@ import Foundation
 protocol CheckoutViewPresenting: AnyObject {
     
     var title: String? { get set }
-    var configuration: Configuration? { get set }
+    var application: Application? { get set }
     var view: CheckoutViewing? { get set }
     
     func viewDidLoad()
     func viewReady()
-    func setupCell(_ cell: CellPresentable, item: CustomCellItem?, indexPath: IndexPath?, delegate: CellDelegate?)
+    func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?)
+    func item(at indexPath: IndexPath) -> Row?
 }
 
 class CheckoutViewPresenter: CheckoutViewPresenting {
     
     weak var view: CheckoutViewing?
     public var title: String?
-    public var configuration: Configuration?
+    public var application: Application?
     
     private let jsonFile = "experiences_checkout"
     
     func viewDidLoad() {
         
-        ConfigurationLoader.parseConfiguration(with: jsonFile) { result, error  in
+        ApplicationLoader.parseConfiguration(with: jsonFile) { result, error  in
             
             DispatchQueue.main.async { [weak self] in
                 
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    self?.title = self?.configuration?.title
-                    self?.configuration = result
+                    self?.title = self?.application?.screens?.first?.title
+                    self?.application = result
                     self?.viewReady()
                 }
             }
@@ -47,7 +48,7 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
      * which should override the content picked up from the json configuraion file
      */
     
-    func setupCell(_ cell: CellPresentable, item: CustomCellItem?, indexPath: IndexPath?, delegate: CellDelegate?) {
+    func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?) {
     
         guard let cellType = item?.type else { return }
         
@@ -65,8 +66,8 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
          * - Add "customContentKey" to json for extracting and mapping
          */
         
-        let payload = Payload(title: nil, content: "Custom Header from API - Please enter address below as per supplied")
-        
+        let examplePayload = Payload(content: "API Test content")
+                
         switch cellType {
             
         case .headerCell:
@@ -74,7 +75,7 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
         case .inputCell:
             viewModel = InputCellViewModel(item: item)
         case .bodyTextCell:
-            viewModel = BodyTextCellViewModel(payload: payload, item: item)
+            viewModel = BodyTextCellViewModel(payload: examplePayload, item: item)
         case .singleActionButtonCell:
             viewModel = SingleActionButtonCellViewModel(item: item)
         case .subHeaderCell:
@@ -84,5 +85,13 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
         }
         
         cell.setupCell(with: viewModel, delegate: delegate)
+    }
+    
+    func item(at indexPath: IndexPath) -> Row? {
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        return application?.screens?.first?.sections?[section].rows?[row]
     }
 }

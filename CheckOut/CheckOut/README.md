@@ -1,4 +1,4 @@
-#  JSON View configuration
+#  JSON Application Builder
 
 ## Description
 

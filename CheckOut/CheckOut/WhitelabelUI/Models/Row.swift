@@ -2,14 +2,14 @@ import Foundation
 
 // MARK: - Model
 
-public struct CustomCellItem: Decodable {
+public struct Row: Decodable {
     
     let content: String?
     let height: PaddingType?
-    let type: CustomCellType?
-    let alignment: CellAlignmentType?
+    let type: RowType?
+    let alignment: RowAlignmentType?
     let cellInputType: CellInputType?
-    let action: Bool?
+    let action: Action?
     
     enum CodingKeys: String, CodingKey {
         
@@ -29,7 +29,7 @@ public struct CustomCellContent: Decodable {
 
 // MARK: Cell Types
 
-public enum CustomCellType: String, CaseIterable, Decodable {
+public enum RowType: String, CaseIterable, Decodable {
     
     case headerCell = "HeaderTextCell"
     case inputCell = "InputCell"
@@ -52,7 +52,7 @@ public enum CellInputType: String, Decodable {
 
 // MARK: - Cell Content Alignment types (not just for text)
 
-public enum CellAlignmentType: String, Decodable {
+public enum RowAlignmentType: String, Decodable {
     
     case left
     case right

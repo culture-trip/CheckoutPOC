@@ -59,21 +59,17 @@ extension CheckoutViewController: UITableViewDelegate {
 extension CheckoutViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.configuration?.sections?.count ?? 0
+        return presenter.application?.screens?.first?.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.configuration?.sections?[section].items?.count ?? 0
+        return presenter.application?.screens?.first?.sections?[section].rows?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let section = indexPath.section
-        let row = indexPath.row
-        
-        guard let item = presenter.configuration?.sections?[section].items?[indexPath.row] else { return UITableViewCell() }
-        
-        guard let cellIdentifier = item.type?.rawValue else { return UITableViewCell() }
+                
+        guard let item = presenter.item(at: indexPath),
+              let cellIdentifier = item.type?.rawValue else { return UITableViewCell() }
         
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CellPresentable else {
             return UITableViewCell()
@@ -92,6 +88,13 @@ extension CheckoutViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? SingleActionButtonCell {
+            
+        }
     }
 }
 

@@ -1,8 +1,8 @@
 struct HeaderTextCellViewModel: CustomCellViewModel {
     
     var payload: Payload?
-    var item: CustomCellItem?
-    var alignment: CellAlignmentType { return item?.alignment ?? .left}
+    var item: Row?
+    var alignment: RowAlignmentType { return item?.alignment ?? .left}
     
     var content: String? {
         

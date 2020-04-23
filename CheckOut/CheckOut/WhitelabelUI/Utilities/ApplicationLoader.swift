@@ -1,5 +1,5 @@
 //
-//  ConfigurationLoader.swift
+//  ApplicationLoader.swift
 //  CheckOut
 //
 //  Created by Warrd Adlani on 26/03/2020.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class ConfigurationLoader {
+public final class ApplicationLoader {
     
-    class func parseConfiguration(with name: String, completion: @escaping (Configuration?, Error?)->()) {
+    class func parseConfiguration(with name: String, completion: @escaping (Application?, Error?)->()) {
         
         let queue = DispatchQueue(label: "configuration-loader-queue")
-        var config: Configuration? = nil
+        var config: Application? = nil
         
         queue.async {
             if let path = Bundle.main.path(forResource: name, ofType: "json") {
@@ -23,7 +23,7 @@ public final class ConfigurationLoader {
                     
                     print(jsonResult)
                     
-                    config = try JSONDecoder().decode(Configuration.self, from: data)
+                    config = try JSONDecoder().decode(Application.self, from: data)
                     
                     completion(config, nil)
                     
