@@ -1,26 +1,14 @@
 import Foundation
 
-protocol TableViewPresenting: AnyObject {
+public class TableViewPresenter: TableViewPresenting {
     
-    var title: String? { get set }
-    var application: Application? { get set }
-    var view: CheckoutViewing? { get set }
-    
-    func viewDidLoad()
-    func viewReady()
-    func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?)
-    func item(at indexPath: IndexPath) -> Row?
-}
-
-class TableViewPresenter: TableViewPresenting {
-    
-    weak var view: CheckoutViewing?
+    weak public var view: TableViewing?
     public var title: String?
     public var application: Application?
     
     private let jsonFile = "experiences_checkout"
     
-    func viewDidLoad() {
+    public func viewDidLoad() {
         
         ApplicationLoader.parseConfiguration(with: jsonFile) { result, error  in
             
@@ -37,7 +25,7 @@ class TableViewPresenter: TableViewPresenting {
         }
     }
     
-    func viewReady() {
+    public func viewReady() {
         
         view?.viewReady()
     }
@@ -48,7 +36,7 @@ class TableViewPresenter: TableViewPresenting {
      * which should override the content picked up from the json configuraion file
      */
     
-    func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?) {
+    public func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?) {
     
         guard let cellType = item?.type else { return }
         
@@ -88,7 +76,7 @@ class TableViewPresenter: TableViewPresenting {
         cell.setupCell(with: viewModel, delegate: delegate)
     }
     
-    func item(at indexPath: IndexPath) -> Row? {
+    public func item(at indexPath: IndexPath) -> Row? {
         
         let section = indexPath.section
         let row = indexPath.row

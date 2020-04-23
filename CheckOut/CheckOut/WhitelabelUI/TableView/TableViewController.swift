@@ -1,21 +1,8 @@
-//
-//  TableViewController.swift
-//  CheckOut
-//
-//  Created by Warrd Adlani on 26/03/2020.
-//  Copyright © 2020 Warrd Adlani. All rights reserved.
-//
-
-protocol CheckoutViewing: AnyObject {
-    
-    func viewReady()
-}
-
 import UIKit
 
-class TableViewController: UIViewController, CheckoutViewing {
+class TableViewController: UIViewController, TableViewing {
     
-    public var presenter: TableViewPresenting = TableViewPresenter()
+    public var presenter: TableViewPresenting!
     
     @IBOutlet private weak var tableView: UITableView!
     

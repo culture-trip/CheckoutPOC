@@ -28,6 +28,8 @@
 		F3431D032450904B00597691 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D022450904B00597691 /* Action.swift */; };
 		F37FF87C2451BC0800EB3ABA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87B2451BC0800EB3ABA /* Payload.swift */; };
 		F37FF87E2451BEB400EB3ABA /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87D2451BEB400EB3ABA /* Rows.swift */; };
+		F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */; };
+		F37FF8A42451D2E600EB3ABA /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */; };
 		F380E8F5242CEA6600874DE6 /* ApplicationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */; };
 		F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* TableViewPresenter.swift */; };
 		F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */; };
@@ -81,6 +83,8 @@
 		F3431D022450904B00597691 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F37FF87B2451BC0800EB3ABA /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		F37FF87D2451BEB400EB3ABA /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
+		F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCoordinator.swift; sourceTree = "<group>"; };
+		F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
 		F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLoader.swift; sourceTree = "<group>"; };
 		F38CFC532443628800D8EFEA /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
 		F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellViewModel.swift; sourceTree = "<group>"; };
@@ -120,8 +124,7 @@
 		F3035FEF242CEB6000E9B279 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C59242CC22100CBB27A /* TableViewController.swift */,
-				F38CFC532443628800D8EFEA /* TableViewPresenter.swift */,
+				F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */,
 				F3053C8D242CE4DD00CBB27A /* Storyboard */,
 			);
 			path = Checkout;
@@ -254,6 +257,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		F37FF8A22451D24500EB3ABA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */,
+				F3053C59242CC22100CBB27A /* TableViewController.swift */,
+				F38CFC532443628800D8EFEA /* TableViewPresenter.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		F38CFC55244368E400D8EFEA /* HeaderTextCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +330,7 @@
 		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
 			isa = PBXGroup;
 			children = (
+				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3BEEEFB24435C4300F65226 /* Utilities */,
 				F3053C8E242CE88A00CBB27A /* Models */,
 				F3035FF0242CEB9300E9B279 /* Shared */,
@@ -448,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */,
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F3053C7C242CC9E000CBB27A /* HeaderTextCell.swift in Sources */,
 				F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */,
@@ -471,6 +486,7 @@
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
 				F3431D0124508BB800597691 /* Screen.swift in Sources */,
 				F3B89D98242E0F61006049B7 /* BodyTextCell.swift in Sources */,
+				F37FF8A42451D2E600EB3ABA /* TableViewProtocols.swift in Sources */,
 				F3053C56242CC22100CBB27A /* AppDelegate.swift in Sources */,
 				F380E8F5242CEA6600874DE6 /* ApplicationLoader.swift in Sources */,
 			);
