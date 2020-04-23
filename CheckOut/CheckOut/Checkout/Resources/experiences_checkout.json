@@ -3,164 +3,164 @@
         "id": "checkout",
         "title": "Experiences Checkout",
         "type": "table",
-        "headerImage": "",
-        "headerText": "header",
-        "footerImage": "",
-        "footerText": "footer",
-        "topContentInset" : "none",
-        "bottomContentInset" : "medium",
+        "header_image": "",
+        "header_text": "header",
+        "footer_image": "",
+        "footer_text": "footer",
+        "top_content_inset" : "none",
+        "bottom_content_inset" : "medium",
         "sections" :
         [{
             "rows": [
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "HeaderTextCell",
+                    "type": "header_text_cell",
                     "content": "Experiences Checkout",
                     "alignment": "center"
                 },
                 {
-                    "type": "PaddingCell",
-                    "height": "medium"
+                    "type": "padding_cell",
+                    "height": "large"
                 },
                 {
-                    "type": "HeaderTextCell",
+                    "type": "header_text_cell",
                     "content": "User info",
                     "alignment": "left"
                 },
                 {
-                    "type": "PaddingCell",
-                    "height": "medium"
+                    "type": "padding_cell",
+                    "height": "large"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "First name"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "InputCell",
-                    "cellInputType": "name",
+                    "type": "input_cell",
+                    "cell_input_type": "name",
                     "content": "Enter info"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "Last name"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "InputCell",
-                    "cellInputType": "name",
+                    "type": "input_cell",
+                    "cell_input_type": "name",
                     "content": "Enter info"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "Address Information"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "BodyTextCell",
+                    "type": "body_text_cell",
                     "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "InputCell",
-                    "cellInputType": "normal",
+                    "type": "input_cell",
+                    "cell_input_type": "normal",
                     "content": "Enter info"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "Cancellation Policy"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "BodyTextCell",
+                    "type": "body_text_cell",
                     "content": "This merchant uses Trust My Travel Ltd to protect and process credit card payments. All credit card payments placed through this website are protected by TMTProtects.Me. Click here for full terms of service.\n\nFor payment questions, please contact:  Tel: 44(0)17small0 43smallsmall2small.  Address: The Cedars, Ryhall PE9 4HL, United Kingdom."
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "How many children?"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "InputCell",
-                    "cellInputType": "numerical",
+                    "type": "input_cell",
+                    "cell_input_type": "numerical",
                     "content": "Enter info"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "large"
                 },
                 {
-                    "type": "HeaderTextCell",
+                    "type": "header_text_cell",
                     "content": "Payment information"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "large"
                 },
                 {
-                    "type": "SubHeaderTextCell",
+                    "type": "sub_header_text_cell",
                     "content": "Credit card number"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "InputCell",
+                    "type": "input_cell",
                     "is_secure": true,
-                    "cellInputType": "numerical",
+                    "cell_input_type": "numerical",
                     "content": "Enter info"
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 },
                 {
-                    "type": "SingleActionButtonCell",
+                    "type": "single_action_button_cell",
                     "content": "Submit",
                     "action" : {
                         "type": "submit"
                     }
                 },
                 {
-                    "type": "PaddingCell",
+                    "type": "padding_cell",
                     "height": "medium"
                 }
             ]

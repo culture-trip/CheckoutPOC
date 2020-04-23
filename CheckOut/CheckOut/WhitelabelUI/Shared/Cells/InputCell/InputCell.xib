@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jHk-fS-CkZ">
-                        <rect key="frame" x="16" y="0.0" width="288" height="28"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="34"/>
                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -31,7 +31,7 @@
                     <constraint firstAttribute="trailing" secondItem="jHk-fS-CkZ" secondAttribute="trailing" constant="16" id="Ema-qu-Sbx"/>
                     <constraint firstItem="jHk-fS-CkZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RUl-xz-udC"/>
                     <constraint firstItem="jHk-fS-CkZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fJa-EX-EAZ"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jHk-fS-CkZ" secondAttribute="bottom" constant="16" id="z9a-bE-c6A"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jHk-fS-CkZ" secondAttribute="bottom" id="z9a-bE-c6A"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

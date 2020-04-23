@@ -18,7 +18,7 @@ public struct Row: Decodable {
         case height
         case type
         case alignment
-        case cellInputType
+        case cellInputType = "cell_input_type"
         case action
         case isSecure = "is_secure"
     }
@@ -33,12 +33,31 @@ public struct CustomCellContent: Decodable {
 
 public enum RowType: String, CaseIterable, Decodable {
     
-    case headerCell = "HeaderTextCell"
-    case inputCell = "InputCell"
-    case bodyTextCell = "BodyTextCell"
-    case singleActionButtonCell = "SingleActionButtonCell"
-    case paddingCell = "PaddingCell"
-    case subHeaderCell = "SubHeaderTextCell"
+    case headerCell = "header_text_cell"
+    case inputCell = "input_cell"
+    case bodyTextCell = "body_text_cell"
+    case singleActionButtonCell = "single_action_button_cell"
+    case paddingCell = "padding_cell"
+    case subHeaderCell = "sub_header_text_cell"
+    
+    func getIdentifier() -> String {
+        
+        switch self {
+        case .headerCell:
+            return "HeaderTextCell"
+        case .inputCell:
+             return "InputCell"
+        case .bodyTextCell:
+             return "BodyTextCell"
+        case .singleActionButtonCell:
+             return "SingleActionButtonCell"
+        case .paddingCell:
+            return "PaddingCell"
+        case .subHeaderCell:
+            return "SubHeaderTextCell"
+        }
+        
+    }
 }
 
 // MARK: - Cell Input Types
