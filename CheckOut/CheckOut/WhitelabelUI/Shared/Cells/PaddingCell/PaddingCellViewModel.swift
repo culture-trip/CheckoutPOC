@@ -2,12 +2,12 @@ import Foundation
 
 struct PaddingCellViewModel: CustomCellViewModel {
     
-    var customPayload: CustomPayload?
+    var payload: Payload?
     var item: CustomCellItem?
     var height: PaddingType? { return item?.height }
     var content: String? {
         
-        if let content = customPayload?.content {
+        if let content = payload?.content {
             return content
         }
         

@@ -24,6 +24,7 @@
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
 		F3053C94242CE91E00CBB27A /* CustomCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* CustomCellItem.swift */; };
+		F3431D0124508BB800597691 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D0024508BB800597691 /* Payload.swift */; };
 		F380E8F5242CEA6600874DE6 /* ConfigurationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */; };
 		F38CFC542443628800D8EFEA /* CheckoutViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */; };
 		F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */; };
@@ -73,6 +74,7 @@
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F3053C93242CE91E00CBB27A /* CustomCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellItem.swift; sourceTree = "<group>"; };
+		F3431D0024508BB800597691 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		F380E8F4242CEA6600874DE6 /* ConfigurationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationLoader.swift; sourceTree = "<group>"; };
 		F38CFC532443628800D8EFEA /* CheckoutViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewPresenter.swift; sourceTree = "<group>"; };
 		F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellViewModel.swift; sourceTree = "<group>"; };
@@ -203,8 +205,9 @@
 		F3053C8E242CE88A00CBB27A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3053C93242CE91E00CBB27A /* CustomCellItem.swift */,
 				F3053C87242CCABB00CBB27A /* Configuration.swift */,
+				F3431D0024508BB800597691 /* Payload.swift */,
+				F3053C93242CE91E00CBB27A /* CustomCellItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */,
 				F3B89DA0242E1E57006049B7 /* SubHeaderTextCell.swift in Sources */,
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
+				F3431D0124508BB800597691 /* Payload.swift in Sources */,
 				F3B89D98242E0F61006049B7 /* BodyTextCell.swift in Sources */,
 				F3053C56242CC22100CBB27A /* AppDelegate.swift in Sources */,
 				F380E8F5242CEA6600874DE6 /* ConfigurationLoader.swift in Sources */,

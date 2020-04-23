@@ -1,12 +1,12 @@
 struct HeaderTextCellViewModel: CustomCellViewModel {
     
-    var customPayload: CustomPayload?
+    var payload: Payload?
     var item: CustomCellItem?
     var alignment: CellAlignmentType { return item?.alignment ?? .left}
     
     var content: String? {
         
-        if let content = customPayload?.content {
+        if let content = payload?.content {
             return content
         }
         

@@ -59,16 +59,19 @@ extension CheckoutViewController: UITableViewDelegate {
 extension CheckoutViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return presenter.configuration?.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.configuration?.items?.count ?? 0
+        return presenter.configuration?.sections?[section].items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let item = presenter.configuration?.items?[indexPath.row] else { return UITableViewCell() }
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        guard let item = presenter.configuration?.sections?[section].items?[indexPath.row] else { return UITableViewCell() }
         
         guard let cellIdentifier = item.type?.rawValue else { return UITableViewCell() }
         

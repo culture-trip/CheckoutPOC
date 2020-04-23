@@ -65,7 +65,7 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
          * - Add "customContentKey" to json for extracting and mapping
          */
         
-        let customPayload = CustomPayload(content: "Custom Header from API - Please enter address below as per supplied", title: nil)
+        let payload = Payload(title: nil, content: "Custom Header from API - Please enter address below as per supplied")
         
         switch cellType {
             
@@ -74,7 +74,7 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
         case .inputCell:
             viewModel = InputCellViewModel(item: item)
         case .bodyTextCell:
-            viewModel = BodyTextCellViewModel(customPayload: customPayload, item: item)
+            viewModel = BodyTextCellViewModel(payload: payload, item: item)
         case .singleActionButtonCell:
             viewModel = SingleActionButtonCellViewModel(item: item)
         case .subHeaderCell:

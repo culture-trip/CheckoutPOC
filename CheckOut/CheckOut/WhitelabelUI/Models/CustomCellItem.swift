@@ -2,12 +2,6 @@ import Foundation
 
 // MARK: - Model
 
-public struct CustomPayload {
-    
-    var content: String?
-    var title: String?
-}
-
 public struct CustomCellItem: Decodable {
     
     let content: String?
@@ -15,6 +9,7 @@ public struct CustomCellItem: Decodable {
     let type: CustomCellType?
     let alignment: CellAlignmentType?
     let cellInputType: CellInputType?
+    let action: Bool?
     
     enum CodingKeys: String, CodingKey {
         
@@ -23,6 +18,7 @@ public struct CustomCellItem: Decodable {
         case type
         case alignment
         case cellInputType
+        case action
     }
 }
 
