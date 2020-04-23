@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol TableViewing: AnyObject {
     
@@ -18,13 +19,17 @@ public protocol TableViewing: AnyObject {
 public protocol TableViewPresenting: AnyObject {
     
     var title: String? { get set }
-    var view: TableViewing? { get set }
-    var screen: Screen? { get set }
+    var topContentInset: CGFloat { get }
+    var bottomContentInset: CGFloat { get }
+    var numberOfSections: Int { get }
     
     func viewDidLoad()
     func updateView()
     func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?)
     func item(at indexPath: IndexPath) -> Row?
+    func nextScreen()
+    func numberOfRows(with section: Int) -> Int
+    func actionAtIndexPath(_ indexPath: IndexPath) -> Action?
     
-     init(screen: Screen?)
+    init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?)
 }

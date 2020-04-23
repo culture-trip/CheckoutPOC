@@ -1,13 +1,26 @@
-import Foundation
+import UIKit
 
 public class TableViewPresenter: TableViewPresenting {
     
-    public var screen: Screen?
-    weak public var view: TableViewing?
+    public var numberOfSections: Int {
+        return screen?.sections?.count ?? 0
+    }
+    public var topContentInset: CGFloat {
+        return CGFloat(screen?.topContentInset?.getValue() ?? 0.0)
+    }
+    public var bottomContentInset: CGFloat {
+        return CGFloat(screen?.bottomContentInset?.getValue() ?? 0.0)
+    }
     public var title: String?
+
+    private weak var view: TableViewing?
+    private var screen: Screen?
+    private weak var coordinator: Coordinator?
     
-    required public init(screen: Screen?) {
-       
+    required public init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?) {
+        
+        self.view = view
+        self.coordinator = coordinator
         self.screen = screen
     }
     
@@ -23,6 +36,16 @@ public class TableViewPresenter: TableViewPresenting {
     public func updateView() {
         
         view?.viewReady()
+    }
+    
+    public func numberOfRows(with section: Int) -> Int {
+        
+        return screen?.sections?[section].rows?.count ?? 0
+    }
+    
+    public func actionAtIndexPath(_ indexPath: IndexPath) -> Action? {
+        
+        return screen?.sections?[indexPath.section].rows?[indexPath.row].action
     }
     
     /* Desc: setupCell
@@ -77,5 +100,10 @@ public class TableViewPresenter: TableViewPresenting {
         let row = indexPath.row
         
         return screen?.sections?[section].rows?[row]
+    }
+    
+    public func nextScreen() {
+        
+        
     }
 }

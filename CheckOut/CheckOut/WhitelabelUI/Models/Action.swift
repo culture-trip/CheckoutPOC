@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ActionType: String, Decodable {
+public enum ActionType: String, Decodable {
     
     case generic
     case submit
@@ -16,7 +16,7 @@ enum ActionType: String, Decodable {
     case exit
 }
 
-struct Action: Decodable {
+public struct Action: Decodable {
     
     let type: ActionType
 }
