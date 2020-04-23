@@ -25,11 +25,11 @@ public protocol TableViewPresenting: AnyObject {
     
     func viewDidLoad()
     func updateView()
-    func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?)
+    func setupCell(_ cell: CellPresentable, row: Row?, indexPath: IndexPath?)
     func item(at indexPath: IndexPath) -> Row?
-    func nextScreen()
+    func submit()
     func numberOfRows(with section: Int) -> Int
-    func actionAtIndexPath(_ indexPath: IndexPath) -> Action?
+    func actionAtIndexPath(_ indexPath: IndexPath)
     
     init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?)
 }

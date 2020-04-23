@@ -1,19 +1,25 @@
 import Foundation
 
-struct SingleActionButtonCellViewModel: CustomCellViewModel {
+public class SingleActionButtonCellViewModel: CellViewModel {
     
-    var payload: Payload?
-    var item: Row?
-    var action: Action? {
+    public var payload: Payload?
+    public var row: Row?
+    public var action: Action? {
         
-        return item?.action
+        return row?.action
     }
-    var content: String? {
+    public var content: String? {
         
         if let content = payload?.content {
             return content
         }
         
-        return item?.content
+        return row?.content
+    }
+    
+    public required init(row: Row?, payload: Payload?) {
+        
+        self.row = row
+        self.payload = payload
     }
 }

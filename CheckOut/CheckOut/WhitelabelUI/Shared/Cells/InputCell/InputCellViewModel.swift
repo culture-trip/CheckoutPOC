@@ -1,16 +1,29 @@
 import Foundation
 
-struct InputCellViewModel: CustomCellViewModel {
+public protocol Inputting {
     
-    var payload: Payload?
-    var item: Row?
-    var cellInputType: CellInputType? { return item?.cellInputType }
-    var content: String? {
+    var data: String? { get set }
+}
+
+public class InputCellViewModel: CellViewModel, Inputting {
+    
+    public var data: String?
+    public var payload: Payload?
+    public var row: Row?
+    
+    public var cellInputType: CellInputType? { return row?.cellInputType }
+    public var content: String? {
         
         if let content = payload?.content {
             return content
         }
         
-        return item?.content
+        return row?.content
+    }
+    
+    required public init(row: Row?, payload: Payload?) {
+        
+        self.row = row
+        self.payload = payload
     }
 }

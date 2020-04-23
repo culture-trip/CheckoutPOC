@@ -1,14 +1,20 @@
 import Foundation
 
-struct BodyTextCellViewModel: CustomCellViewModel {
-    var payload: Payload?
-    var item: Row?
-    var content: String? {
+public class BodyTextCellViewModel: CellViewModel {
+    public var payload: Payload?
+    public var row: Row?
+    public var content: String? {
         
         if let content = payload?.content {
             return content
         }
         
-        return item?.content
+        return row?.content
+    }
+    
+    public required init(row: Row?, payload: Payload?) {
+        
+        self.row = row
+        self.payload = payload
     }
 }

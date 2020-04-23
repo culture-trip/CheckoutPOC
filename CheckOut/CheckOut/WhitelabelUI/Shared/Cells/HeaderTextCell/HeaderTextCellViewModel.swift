@@ -1,15 +1,20 @@
-struct HeaderTextCellViewModel: CustomCellViewModel {
+public class HeaderTextCellViewModel: CellViewModel {
     
-    var payload: Payload?
-    var item: Row?
-    var alignment: RowAlignmentType { return item?.alignment ?? .left}
-    
-    var content: String? {
+    public var payload: Payload?
+    public var row: Row?
+    public var alignment: RowAlignmentType { return row?.alignment ?? .left}
+    public var content: String? {
         
         if let content = payload?.content {
             return content
         }
         
-        return item?.content
+        return row?.content
+    }
+    
+    required public init(row: Row?, payload: Payload?) {
+        
+        self.row = row
+        self.payload = payload
     }
 }

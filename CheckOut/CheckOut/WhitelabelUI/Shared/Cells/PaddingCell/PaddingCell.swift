@@ -21,7 +21,7 @@ class PaddingCell: UITableViewCell {
 
 extension PaddingCell: CellPresentable {
     
-    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? PaddingCellViewModel,
             let height = viewModel.height?.getValue()

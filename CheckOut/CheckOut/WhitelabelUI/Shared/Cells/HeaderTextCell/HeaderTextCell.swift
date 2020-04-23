@@ -21,7 +21,7 @@ class HeaderTextCell: UITableViewCell {
 
 extension HeaderTextCell: CellPresentable {
     
-    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? HeaderTextCellViewModel else { return }
         

@@ -26,6 +26,11 @@
 		F3053C94242CE91E00CBB27A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* Row.swift */; };
 		F3431D0124508BB800597691 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D0024508BB800597691 /* Screen.swift */; };
 		F3431D032450904B00597691 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D022450904B00597691 /* Action.swift */; };
+		F36C70A124520941006FA29A /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C70A024520941006FA29A /* TableViewDelegate.swift */; };
+		F36C70A32452094A006FA29A /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C70A22452094A006FA29A /* TableViewDataSource.swift */; };
+		F36C70A92452304B006FA29A /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36C70A62452304B006FA29A /* ProximaNova-Semibold.otf */; };
+		F36C70AA2452304B006FA29A /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36C70A72452304B006FA29A /* ProximaNova-Bold.otf */; };
+		F36C70AB2452304B006FA29A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36C70A82452304B006FA29A /* ProximaNova-Regular.otf */; };
 		F37FF87C2451BC0800EB3ABA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87B2451BC0800EB3ABA /* Payload.swift */; };
 		F37FF87E2451BEB400EB3ABA /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF87D2451BEB400EB3ABA /* Rows.swift */; };
 		F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */; };
@@ -81,6 +86,11 @@
 		F3053C93242CE91E00CBB27A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		F3431D0024508BB800597691 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		F3431D022450904B00597691 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F36C70A024520941006FA29A /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		F36C70A22452094A006FA29A /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		F36C70A62452304B006FA29A /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		F36C70A72452304B006FA29A /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		F36C70A82452304B006FA29A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		F37FF87B2451BC0800EB3ABA /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		F37FF87D2451BEB400EB3ABA /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
 		F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCoordinator.swift; sourceTree = "<group>"; };
@@ -177,7 +187,7 @@
 				F3053C55242CC22100CBB27A /* AppDelegate.swift */,
 				F3053C8F242CE89B00CBB27A /* Checkout */,
 				F3BEEEFA24435BE100F65226 /* WhitelabelUI */,
-				F3053C90242CE8A400CBB27A /* Extentensions */,
+				F3053C90242CE8A400CBB27A /* Extensions */,
 				F3053C91242CE8BD00CBB27A /* LaunchScreen */,
 				F3053C5E242CC22600CBB27A /* Assets.xcassets */,
 				F3053C63242CC22600CBB27A /* Info.plist */,
@@ -233,12 +243,12 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
-		F3053C90242CE8A400CBB27A /* Extentensions */ = {
+		F3053C90242CE8A400CBB27A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */,
 			);
-			path = Extentensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F3053C91242CE8BD00CBB27A /* LaunchScreen */ = {
@@ -257,12 +267,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		F36C70A424523025006FA29A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F36C70A52452304B006FA29A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F36C70A52452304B006FA29A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F36C70A62452304B006FA29A /* ProximaNova-Semibold.otf */,
+				F36C70A72452304B006FA29A /* ProximaNova-Bold.otf */,
+				F36C70A82452304B006FA29A /* ProximaNova-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F37FF8A22451D24500EB3ABA /* TableView */ = {
 			isa = PBXGroup;
 			children = (
 				F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */,
 				F3053C59242CC22100CBB27A /* TableViewController.swift */,
 				F38CFC532443628800D8EFEA /* TableViewPresenter.swift */,
+				F36C70A024520941006FA29A /* TableViewDelegate.swift */,
+				F36C70A22452094A006FA29A /* TableViewDataSource.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -330,6 +360,7 @@
 		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
 			isa = PBXGroup;
 			children = (
+				F36C70A424523025006FA29A /* Resources */,
 				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3BEEEFB24435C4300F65226 /* Utilities */,
 				F3053C8E242CE88A00CBB27A /* Models */,
@@ -440,10 +471,13 @@
 				F3B89D9D242E1955006049B7 /* PaddingCell.xib in Resources */,
 				F3053C82242CC9F500CBB27A /* InputCell.xib in Resources */,
 				F3053C5F242CC22600CBB27A /* Assets.xcassets in Resources */,
+				F36C70A92452304B006FA29A /* ProximaNova-Semibold.otf in Resources */,
 				F3B89DA1242E1E57006049B7 /* SubHeaderTextCell.xib in Resources */,
 				F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */,
 				F3053C5D242CC22100CBB27A /* Main.storyboard in Resources */,
+				F36C70AA2452304B006FA29A /* ProximaNova-Bold.otf in Resources */,
 				F3053C86242CCA1100CBB27A /* SingleActionButtonCell.xib in Resources */,
+				F36C70AB2452304B006FA29A /* ProximaNova-Regular.otf in Resources */,
 				F3053C7D242CC9E000CBB27A /* HeaderTextCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36C70A124520941006FA29A /* TableViewDelegate.swift in Sources */,
 				F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */,
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F3053C7C242CC9E000CBB27A /* HeaderTextCell.swift in Sources */,
@@ -478,6 +513,7 @@
 				F3BEEEFD24435DAA00F65226 /* PaddingType.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,
 				F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */,
+				F36C70A32452094A006FA29A /* TableViewDataSource.swift in Sources */,
 				F38CFC6624436B7E00D8EFEA /* PaddingCellViewModel.swift in Sources */,
 				F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */,
 				F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */,

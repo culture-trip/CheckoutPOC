@@ -1,16 +1,22 @@
 import Foundation
 
-struct PaddingCellViewModel: CustomCellViewModel {
+public class PaddingCellViewModel: CellViewModel {
     
-    var payload: Payload?
-    var item: Row?
-    var height: PaddingType? { return item?.height }
-    var content: String? {
+    public var payload: Payload?
+    public var row: Row?
+    public var height: PaddingType? { return row?.height }
+    public var content: String? {
         
         if let content = payload?.content {
             return content
         }
         
-        return item?.content
+        return row?.content
+    }
+    
+    public required init(row: Row?, payload: Payload?) {
+        
+        self.row = row
+        self.payload = payload
     }
 }

@@ -10,11 +10,13 @@ public protocol CellDelegate: AnyObject {}
 public protocol CellPresentable: AnyObject {
     
     func getInformationFromCell() -> CellData?
-    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?)
+    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?)
 }
 
-public protocol CustomCellViewModel {
+public protocol CellViewModel {
     
     var payload: Payload? { get set}
-    var item: Row? { get }
+    var row: Row? { get }
+    
+    init(row: Row?, payload: Payload?)
 }

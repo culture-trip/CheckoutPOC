@@ -20,7 +20,7 @@ class SubHeaderTextCell: UITableViewCell {
 }
 
 extension SubHeaderTextCell: CellPresentable {
-    func setupCell(with viewModel: CustomCellViewModel?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? SubHeaderTextCellViewModel else { return }
         
