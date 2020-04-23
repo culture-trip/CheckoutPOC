@@ -44,6 +44,13 @@ class CheckoutViewController: UIViewController, CheckoutViewing {
     public func viewReady() {
         
         title = presenter.title
+        var contentInset = tableView.contentInset
+        
+        contentInset.top = CGFloat(presenter.application?.screens?.first?.topContentInset?.getValue() ?? 0.0)
+        contentInset.bottom = CGFloat(presenter.application?.screens?.first?.bottomContentInset?.getValue() ?? 0.0)
+        
+        tableView.contentInset = contentInset
+        
         tableView.reloadData()
     }
 }
@@ -91,16 +98,18 @@ extension CheckoutViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? SingleActionButtonCell {
-            
+    
+        if let section = presenter.application?.screens?.first?.sections?[indexPath.section] {
+            if let action = section.rows?[indexPath.row].action?.type {
+                if action == .submit {
+                    submit()
+                    tableView.deselectRow(at: indexPath, animated: true)
+                }
+            }
         }
     }
-}
-
-extension CheckoutViewController: SubmitButtonDelegate {
     
-    func didTapSubmit() {
+    func submit() {
         print("submit tapped")
         
         // Magic happens here where the information is collected using a generic struct
@@ -113,4 +122,6 @@ extension CheckoutViewController: SubmitButtonDelegate {
         }
     }
 }
+
+extension CheckoutViewController: CellDelegate {}
 

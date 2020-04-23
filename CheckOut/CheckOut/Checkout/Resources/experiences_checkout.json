@@ -7,8 +7,8 @@
         "headerText": "header",
         "footerImage": "",
         "footerText": "footer",
-        "topContentInset" : 0.0,
-        "bottomContentInset" : 0.0,
+        "topContentInset" : "none",
+        "bottomContentInset" : "medium",
         "sections" :
         [{
             "rows": [

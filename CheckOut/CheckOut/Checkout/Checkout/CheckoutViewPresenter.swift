@@ -66,6 +66,7 @@ class CheckoutViewPresenter: CheckoutViewPresenting {
          * - Add "customContentKey" to json for extracting and mapping
          */
         
+        // At this point we need to inject API data via a condition
         let payload = Payload(content: item?.content)
                 
         switch cellType {

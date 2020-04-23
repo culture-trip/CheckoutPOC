@@ -11,6 +11,6 @@ public struct Screen: Decodable {
     let headerText: String?
     let footerImage: String?
     let footerText: String?
-    let topContentInset: Float?
-    let bottomContentInset: Float?
+    let topContentInset: PaddingType?
+    let bottomContentInset: PaddingType?
 }

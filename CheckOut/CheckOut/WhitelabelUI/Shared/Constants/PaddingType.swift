@@ -4,6 +4,7 @@ import Foundation
 
 public enum PaddingType: String, Decodable {
     
+    case none
     case small
     case medium
     case large
@@ -11,6 +12,7 @@ public enum PaddingType: String, Decodable {
     
     func getValue() -> Double {
         switch self {
+        case .none: return 0.0
         case .small: return 4.0
         case .medium: return 8.0
         case .large: return 16.0
