@@ -1,6 +1,6 @@
 {
     "screens": [{
-        "id": "home",
+        "id": "checkout",
         "title": "Experiences Checkout",
         "type": "table",
         "headerImage": "",

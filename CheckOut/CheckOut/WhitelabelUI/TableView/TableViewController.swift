@@ -33,8 +33,8 @@ class TableViewController: UIViewController, TableViewing {
         title = presenter.title
         var contentInset = tableView.contentInset
         
-        contentInset.top = CGFloat(presenter.application?.screens?.first?.topContentInset?.getValue() ?? 0.0)
-        contentInset.bottom = CGFloat(presenter.application?.screens?.first?.bottomContentInset?.getValue() ?? 0.0)
+        contentInset.top = CGFloat(presenter.screen?.topContentInset?.getValue() ?? 0.0)
+        contentInset.bottom = CGFloat(presenter.screen?.bottomContentInset?.getValue() ?? 0.0)
         
         tableView.contentInset = contentInset
         
@@ -53,11 +53,11 @@ extension TableViewController: UITableViewDelegate {
 extension TableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.application?.screens?.first?.sections?.count ?? 0
+        return presenter.screen?.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.application?.screens?.first?.sections?[section].rows?.count ?? 0
+        return presenter.screen?.sections?[section].rows?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,7 +86,7 @@ extension TableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        if let section = presenter.application?.screens?.first?.sections?[indexPath.section] {
+        if let section = presenter.screen?.sections?[indexPath.section] {
             if let action = section.rows?[indexPath.row].action?.type {
                 if action == .submit {
                     submit()

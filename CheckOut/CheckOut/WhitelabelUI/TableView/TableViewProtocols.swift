@@ -18,11 +18,13 @@ public protocol TableViewing: AnyObject {
 public protocol TableViewPresenting: AnyObject {
     
     var title: String? { get set }
-    var application: Application? { get set }
     var view: TableViewing? { get set }
+    var screen: Screen? { get set }
     
     func viewDidLoad()
-    func viewReady()
+    func updateView()
     func setupCell(_ cell: CellPresentable, item: Row?, indexPath: IndexPath?, delegate: CellDelegate?)
     func item(at indexPath: IndexPath) -> Row?
+    
+     init(screen: Screen?)
 }

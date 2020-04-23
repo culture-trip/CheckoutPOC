@@ -2,30 +2,25 @@ import Foundation
 
 public class TableViewPresenter: TableViewPresenting {
     
+    public var screen: Screen?
     weak public var view: TableViewing?
     public var title: String?
-    public var application: Application?
     
-    private let jsonFile = "experiences_checkout"
+    required public init(screen: Screen?) {
+       
+        self.screen = screen
+    }
     
     public func viewDidLoad() {
         
-        ApplicationLoader.parseConfiguration(with: jsonFile) { result, error  in
+        
+        if screen != nil, view != nil {
             
-            DispatchQueue.main.async { [weak self] in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    self?.title = self?.application?.screens?.first?.title
-                    self?.application = result
-                    self?.viewReady()
-                }
-            }
+            updateView()
         }
     }
     
-    public func viewReady() {
+    public func updateView() {
         
         view?.viewReady()
     }
@@ -81,6 +76,6 @@ public class TableViewPresenter: TableViewPresenting {
         let section = indexPath.section
         let row = indexPath.row
         
-        return application?.screens?.first?.sections?[section].rows?[row]
+        return screen?.sections?[section].rows?[row]
     }
 }
