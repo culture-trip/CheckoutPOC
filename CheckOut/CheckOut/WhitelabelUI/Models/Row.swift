@@ -10,6 +10,7 @@ public struct Row: Decodable {
     let alignment: RowAlignmentType?
     let cellInputType: CellInputType?
     let action: Action?
+    let isSecure: Bool?
     
     enum CodingKeys: String, CodingKey {
         
@@ -19,6 +20,7 @@ public struct Row: Decodable {
         case alignment
         case cellInputType
         case action
+        case isSecure = "is_secure"
     }
 }
 
@@ -44,10 +46,10 @@ public enum RowType: String, CaseIterable, Decodable {
 public enum CellInputType: String, Decodable {
     
     case normal
+    case numerical
     case name
     case address
     case email
-    case secure
 }
 
 // MARK: - Cell Content Alignment types (not just for text)

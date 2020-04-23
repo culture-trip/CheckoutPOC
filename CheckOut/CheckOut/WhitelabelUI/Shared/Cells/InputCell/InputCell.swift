@@ -41,15 +41,24 @@ extension InputCell: CellPresentable {
         
         guard let viewModel = viewModel as? InputCellViewModel else { return }
         
-        guard let cellInputType = viewModel.cellInputType,
-            let title = viewModel.content else { return }
-        
-        
         self.viewModel = viewModel
         
-        inputField.placeholder = title
+        switch viewModel.cellInputType {
+            
+        case .normal: break
+        case .name: inputField.textContentType = .name
+        case .numerical: inputField.keyboardType = .numberPad
+        case .address: inputField.textContentType = .fullStreetAddress
+        case .email: inputField.textContentType = .emailAddress
+        case .none:
+            break
+        }
+        
+        inputField.isSecureTextEntry = viewModel.isSecure
         inputField.text = viewModel.data
-        inputField.isSecureTextEntry = cellInputType == .secure ? true : false
+        
+        guard let placeholder = viewModel.content else { return }
+        inputField.placeholder = placeholder
     }
     
     func getInformationFromCell() -> CellData? {
