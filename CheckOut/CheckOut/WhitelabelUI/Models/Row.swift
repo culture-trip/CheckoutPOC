@@ -31,6 +31,8 @@ public struct Row: Decodable {
     }
 }
 
+/* This factory must be kept up to date for all new cells */
+
 public struct RowFactory {
     
     static func headerRowInit(with content: String, alignment: RowAlignmentType) -> Row {
@@ -54,35 +56,25 @@ public struct RowFactory {
         return row
     }
     
-    static func subHeaderTextCell(with content: String, alignment: RowAlignmentType) -> Row {
+    static func subHeaderTextInit(with content: String, alignment: RowAlignmentType) -> Row {
         
         let row = Row(content: content, height: nil, type: .subHeaderCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
         
         return row
     }
     
-    static func singleActionButtonCell(with content: String, action: Action?) -> Row {
+    static func singleActionInit(with content: String, action: Action?) -> Row {
         
         let row = Row(content: content, height: nil, type: .singleActionButtonCell, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isInjected: true)
         
         return row
     }
     
-    static func paddingCell(with height: PaddingSize) -> Row {
+    static func paddingInit(with height: PaddingSize) -> Row {
         
         let row = Row(content: nil, height: height, type: .paddingCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
         
         return row
-    }
-}
-
-public struct CustomCellContent: Decodable {
-    
-    var content: String?
-    
-    public func updateValues(content: String?) -> CustomCellContent {
-        
-        return CustomCellContent(content: content ?? self.content)
     }
 }
 
