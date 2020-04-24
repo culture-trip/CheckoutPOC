@@ -37,17 +37,12 @@ class CheckoutCoordinator: CheckCoordinating {
         window?.rootViewController = context
         window?.makeKeyAndVisible()
         
-        ApplicationLoader.parseConfiguration(with: "example") { result, error  in
+        JSONParserWorker.parseJSON(with: "example") { [weak self] result, error in
             
-            DispatchQueue.main.async { [weak self] in
-                
-                if let error = error {
-                    
-                    print(error.localizedDescription)
-                } else {
-                    
-                    self?.application = result
-                }
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                self?.application = result
             }
         }
     }
