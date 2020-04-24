@@ -29,8 +29,4 @@ extension BodyTextCell: CellPresentable {
         
         bodyTextView.text = viewModel.content
     }
-    
-    func getInformationFromCell() -> CellData? {
-        nil
-    }
 }

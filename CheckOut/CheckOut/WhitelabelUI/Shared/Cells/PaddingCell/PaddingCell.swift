@@ -24,13 +24,9 @@ extension PaddingCell: CellPresentable {
     func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? PaddingCellViewModel,
-            let height = viewModel.height?.getValue()
+            let height = viewModel.height?.convertToCGFloat()
               else { return }
         
         paddingHeight.constant = CGFloat(height)
-    }
-    
-    func getInformationFromCell() -> CellData? {
-        return nil
     }
 }

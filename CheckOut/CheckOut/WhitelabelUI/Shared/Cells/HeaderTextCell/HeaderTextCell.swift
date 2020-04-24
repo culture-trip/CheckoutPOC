@@ -38,8 +38,4 @@ extension HeaderTextCell: CellPresentable {
         
         titleLabel.text = viewModel.content
     }
-    
-    func getInformationFromCell() -> CellData? {
-        nil
-    }
 }

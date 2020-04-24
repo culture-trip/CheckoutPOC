@@ -13,6 +13,7 @@ public struct Screen: Decodable {
     let footerText: String?
     let topContentInset: PaddingType?
     let bottomContentInset: PaddingType?
+    let hasSeparators: Bool?
     
     enum CodingKeys: String, CodingKey {
         
@@ -27,5 +28,6 @@ public struct Screen: Decodable {
         case footerText = "footer_text"
         case topContentInset = "top_content_inset"
         case bottomContentInset = "bottom_content_inset"
+        case hasSeparators = "has_seperators"
     }
 }

@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 // MARK: - Typical Height Types
 
@@ -10,7 +11,7 @@ public enum PaddingType: String, Decodable {
     case large
     case xtraLarge
     
-    func getValue() -> Double {
+    func convertToCGFloat() -> CGFloat {
         switch self {
         case .none: return 0.0
         case .small: return 4.0

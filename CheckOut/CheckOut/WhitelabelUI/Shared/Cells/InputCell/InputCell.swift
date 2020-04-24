@@ -29,9 +29,25 @@ extension InputCell: UITextFieldDelegate {
         
         if let result = textField.text {
         
-            viewModel?.data = result + string
+            var data = result + string
+            
+            if string == "" {
+                
+                data.removeLast()
+            }
+            
+            let trimmed = data.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            viewModel?.data = trimmed.isEmpty ? nil : trimmed
         }
         
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        
+        viewModel?.data = nil
+            
         return true
     }
 }
@@ -59,13 +75,5 @@ extension InputCell: CellPresentable {
         
         guard let placeholder = viewModel.content else { return }
         inputField.placeholder = placeholder
-    }
-    
-    func getInformationFromCell() -> CellData? {
-        
-        let info = inputField?.text
-        let information = CellData(information: info)
-        
-        return information
     }
 }

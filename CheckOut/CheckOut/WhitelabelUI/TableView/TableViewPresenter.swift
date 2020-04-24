@@ -13,12 +13,16 @@ public class TableViewPresenter: TableViewPresenting {
         return screen?.sections?.count ?? 0
     }
     public var topContentInset: CGFloat {
-        return CGFloat(screen?.topContentInset?.getValue() ?? 0.0)
+        return screen?.topContentInset?.convertToCGFloat() ?? 0.0
     }
     public var bottomContentInset: CGFloat {
-        return CGFloat(screen?.bottomContentInset?.getValue() ?? 0.0)
+        return screen?.bottomContentInset?.convertToCGFloat() ?? 0.0
     }
     public var title: String?
+    public var hasSeparators: Bool {
+        
+        return screen?.hasSeparators ?? false
+    }
     
     private weak var view: TableViewing?
     private var screen: Screen?
@@ -103,6 +107,8 @@ public class TableViewPresenter: TableViewPresenting {
             viewModel = SubHeaderTextCellViewModel(row: row, payload: nil)
         case .paddingCell:
             viewModel = PaddingCellViewModel(row: row, payload: nil)
+        case .separatorCell:
+            return
         }
         
         if let viewModel = viewModel, let indexPath = indexPath {

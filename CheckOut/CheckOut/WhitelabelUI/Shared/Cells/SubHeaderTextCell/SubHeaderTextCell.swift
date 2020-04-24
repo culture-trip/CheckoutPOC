@@ -26,8 +26,4 @@ extension SubHeaderTextCell: CellPresentable {
         
         subheaderLabel.text = viewModel.content
     }
-    
-    func getInformationFromCell() -> CellData? {
-        nil
-    }
 }

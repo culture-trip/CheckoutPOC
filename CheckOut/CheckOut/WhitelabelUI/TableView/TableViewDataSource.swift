@@ -19,14 +19,14 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let item = presenter.item(at: indexPath),
-            let cellIdentifier = item.type?.getIdentifier() else { return UITableViewCell() }
+        guard let row = presenter.item(at: indexPath),
+            let cellIdentifier = row.type?.getIdentifier() else { return UITableViewCell() }
         
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CellPresentable else {
             return UITableViewCell()
         }
         
-        presenter.setupCell(customCell, row: item, indexPath: indexPath)
+        presenter.setupCell(customCell, row: row, indexPath: indexPath)
         
         guard let cell = customCell as? UITableViewCell else {
             

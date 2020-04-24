@@ -2,6 +2,8 @@ import UIKit
 
 class TableViewController: UIViewController, TableViewing {
     
+    // MARK: - Public properties
+    
     public var presenter: TableViewPresenting! {
         
         didSet {
@@ -10,17 +12,40 @@ class TableViewController: UIViewController, TableViewing {
         }
     }
     
+    // MARK: IBOutlets (private)
+    
     @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK: Private properties
     
     private var tableViewDataSource: TableViewDataSource?
     private var tableViewDelegate: TableViewDelegate?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
         
         presenter.viewDidLoad()
+    }
+    
+    public func viewReady() {
+        
+        title = presenter.title
+        
+        var contentInset = tableView.contentInset
+        
+        contentInset.top = presenter.topContentInset
+        contentInset.bottom = presenter.bottomContentInset
+        
+        tableView.contentInset = contentInset
+        tableView.separatorColor = presenter.hasSeparators ? #colorLiteral(red: 0.768627451, green: 0.7843137255, blue: 0.8, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        tableView.separatorInset = UIEdgeInsets(top: PaddingType.none.convertToCGFloat(),
+                                                left: PaddingType.medium.convertToCGFloat(),
+                                                bottom: PaddingType.none.convertToCGFloat(),
+                                                right: PaddingType.medium.convertToCGFloat())
+        
+        tableView.reloadData()
     }
     
     private func setupTableView() {
@@ -34,33 +59,8 @@ class TableViewController: UIViewController, TableViewing {
         tableView.register(SingleActionButtonCell.nib(), forCellReuseIdentifier: SingleActionButtonCell.className)
         tableView.register(PaddingCell.nib(), forCellReuseIdentifier: PaddingCell.className)
         tableView.register(SubHeaderTextCell.nib(), forCellReuseIdentifier: SubHeaderTextCell.className)
+        tableView.register(SeparatorCell.nib(), forCellReuseIdentifier: SeparatorCell.className)
         
         tableView.tableFooterView = UIView()
     }
-    
-    public func viewReady() {
-        
-        title = presenter.title
-        var contentInset = tableView.contentInset
-        
-        contentInset.top = presenter.topContentInset
-        contentInset.bottom = presenter.bottomContentInset
-        
-        tableView.contentInset = contentInset
-        
-        tableView.reloadData()
-    }
-    
-//    private func submit() {
-//        print("submit tapped")
-//
-//        // Magic happens here where the information is collected using a generic struct
-//
-//        for cell in cells {
-//
-//            if let cell: CellPresentable = (cell as? CellPresentable) {
-//                print(cell.getInformationFromCell())
-//            }
-//        }
-//    }
 }

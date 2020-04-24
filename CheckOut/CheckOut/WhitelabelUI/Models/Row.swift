@@ -39,6 +39,7 @@ public enum RowType: String, CaseIterable, Decodable {
     case singleActionButtonCell = "single_action_button_cell"
     case paddingCell = "padding_cell"
     case subHeaderCell = "sub_header_text_cell"
+    case separatorCell = "separator_cell"
     
     func getIdentifier() -> String {
         
@@ -55,6 +56,8 @@ public enum RowType: String, CaseIterable, Decodable {
             return "PaddingCell"
         case .subHeaderCell:
             return "SubHeaderTextCell"
+        case .separatorCell:
+            return "SeparatorCell"
         }
         
     }

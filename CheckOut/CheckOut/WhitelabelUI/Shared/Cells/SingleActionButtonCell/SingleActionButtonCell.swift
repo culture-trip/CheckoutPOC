@@ -32,8 +32,4 @@ extension SingleActionButtonCell: CellPresentable {
         
         submitButton.setTitle(viewModel.content, for: .normal)
     }
-    
-    func getInformationFromCell() -> CellData? {
-        return nil
-    }
 }

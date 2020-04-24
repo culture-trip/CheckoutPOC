@@ -37,7 +37,7 @@ class CheckoutCoordinator: CheckCoordinating {
         window?.rootViewController = context
         window?.makeKeyAndVisible()
         
-        ApplicationLoader.parseConfiguration(with: "experiences_checkout") { result, error  in
+        ApplicationLoader.parseConfiguration(with: "example") { result, error  in
             
             DispatchQueue.main.async { [weak self] in
                 

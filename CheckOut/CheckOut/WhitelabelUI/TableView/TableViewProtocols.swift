@@ -22,6 +22,7 @@ public protocol TableViewPresenting: AnyObject {
     var topContentInset: CGFloat { get }
     var bottomContentInset: CGFloat { get }
     var numberOfSections: Int { get }
+    var hasSeparators: Bool { get }
     
     func viewDidLoad()
     func updateView()
