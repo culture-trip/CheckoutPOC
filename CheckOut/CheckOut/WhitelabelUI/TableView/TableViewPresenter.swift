@@ -78,19 +78,6 @@ public class TableViewPresenter: TableViewPresenting {
         
         var viewModel: CellViewModel? = nil
         
-        // Custom payload example extracted from an api model (REDACTED)
-        
-        /* Current problem is synchronizing API data with cells (PRESENT) */
-        
-        /* Idea's to solve data sync ... :
-         * - Pass a customized presenter.
-         * - Pass index paths for content.
-         * - View Controller extracts and passes model and indexes.
-         * - Worker class creates key-value pairs
-         * - Add "customContentKey" to json for extracting and mapping
-         */
-        
-        // At this point we need to inject API data via a condition
         let payload = Payload(content: row?.content)
                 
         switch cellType {

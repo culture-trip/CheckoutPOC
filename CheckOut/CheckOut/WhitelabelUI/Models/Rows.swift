@@ -2,7 +2,7 @@ import Foundation
 
 public struct Rows: Decodable {
     
-    let rows: [Row]?
+    var rows: [Row]?
     
     public func updateValues(rows: [Row]?) -> Rows {
         
