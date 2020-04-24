@@ -108,6 +108,7 @@ public class TableViewPresenter: TableViewPresenting {
             } else {
                 
                 viewModels.append(result)
+                
                 cell.setupCell(with: result.viewModel, delegate: self)
             }
         }

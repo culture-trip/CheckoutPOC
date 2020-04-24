@@ -36,14 +36,32 @@ public class JSONParserWorker {
         guard let application = application,
               let additionalData = additionalData else { return nil }
         
-        let newRow = Row(content: "Testing injectable info", height: nil, type: .bodyTextCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil)
+        guard let rows = application.screens?.first?.sections?.first?.rows else { return nil }
         
-        let rows = application.screens?.first?.sections?.first?.rows
-        var updatedRows: [Row] = [Row].init(rows!)
-        updatedRows.insert(newRow, at: 20)
+        // Example row injected ...
+        let newRow = Row(content: "Testing injectable info to see how and where this can be done", height: nil, type: .bodyTextCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        
+        let addRows = [newRow]
+        
+        // Updating the application (assuming there is only one section)
+        // Need to inject secion, and row if required
+        
+        let currentRows = application.screens?.first?.sections?.first?.rows
+        var updatedRows: [Row] = [Row].init(currentRows!)
+        
+        // Look in the current rows for injectable logic in reverse order to prevent breakage
+        for i in stride(from: updatedRows.count-1, through: 0, by: -1) {
+            
+            let row = rows[i]
+            
+            if row.isInjected != nil, row.isInjected == true {
+
+                updatedRows.replaceSubrange(i...i, with: addRows)
+            }
+        }
         
         let newRows = application.screens?.first?.sections?.first?.updateValues(rows: updatedRows)
-        let newScreen = application.screens?.first?.updateValues(id: nil, title: nil, sections: [newRows!], content: nil, type: nil, headerImage: nil, headerText: nil, footerImage: nil, footerText: nil, topContentInset: nil, bottomContentInset: nil, hasSeparators: nil)
+        let newScreen = application.screens?.first?.updateValues(id: nil, title: nil, sections: newRows == nil ? nil : [newRows!], content: nil, type: nil, headerImage: nil, headerText: nil, footerImage: nil, footerText: nil, topContentInset: nil, bottomContentInset: nil, hasSeparators: nil)
         let newApplication = application.updateValues(screens: [newScreen!])
         
         return newApplication

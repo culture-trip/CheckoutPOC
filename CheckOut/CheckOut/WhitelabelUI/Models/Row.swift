@@ -11,6 +11,7 @@ public struct Row: Decodable {
     let cellInputType: RowInputType?
     let action: Action?
     let isSecure: Bool?
+    let isInjected: Bool?
     
     enum CodingKeys: String, CodingKey {
         
@@ -21,11 +22,12 @@ public struct Row: Decodable {
         case cellInputType = "cell_input_type"
         case action
         case isSecure = "is_secure"
+        case isInjected = "is_injected"
     }
     
     public func updateValues(content: String?, height: PaddingType?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?) -> Row {
         
-        return Row(content: content ?? self.content, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure)
+        return Row(content: content ?? self.content, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isInjected: isInjected ?? self.isInjected)
     }
 }
 

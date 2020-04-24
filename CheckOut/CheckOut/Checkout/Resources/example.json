@@ -27,6 +27,9 @@
                     "height": "large"
                 },
                 {
+                    "is_injected": true
+                },
+                {
                     "type": "separator_cell"
                 },
                 {
@@ -151,6 +154,13 @@
                     "is_secure": true,
                     "cell_input_type": "numerical",
                     "content": "Enter info"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                },
+                {
+                    "is_injected": true
                 },
                 {
                     "type": "padding_cell",
