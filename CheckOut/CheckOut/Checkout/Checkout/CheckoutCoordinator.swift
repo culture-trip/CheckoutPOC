@@ -37,7 +37,7 @@ class CheckoutCoordinator: CheckCoordinating {
         window?.rootViewController = context
         window?.makeKeyAndVisible()
         
-        JSONParserWorker.parseJSON(with: "example") { [weak self] result, error in
+        JSONParserWorker.parseJSON(with: "example", injectableSections: nil) { [weak self] result, error in
             
             if let error = error {
                 print(error.localizedDescription)

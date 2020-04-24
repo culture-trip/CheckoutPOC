@@ -3,7 +3,7 @@ import UIKit
 
 // MARK: - Typical Height Types
 
-public enum PaddingType: String, Decodable {
+public enum PaddingSize: String, Decodable {
     
     case none
     case small

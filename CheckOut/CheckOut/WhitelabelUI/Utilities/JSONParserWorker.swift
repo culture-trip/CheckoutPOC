@@ -8,17 +8,20 @@
 
 import Foundation
 
+struct InjectedProperties {
+    
+    var sections: [Row]
+}
+
 public class JSONParserWorker {
     
-    static func parseJSON(with name: String?, completion: ((Application?, Error?)->())?) {
+    static func parseJSON(with name: String?, injectableSections: [Rows]?, completion: ((Application?, Error?)->())?) {
        
         guard let name = name, let completion = completion else { return }
         
         ApplicationLoader.parseConfiguration(with: name) { application, error  in
-            
-            let fakeData = NSData() // This is where the new data will be injected
-            
-            let newApplication = updateForInjection(with: application, additionalData: fakeData)
+                        
+            let newApplication = updateForInjection(with: application, injectableSections: nil)
 
             DispatchQueue.main.async {
                 
@@ -31,10 +34,10 @@ public class JSONParserWorker {
         }
     }
     
-    private static func updateForInjection(with application: Application?, additionalData: Any?) -> Application? {
+    private static func updateForInjection(with application: Application?, injectableSections: [Rows]?) -> Application? {
         
         guard let application = application,
-              let additionalData = additionalData else { return nil }
+              let injectableSections = injectableSections else { return nil }
         
         guard let rows = application.screens?.first?.sections?.first?.rows else { return nil }
         
@@ -43,19 +46,21 @@ public class JSONParserWorker {
         
         let addRows = [newRow]
         
-        // Updating the application (assuming there is only one section)
+        // Updating the application (assuming there is only one section for now)
         // Need to inject secion, and row if required
         
         let currentRows = application.screens?.first?.sections?.first?.rows
         var updatedRows: [Row] = [Row].init(currentRows!)
         
         // Look in the current rows for injectable logic in reverse order to prevent breakage
-        for i in stride(from: updatedRows.count-1, through: 0, by: -1) {
+        let itemsCount = updatedRows.count > 1 ? updatedRows.count - 1 : updatedRows.count
+        for i in stride(from: itemsCount, through: 0, by: -1) {
             
             let row = rows[i]
             
             if row.isInjected != nil, row.isInjected == true {
 
+                // Either update content here, or replace the object with the injected group
                 updatedRows.replaceSubrange(i...i, with: addRows)
             }
         }

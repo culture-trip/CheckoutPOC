@@ -24,6 +24,8 @@
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
 		F3053C94242CE91E00CBB27A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* Row.swift */; };
+		F337AC5B245386000074B3E1 /* chip_checkout.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC59245386000074B3E1 /* chip_checkout.json */; };
+		F337AC5C245386000074B3E1 /* exampl_injected_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */; };
 		F3431D0124508BB800597691 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D0024508BB800597691 /* Screen.swift */; };
 		F3431D032450904B00597691 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D022450904B00597691 /* Action.swift */; };
 		F36C70A124520941006FA29A /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C70A024520941006FA29A /* TableViewDelegate.swift */; };
@@ -52,7 +54,7 @@
 		F3B89D9D242E1955006049B7 /* PaddingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9B242E1955006049B7 /* PaddingCell.xib */; };
 		F3B89DA0242E1E57006049B7 /* SubHeaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */; };
 		F3B89DA1242E1E57006049B7 /* SubHeaderTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */; };
-		F3BEEEFD24435DAA00F65226 /* PaddingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEEEFC24435DAA00F65226 /* PaddingType.swift */; };
+		F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F3053C93242CE91E00CBB27A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		F337AC59245386000074B3E1 /* chip_checkout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chip_checkout.json; sourceTree = "<group>"; };
+		F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampl_injected_configuration.json; sourceTree = "<group>"; };
 		F3431D0024508BB800597691 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		F3431D022450904B00597691 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F36C70A024520941006FA29A /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +120,7 @@
 		F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTextCell.swift; sourceTree = "<group>"; };
 		F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubHeaderTextCell.xib; sourceTree = "<group>"; };
 		F3B89DA2242E2B0D006049B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F3BEEEFC24435DAA00F65226 /* PaddingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingType.swift; sourceTree = "<group>"; };
+		F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,6 @@
 			children = (
 				F3BEEEFE24435DC300F65226 /* Constants */,
 				F3053C92242CE8EC00CBB27A /* Protocols */,
-				F3035FF1242CEBB100E9B279 /* Cells */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -215,6 +218,8 @@
 		F3053C77242CC33100CBB27A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F337AC59245386000074B3E1 /* chip_checkout.json */,
+				F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */,
 				F3053C78242CC35A00CBB27A /* example.json */,
 			);
 			path = Resources;
@@ -300,6 +305,7 @@
 				F38CFC532443628800D8EFEA /* TableViewPresenter.swift */,
 				F36C70A024520941006FA29A /* TableViewDelegate.swift */,
 				F36C70A22452094A006FA29A /* TableViewDataSource.swift */,
+				F3035FF1242CEBB100E9B279 /* Cells */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -376,10 +382,10 @@
 		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
 			isa = PBXGroup;
 			children = (
-				F36C70A424523025006FA29A /* Resources */,
-				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3BEEEFB24435C4300F65226 /* Utilities */,
 				F3053C8E242CE88A00CBB27A /* Models */,
+				F36C70A424523025006FA29A /* Resources */,
+				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3035FF0242CEB9300E9B279 /* Shared */,
 			);
 			path = WhitelabelUI;
@@ -397,7 +403,7 @@
 		F3BEEEFE24435DC300F65226 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				F3BEEEFC24435DAA00F65226 /* PaddingType.swift */,
+				F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3053C62242CC22600CBB27A /* LaunchScreen.storyboard in Resources */,
+				F337AC5C245386000074B3E1 /* exampl_injected_configuration.json in Resources */,
 				F38F8B8D24532E860096D7C1 /* SeparatorCell.xib in Resources */,
 				F3053C79242CC35A00CBB27A /* example.json in Resources */,
 				F3B89D9D242E1955006049B7 /* PaddingCell.xib in Resources */,
@@ -494,6 +501,7 @@
 				F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */,
 				F3053C5D242CC22100CBB27A /* Main.storyboard in Resources */,
 				F36C70AA2452304B006FA29A /* ProximaNova-Bold.otf in Resources */,
+				F337AC5B245386000074B3E1 /* chip_checkout.json in Resources */,
 				F3053C86242CCA1100CBB27A /* SingleActionButtonCell.xib in Resources */,
 				F36C70AB2452304B006FA29A /* ProximaNova-Regular.otf in Resources */,
 				F3053C7D242CC9E000CBB27A /* HeaderTextCell.xib in Resources */,
@@ -528,7 +536,7 @@
 				F3053C94242CE91E00CBB27A /* Row.swift in Sources */,
 				F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */,
 				F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */,
-				F3BEEEFD24435DAA00F65226 /* PaddingType.swift in Sources */,
+				F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */,
 				F38F8B8F24533E4E0096D7C1 /* JSONParserWorker.swift in Sources */,
 				F38F8B8C24532E860096D7C1 /* SeparatorCell.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,

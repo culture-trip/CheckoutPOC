@@ -5,7 +5,7 @@ import Foundation
 public struct Row: Decodable {
     
     let content: String?
-    let height: PaddingType?
+    let height: PaddingSize?
     let type: RowType?
     let alignment: RowAlignmentType?
     let cellInputType: RowInputType?
@@ -25,9 +25,54 @@ public struct Row: Decodable {
         case isInjected = "is_injected"
     }
     
-    public func updateValues(content: String?, height: PaddingType?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?) -> Row {
+    public func updateValues(content: String?, height: PaddingSize?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?) -> Row {
         
         return Row(content: content ?? self.content, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isInjected: isInjected ?? self.isInjected)
+    }
+}
+
+public struct RowFactory {
+    
+    static func headerRowInit(with content: String, alignment: RowAlignmentType) -> Row {
+        
+        let row = Row(content: content, height: nil, type: .headerCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        
+        return row
+    }
+    
+    static func inputRowInit(with placeholder: String?, isSecure: Bool, inputType: RowInputType) -> Row {
+        
+        let row = Row(content: placeholder, height: nil, type: .inputCell, alignment: nil, cellInputType: inputType, action: nil, isSecure: isSecure, isInjected: true)
+        
+        return row
+    }
+    
+    static func bodyTextCellInit(with content: String, alignment: RowAlignmentType) -> Row {
+        
+        let row = Row(content: content, height: nil, type: .bodyTextCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        
+        return row
+    }
+    
+    static func subHeaderTextCell(with content: String, alignment: RowAlignmentType) -> Row {
+        
+        let row = Row(content: content, height: nil, type: .subHeaderCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        
+        return row
+    }
+    
+    static func singleActionButtonCell(with content: String, action: Action?) -> Row {
+        
+        let row = Row(content: content, height: nil, type: .singleActionButtonCell, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isInjected: true)
+        
+        return row
+    }
+    
+    static func paddingCell(with height: PaddingSize) -> Row {
+        
+        let row = Row(content: nil, height: height, type: .paddingCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        
+        return row
     }
 }
 

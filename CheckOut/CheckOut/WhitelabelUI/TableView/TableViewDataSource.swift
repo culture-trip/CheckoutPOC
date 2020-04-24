@@ -19,11 +19,14 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let row = presenter.item(at: indexPath),
-            let cellIdentifier = row.type?.getIdentifier() else { return UITableViewCell() }
-        
+        guard let row = presenter.item(at: indexPath) else {
+            fatalError("Item does not exist in aray. Check JSON as a potential issue")
+        }
+        guard let cellIdentifier = row.type?.getIdentifier() else {
+                fatalError("unable to get identifer. Check JSON for any missing or extra un-handled fields")
+        }
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CellPresentable else {
-            return UITableViewCell()
+            fatalError("Could not dequeu cell. Check JSON does not have extra/lacking properties")
         }
         
         presenter.setupCell(customCell, row: row, indexPath: indexPath)

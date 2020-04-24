@@ -40,10 +40,10 @@ class TableViewController: UIViewController, TableViewing {
         
         tableView.contentInset = contentInset
         tableView.separatorColor = presenter.hasSeparators ? #colorLiteral(red: 0.768627451, green: 0.7843137255, blue: 0.8, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        tableView.separatorInset = UIEdgeInsets(top: PaddingType.none.convertToCGFloat(),
-                                                left: PaddingType.medium.convertToCGFloat(),
-                                                bottom: PaddingType.none.convertToCGFloat(),
-                                                right: PaddingType.medium.convertToCGFloat())
+        tableView.separatorInset = UIEdgeInsets(top: PaddingSize.none.convertToCGFloat(),
+                                                left: PaddingSize.medium.convertToCGFloat(),
+                                                bottom: PaddingSize.none.convertToCGFloat(),
+                                                right: PaddingSize.medium.convertToCGFloat())
         
         tableView.reloadData()
     }

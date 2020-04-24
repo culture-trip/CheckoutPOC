@@ -11,8 +11,8 @@ public struct Screen: Decodable {
     let headerText: String?
     let footerImage: String?
     let footerText: String?
-    let topContentInset: PaddingType?
-    let bottomContentInset: PaddingType?
+    let topContentInset: PaddingSize?
+    let bottomContentInset: PaddingSize?
     let hasSeparators: Bool?
     
     enum CodingKeys: String, CodingKey {
@@ -31,7 +31,7 @@ public struct Screen: Decodable {
         case hasSeparators = "has_seperators"
     }
     
-    public func updateValues(id: String?, title: String?, sections: [Rows]?, content: String?, type: String?, headerImage: String?, headerText: String?, footerImage: String?, footerText: String?, topContentInset: PaddingType?, bottomContentInset: PaddingType?, hasSeparators: Bool?) -> Screen {
+    public func updateValues(id: String?, title: String?, sections: [Rows]?, content: String?, type: String?, headerImage: String?, headerText: String?, footerImage: String?, footerText: String?, topContentInset: PaddingSize?, bottomContentInset: PaddingSize?, hasSeparators: Bool?) -> Screen {
         
         
         return Screen(id: id ?? self.id,
