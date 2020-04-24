@@ -21,7 +21,7 @@ public class JSONParserWorker {
         
         ApplicationLoader.parseConfiguration(with: name) { application, error  in
                         
-            let newApplication = updateForInjection(with: application, injectableSections: nil)
+            let newApplication = updateForInjection(with: application, injectableSections: injectableSections)
 
             DispatchQueue.main.async {
                 
@@ -41,11 +41,6 @@ public class JSONParserWorker {
         
         guard let rows = application.screens?.first?.sections?.first?.rows else { return nil }
         
-        // Example row injected ...
-        let newRow = Row(key: "nothing", content: "Testing injectable info to see how and where this can be done", height: nil, type: .bodyTextCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
-        
-        let addRows = [newRow]
-        
         // Updating the application (assuming there is only one section for now)
         // Need to inject secion, and row if required
         
@@ -53,16 +48,28 @@ public class JSONParserWorker {
         var updatedRows: [Row] = [Row].init(currentRows!)
         
         // Look in the current rows for injectable logic in reverse order to prevent breakage
+        
         let itemsCount = updatedRows.count > 1 ? updatedRows.count - 1 : updatedRows.count
+        
         for i in stride(from: itemsCount, through: 0, by: -1) {
             
             let row = rows[i]
             
             if row.isInjected != nil, row.isInjected == true {
+                
+                var relatedRows = [Row]()
+                
+                for injectedRow in injectableSections.first!.rows! {
+                    
+                    if injectedRow.groupKey == row.groupKey {
+                        
+                        relatedRows.append(injectedRow)
+                    }
+                }
 
                 // Either update content here, or replace the object with the injected group
                 
-                updatedRows.replaceSubrange(i...i, with: addRows)
+                updatedRows.replaceSubrange(i...i, with: relatedRows)
             }
         }
         

@@ -36,8 +36,23 @@ class CheckoutCoordinator: CheckCoordinating {
         
         window?.rootViewController = context
         window?.makeKeyAndVisible()
+    
+        /* Use this to swap between static data, and injected data driven content examples */
         
-        JSONParserWorker.parseJSON(with: "example", injectableSections: nil) { [weak self] result, error in
+        let testingInjection = true
+        var injectableSections: [Rows]? = nil
+        
+        var fileName = "example"
+        
+        if testingInjection {
+            
+            fileName = "exampl_injected_configuration"
+            injectableSections = Self.mockedAPI()
+        }
+        
+        /**/
+        
+        JSONParserWorker.parseJSON(with: fileName, injectableSections: injectableSections) { [weak self] result, error in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -45,29 +60,6 @@ class CheckoutCoordinator: CheckCoordinating {
                 self?.application = result
             }
         }
-    }
-    
-    private func mockedAPI() -> [Rows] {
-        
-        var sections = [Rows]()
-        var firstSection = Rows()
-        var rows = [Row]()
-        
-        let firstRow = RowFactory.headerRowInit(key: "header", content: "Header", alignment: .left)
-        let secondRow = RowFactory.paddingInit(key: "headerPadding", height: .medium)
-        let thirdRow = RowFactory.bodyTextCellInit(key: "body", content: "body text", alignment: .left)
-        let fourthRow = RowFactory.paddingInit(key: "bodyPadding", height: .medium)
-        
-        rows.append(firstRow)
-        rows.append(secondRow)
-        rows.append(thirdRow)
-        rows.append(fourthRow)
-        
-        firstSection.rows = rows
-        
-        sections.append(firstSection)
-        
-        return sections
     }
     
     private func loadUI() {
@@ -114,5 +106,36 @@ class CheckoutCoordinator: CheckCoordinating {
     
     func nextScreen() {
         
+    }
+    
+    static func mockedAPI() -> [Rows] {
+        
+        var sections = [Rows]()
+        var firstSection = Rows()
+        var rows = [Row]()
+        
+        let firstRow = RowFactory.headerRowInit(groupKey: "first_injection", content: "Injected Header", alignment: .left)
+        let secondRow = RowFactory.paddingInit(groupKey: "first_injection", height: .medium)
+        let thirdRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text", alignment: .left)
+        let fourthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .large)
+        let fifthRow = RowFactory.subHeaderTextInit(groupKey: "first_injection", content: "Injected subheader", alignment: .left)
+        let sixthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .medium)
+        let seventhRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text beneath subheader", alignment: .right)
+        let eigthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .large)
+        
+        rows.append(firstRow)
+        rows.append(secondRow)
+        rows.append(thirdRow)
+        rows.append(fourthRow)
+        rows.append(fifthRow)
+        rows.append(sixthRow)
+        rows.append(seventhRow)
+        rows.append(eigthRow)
+        
+        firstSection.rows = rows
+        
+        sections.append(firstSection)
+        
+        return sections
     }
 }

@@ -27,10 +27,6 @@
                     "height": "large"
                 },
                 {
-                    "is_injected": true
-                    "id": "first"
-                },
-                {
                     "type": "separator_cell"
                 },
                 {
@@ -161,10 +157,6 @@
                     "height": "medium"
                 },
                 {
-                    "is_injected": true
-                    "id": "second"
-                },
-                {
                     "type": "padding_cell",
                     "height": "medium"
                 },
@@ -178,6 +170,10 @@
                 {
                     "type": "padding_cell",
                     "height": "medium"
+                },
+                {
+                    "is_injected": true,
+                    "group_key": "first_injection"
                 }
             ]
         }]
