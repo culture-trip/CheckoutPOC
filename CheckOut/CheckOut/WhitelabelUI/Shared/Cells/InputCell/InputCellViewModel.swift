@@ -15,7 +15,7 @@ public class InputCellViewModel: CellViewModel, Inputting {
         return row?.isSecure ?? false
     }
     
-    public var cellInputType: CellInputType? { return row?.cellInputType }
+    public var cellInputType: RowInputType? { return row?.cellInputType }
     public var content: String? {
         
         if let content = payload?.content {

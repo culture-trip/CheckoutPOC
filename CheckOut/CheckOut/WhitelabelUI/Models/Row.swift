@@ -8,7 +8,7 @@ public struct Row: Decodable {
     let height: PaddingType?
     let type: RowType?
     let alignment: RowAlignmentType?
-    let cellInputType: CellInputType?
+    let cellInputType: RowInputType?
     let action: Action?
     let isSecure: Bool?
     
@@ -65,7 +65,7 @@ public enum RowType: String, CaseIterable, Decodable {
 
 // MARK: - Cell Input Types
 
-public enum CellInputType: String, Decodable {
+public enum RowInputType: String, Decodable {
     
     case normal
     case numerical
