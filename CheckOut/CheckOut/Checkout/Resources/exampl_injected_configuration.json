@@ -28,6 +28,7 @@
                 },
                 {
                     "is_injected": true
+                    "id": "first"
                 },
                 {
                     "type": "separator_cell"
@@ -161,6 +162,7 @@
                 },
                 {
                     "is_injected": true
+                    "id": "second"
                 },
                 {
                     "type": "padding_cell",

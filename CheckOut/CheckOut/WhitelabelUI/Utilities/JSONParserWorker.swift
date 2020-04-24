@@ -42,7 +42,7 @@ public class JSONParserWorker {
         guard let rows = application.screens?.first?.sections?.first?.rows else { return nil }
         
         // Example row injected ...
-        let newRow = Row(content: "Testing injectable info to see how and where this can be done", height: nil, type: .bodyTextCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
+        let newRow = Row(key: "nothing", content: "Testing injectable info to see how and where this can be done", height: nil, type: .bodyTextCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true)
         
         let addRows = [newRow]
         
