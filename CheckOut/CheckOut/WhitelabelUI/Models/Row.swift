@@ -22,11 +22,21 @@ public struct Row: Decodable {
         case action
         case isSecure = "is_secure"
     }
+    
+    public func updateValues(content: String?, height: PaddingType?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?) -> Row {
+        
+        return Row(content: content ?? self.content, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure)
+    }
 }
 
 public struct CustomCellContent: Decodable {
     
     var content: String?
+    
+    public func updateValues(content: String?) -> CustomCellContent {
+        
+        return CustomCellContent(content: content ?? self.content)
+    }
 }
 
 // MARK: Cell Types

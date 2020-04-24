@@ -14,14 +14,14 @@ public class JSONParserWorker {
        
         guard let name = name, let completion = completion else { return }
         
-        ApplicationLoader.parseConfiguration(with: name) { result, error  in
+        ApplicationLoader.parseConfiguration(with: name) { application, error  in
             
             DispatchQueue.main.async {
                 
                 if let error = error {
                     completion(nil, error)
                 } else {
-                    completion(result, nil)
+                    completion(application, nil)
                 }
             }
         }
