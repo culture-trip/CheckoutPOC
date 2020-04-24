@@ -47,6 +47,29 @@ class CheckoutCoordinator: CheckCoordinating {
         }
     }
     
+    private func mockedAPI() -> [Rows] {
+        
+        var sections = [Rows]()
+        var firstSection = Rows()
+        var rows = [Row]()
+        
+        let firstRow = RowFactory.headerRowInit(key: "header", content: "Header", alignment: .left)
+        let secondRow = RowFactory.paddingInit(key: "headerPadding", height: .medium)
+        let thirdRow = RowFactory.bodyTextCellInit(key: "body", content: "body text", alignment: .left)
+        let fourthRow = RowFactory.paddingInit(key: "bodyPadding", height: .medium)
+        
+        rows.append(firstRow)
+        rows.append(secondRow)
+        rows.append(thirdRow)
+        rows.append(fourthRow)
+        
+        firstSection.rows = rows
+        
+        sections.append(firstSection)
+        
+        return sections
+    }
+    
     private func loadUI() {
         
         var currentScreen: Screen?

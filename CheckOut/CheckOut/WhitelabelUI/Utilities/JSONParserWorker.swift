@@ -61,6 +61,7 @@ public class JSONParserWorker {
             if row.isInjected != nil, row.isInjected == true {
 
                 // Either update content here, or replace the object with the injected group
+                
                 updatedRows.replaceSubrange(i...i, with: addRows)
             }
         }
