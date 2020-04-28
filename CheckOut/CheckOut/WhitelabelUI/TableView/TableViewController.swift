@@ -44,7 +44,7 @@ class TableViewController: UIViewController, TableViewing {
                                                 left: PaddingSize.medium.convertToCGFloat(),
                                                 bottom: PaddingSize.none.convertToCGFloat(),
                                                 right: PaddingSize.medium.convertToCGFloat())
-        
+        tableView.keyboardDismissMode = .onDrag
         tableView.reloadData()
     }
     
@@ -66,7 +66,13 @@ class TableViewController: UIViewController, TableViewing {
     
     func scrollToIndexPath(_ indexPath: IndexPath) {
 
-        tableView.reloadRows(at: [indexPath], with: .none)
         tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+    }
+    
+    func update(with indexPath: IndexPath?) {
+        
+        if let indexPath = indexPath {
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 }

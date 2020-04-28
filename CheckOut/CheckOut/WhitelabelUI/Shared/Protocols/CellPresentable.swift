@@ -7,6 +7,8 @@ public protocol CellPresentable: AnyObject {
     func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?)
 }
 
+public typealias CellActionBlock = ()->()
+
 public protocol CellViewModel {
     
     var payload: Payload? { get set}

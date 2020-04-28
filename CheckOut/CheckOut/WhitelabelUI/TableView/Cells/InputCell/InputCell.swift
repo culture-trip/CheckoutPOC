@@ -27,21 +27,19 @@ class InputCell: UITableViewCell {
         inputField.clipsToBounds = true
         inputField.layer.masksToBounds = true
         inputField.layer.borderColor = UIColor.clear.cgColor
-        
-        errorLabel.isHidden = true
     }
     
     fileprivate func resetCell() {
         
         showErrorState(false)
         viewModel?.setHighlighted(false)
+        viewModel?.actionBlock?()
     }
-    
     
     fileprivate func showErrorState(_ isErrorState: Bool) {
         
         inputField.layer.borderColor = isErrorState ? UIColor.red.cgColor : UIColor.clear.cgColor
-        errorLabel.isHidden = !isHighlighted
+        errorLabel.isHidden = !isErrorState
     }
 }
 
@@ -62,9 +60,7 @@ extension InputCell: UITextFieldDelegate {
             
             viewModel?.data = trimmed.isEmpty ? nil : trimmed
         }
-        
-        resetCell()
-        
+                
         return true
     }
     
@@ -73,12 +69,18 @@ extension InputCell: UITextFieldDelegate {
         viewModel?.data = nil
         
         resetCell()
-            
+                    
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        resetCell()
     }
 }
 
 extension InputCell: CellPresentable {
+    
     func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? InputCellViewModel else { return }
@@ -88,10 +90,17 @@ extension InputCell: CellPresentable {
         switch viewModel.cellInputType {
             
         case .normal: break
-        case .name: inputField.textContentType = .name
-        case .numerical: inputField.keyboardType = .numberPad
-        case .address: inputField.textContentType = .fullStreetAddress
-        case .email: inputField.textContentType = .emailAddress
+        case .name:
+            inputField.textContentType = .name
+            inputField.keyboardType = .alphabet
+        case .numerical:
+            inputField.keyboardType = .numberPad
+        case .address:
+            inputField.textContentType = .fullStreetAddress
+            inputField.keyboardType = .alphabet
+        case .email:
+            inputField.textContentType = .emailAddress
+            inputField.keyboardType = .emailAddress
         case .none:
             break
         }
@@ -100,11 +109,8 @@ extension InputCell: CellPresentable {
         inputField.text = viewModel.data
         errorLabel.text = viewModel.errorTitle
         titleLabel.text = viewModel.title
-        
-        if let isHighlighted = viewModel.isHighlighted {
-            
-            showErrorState(isHighlighted)
-        }
+                    
+        showErrorState(viewModel.isHighlighted ?? false)
         
         guard let placeholder = viewModel.content else { return }
         inputField.placeholder = placeholder

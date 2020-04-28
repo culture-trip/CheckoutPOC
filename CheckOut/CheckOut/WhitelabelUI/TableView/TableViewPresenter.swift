@@ -85,7 +85,9 @@ public class TableViewPresenter: TableViewPresenting {
         case .headerCell:
             viewModel = HeaderTextCellViewModel(row: row, payload: nil)
         case .inputCell:
-            viewModel = InputCellViewModel(row: row, payload: nil)
+            viewModel = InputCellViewModel(row: row, payload: payload, actionBlock: { [weak self] in
+                self?.view?.update(with: indexPath)
+            })
         case .bodyTextCell:
             viewModel = BodyTextCellViewModel(row: row, payload: payload)
         case .singleActionButtonCell:
@@ -124,28 +126,35 @@ public class TableViewPresenter: TableViewPresenting {
     
     public func submit() {
         
-        let dataList = viewModels.compactMap { element -> String? in
+        var dataList = [String]()
+        
+        var scrollToTopIndex: IndexPath? = nil
+        
+        for element in viewModels {
             
             if let viewModel = element?.viewModel as? Inputting {
-                
                 if let data = viewModel.data {
                     
-                    return data
-                } else {
+                    dataList.append(data)
+                } else if let viewModel = element?.viewModel as? Inputting {
                     
                     if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
                         let indexPath = element?.indexPath {
-                        viewModel.setHighlighted(true)
-                        view?.scrollToIndexPath(indexPath)
                         
-                        return nil
+                        viewModel.setHighlighted(true)
+                        if scrollToTopIndex == nil {
+                            scrollToTopIndex = indexPath
+                        }
                     }
                 }
             }
-            
-            return nil
         }
         
+        if let scrollToTopIndex = scrollToTopIndex {
+            view?.update(with: scrollToTopIndex)
+            view?.scrollToIndexPath(scrollToTopIndex)
+        }
+                
         print(dataList) // Return info here
     }
 }

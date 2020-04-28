@@ -159,6 +159,7 @@
                     "title": "Credit card number",
                     "error_title": "Enter a valid credit card number",
                     "is_secure": true,
+                    "is_required": true,
                     "cell_input_type": "numerical",
                     "content": "Enter info"
                 },

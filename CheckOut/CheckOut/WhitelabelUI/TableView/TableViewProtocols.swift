@@ -15,6 +15,7 @@ public protocol TableViewing: AnyObject {
     
     func viewReady()
     func scrollToIndexPath(_ indexPath: IndexPath)
+    func update(with indexPath: IndexPath?)
 }
 
 public protocol TableViewPresenting: AnyObject {
