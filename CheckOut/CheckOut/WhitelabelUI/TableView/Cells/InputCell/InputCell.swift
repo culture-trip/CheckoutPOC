@@ -10,7 +10,9 @@ import UIKit
 
 class InputCell: UITableViewCell {
 
-    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet private weak var inputField: UITextField!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var errorLabel: UILabel!
     
     private var viewModel: InputCellViewModel?
     
@@ -20,6 +22,26 @@ class InputCell: UITableViewCell {
         selectionStyle = .none
         
         inputField.delegate = self
+        inputField.layer.borderWidth = 1.0
+        inputField.layer.cornerRadius = 4.0
+        inputField.clipsToBounds = true
+        inputField.layer.masksToBounds = true
+        inputField.layer.borderColor = UIColor.clear.cgColor
+        
+        errorLabel.isHidden = true
+    }
+    
+    fileprivate func resetCell() {
+        
+        showErrorState(false)
+        viewModel?.setHighlighted(false)
+    }
+    
+    
+    fileprivate func showErrorState(_ isErrorState: Bool) {
+        
+        inputField.layer.borderColor = isErrorState ? UIColor.red.cgColor : UIColor.clear.cgColor
+        errorLabel.isHidden = !isHighlighted
     }
 }
 
@@ -41,12 +63,16 @@ extension InputCell: UITextFieldDelegate {
             viewModel?.data = trimmed.isEmpty ? nil : trimmed
         }
         
+        resetCell()
+        
         return true
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         
         viewModel?.data = nil
+        
+        resetCell()
             
         return true
     }
@@ -72,6 +98,13 @@ extension InputCell: CellPresentable {
         
         inputField.isSecureTextEntry = viewModel.isSecure
         inputField.text = viewModel.data
+        errorLabel.text = viewModel.errorTitle
+        titleLabel.text = viewModel.title
+        
+        if let isHighlighted = viewModel.isHighlighted {
+            
+            showErrorState(isHighlighted)
+        }
         
         guard let placeholder = viewModel.content else { return }
         inputField.placeholder = placeholder

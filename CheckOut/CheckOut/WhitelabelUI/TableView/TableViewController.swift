@@ -66,6 +66,7 @@ class TableViewController: UIViewController, TableViewing {
     
     func scrollToIndexPath(_ indexPath: IndexPath) {
 
+        tableView.reloadRows(at: [indexPath], with: .none)
         tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
     }
 }

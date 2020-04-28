@@ -3,6 +3,9 @@ import Foundation
 public protocol Inputting {
     
     var data: String? { get set }
+    var isHighlighted: Bool? { get set }
+    
+    func setHighlighted(_ isHighlighted: Bool)
 }
 
 public class InputCellViewModel: CellViewModel, Inputting {
@@ -10,9 +13,20 @@ public class InputCellViewModel: CellViewModel, Inputting {
     public var data: String?
     public var payload: Payload?
     public var row: Row?
+    public var isHighlighted: Bool?
     public var isSecure: Bool {
         
         return row?.isSecure ?? false
+    }
+    public var title: String? {
+        return row?.title
+    }
+    public var errorTitle: String? {
+        return row?.errorTitle
+    }
+    public func setHighlighted(_ isHighlighted: Bool) {
+        
+        self.isHighlighted = isHighlighted
     }
     
     public var cellInputType: RowInputType? { return row?.cellInputType }

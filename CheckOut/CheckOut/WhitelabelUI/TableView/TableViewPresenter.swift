@@ -135,8 +135,9 @@ public class TableViewPresenter: TableViewPresenting {
                     
                     if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
                         let indexPath = element?.indexPath {
-                        
+                        viewModel.setHighlighted(true)
                         view?.scrollToIndexPath(indexPath)
+                        
                         return nil
                     }
                 }
