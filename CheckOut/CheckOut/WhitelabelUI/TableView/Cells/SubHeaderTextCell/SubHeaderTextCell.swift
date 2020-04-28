@@ -10,12 +10,13 @@ import UIKit
 
 class SubHeaderTextCell: UITableViewCell {
     
-    @IBOutlet private weak var subheaderLabel: UILabel!
+    @IBOutlet private weak var subheaderTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
+        subheaderTextView.textContainer.lineFragmentPadding = 0
     }
 }
 
@@ -24,6 +25,28 @@ extension SubHeaderTextCell: CellPresentable {
         
         guard let viewModel = viewModel as? SubHeaderTextCellViewModel else { return }
         
-        subheaderLabel.text = viewModel.content
+        if let content = viewModel.content {
+            let style = NSMutableParagraphStyle()
+            
+            style.lineHeightMultiple = 1.42
+            
+            let font = UIFont(name: "ProximaNova-Bold", size: 18)
+            let attributes = [NSAttributedString.Key.paragraphStyle : style,
+                              NSAttributedString.Key.font : font]
+            subheaderTextView.attributedText = NSAttributedString(string: content, attributes: attributes as [NSAttributedString.Key : Any])
+            
+            if viewModel.isBordered ?? false {
+                let topPadding: CGFloat = 8.0
+                let bottomPadding: CGFloat = 0.0
+                let leftPadding: CGFloat = 8.0
+                let rightPadding: CGFloat = 8.0
+                
+                subheaderTextView.textContainerInset = UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding)
+                subheaderTextView.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.862745098, alpha: 1)
+            } else {
+                subheaderTextView.textContainerInset = .zero
+                subheaderTextView.backgroundColor = .clear
+            }
+        }
     }
 }

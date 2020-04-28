@@ -12,7 +12,10 @@ class SubHeaderTextCellViewModel: CellViewModel {
         
         return row?.content
     }
-    
+    var isBordered: Bool? {
+        
+        return row?.isBordered
+    }
     required init(row: Row?, payload: Payload?) {
         
         self.row = row

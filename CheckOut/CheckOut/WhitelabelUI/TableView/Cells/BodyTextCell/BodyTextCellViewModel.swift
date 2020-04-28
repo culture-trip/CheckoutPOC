@@ -3,6 +3,10 @@ import Foundation
 public class BodyTextCellViewModel: CellViewModel {
     public var payload: Payload?
     public var row: Row?
+    public var isBordered: Bool? {
+        
+        return row?.isBordered
+    }
     public var content: String? {
         
         if let content = payload?.content {

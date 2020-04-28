@@ -116,11 +116,11 @@ class CheckoutCoordinator: CheckCoordinating {
         
         let firstRow = RowFactory.headerRowInit(groupKey: "first_injection", content: "Injected Header", alignment: .left)
         let secondRow = RowFactory.paddingInit(groupKey: "first_injection", height: .medium)
-        let thirdRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text", alignment: .left)
+        let thirdRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text", alignment: .left, isBordered: false)
         let fourthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .large)
-        let fifthRow = RowFactory.subHeaderTextInit(groupKey: "first_injection", content: "Injected subheader", alignment: .left)
+        let fifthRow = RowFactory.subHeaderTextInit(groupKey: "first_injection", content: "Injected subheader", alignment: .left, isBordered: true)
         let sixthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .medium)
-        let seventhRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text beneath subheader", alignment: .right)
+        let seventhRow = RowFactory.bodyTextCellInit(groupKey: "first_injection", content: "Injected body text beneath subheader", alignment: .center, isBordered: true)
         let eigthRow = RowFactory.paddingInit(groupKey: "first_injection", height: .large)
         
         rows.append(firstRow)
