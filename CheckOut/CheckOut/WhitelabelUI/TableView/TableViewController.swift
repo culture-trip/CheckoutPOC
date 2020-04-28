@@ -63,4 +63,9 @@ class TableViewController: UIViewController, TableViewing {
         
         tableView.tableFooterView = UIView()
     }
+    
+    func scrollToIndexPath(_ indexPath: IndexPath) {
+
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+    }
 }

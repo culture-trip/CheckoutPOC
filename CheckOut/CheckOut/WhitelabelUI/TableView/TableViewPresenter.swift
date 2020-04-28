@@ -124,11 +124,24 @@ public class TableViewPresenter: TableViewPresenting {
     
     public func submit() {
         
-        let dataList = viewModels.compactMap { viewModel -> String? in
+        let dataList = viewModels.compactMap { element -> String? in
             
-            if let viewModel = viewModel?.viewModel as? Inputting, let data = viewModel.data {
-                return data
+            if let viewModel = element?.viewModel as? Inputting {
+                
+                if let data = viewModel.data {
+                    
+                    return data
+                } else {
+                    
+                    if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
+                        let indexPath = element?.indexPath {
+                        
+                        view?.scrollToIndexPath(indexPath)
+                        return nil
+                    }
+                }
             }
+            
             return nil
         }
         
