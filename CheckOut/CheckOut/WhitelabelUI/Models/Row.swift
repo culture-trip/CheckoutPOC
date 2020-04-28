@@ -2,6 +2,13 @@ import Foundation
 
 // MARK: - Model
 
+public enum HeaderType: String, Decodable {
+    
+    case largeHeader = "large_header"
+    case normalHeader = "normal_header"
+    case subHeader = "sub_header"
+}
+
 public struct Row: Decodable {
     
     let groupKey: String?
@@ -17,6 +24,7 @@ public struct Row: Decodable {
     let isInjected: Bool?
     let isRequired: Bool?
     let isBordered: Bool?
+    let headerType: HeaderType?
     
     enum CodingKeys: String, CodingKey {
         
@@ -33,11 +41,12 @@ public struct Row: Decodable {
         case title
         case errorTitle = "error_title"
         case isBordered = "is_bordered"
+        case headerType = "header_type"
     }
     
-    public func updateValues(groupKey: String?, title: String?, errorTitle: String?, content: String?, height: PaddingSize?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?, isRequired: Bool?) -> Row {
+    public func updateValues(groupKey: String?, title: String?, errorTitle: String?, content: String?, height: PaddingSize?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?, isRequired: Bool?, headerType: HeaderType?) -> Row {
         
-        return Row(groupKey: groupKey ?? self.groupKey, content: content ?? self.content, title: title ?? self.title, errorTitle: errorTitle ?? self.errorTitle, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isInjected: isInjected ?? self.isInjected, isRequired: isRequired ?? self.isRequired, isBordered: false)
+        return Row(groupKey: groupKey ?? self.groupKey, content: content ?? self.content, title: title ?? self.title, errorTitle: errorTitle ?? self.errorTitle, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isInjected: isInjected ?? self.isInjected, isRequired: isRequired ?? self.isRequired, isBordered: false, headerType: headerType ?? self.headerType)
     }
 }
 
@@ -45,44 +54,37 @@ public struct Row: Decodable {
 
 public struct RowFactory {
     
-    static func headerRowInit(groupKey: String?, content: String, alignment: RowAlignmentType) -> Row {
-        
-        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .headerCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: false)
-        
-        return row
-    }
-    
     static func inputRowInit(groupKey: String?, title: String?,  placeholder: String?, errorTitle: String?, isSecure: Bool, inputType: RowInputType, isRequired: Bool?) -> Row {
         
-        let row = Row(groupKey: groupKey, content: placeholder, title: title, errorTitle: errorTitle, height: nil, type: .inputCell, alignment: nil, cellInputType: inputType, action: nil, isSecure: isSecure, isInjected: true, isRequired: isRequired, isBordered: false)
+        let row = Row(groupKey: groupKey, content: placeholder, title: title, errorTitle: errorTitle, height: nil, type: .inputCell, alignment: nil, cellInputType: inputType, action: nil, isSecure: isSecure, isInjected: true, isRequired: isRequired, isBordered: false, headerType: nil)
         
         return row
     }
     
     static func bodyTextCellInit(groupKey: String?, content: String, alignment: RowAlignmentType, isBordered: Bool) -> Row {
         
-        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .bodyTextCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: isBordered)
+        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .bodyTextCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: isBordered, headerType: nil)
         
         return row
     }
     
-    static func subHeaderTextInit(groupKey: String?, content: String, alignment: RowAlignmentType, isBordered: Bool) -> Row {
+    static func headerRowInit(groupKey: String?, content: String, alignment: RowAlignmentType, isBordered: Bool, headerType: HeaderType) -> Row {
         
-        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .subHeaderCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: isBordered)
+        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .headerCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: isBordered, headerType: headerType)
         
         return row
     }
     
     static func singleActionInit(groupKey: String?, content: String, action: Action?) -> Row {
         
-        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .singleActionButtonCell, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isInjected: true, isRequired: false, isBordered: false)
+        let row = Row(groupKey: groupKey, content: content, title: nil, errorTitle: nil, height: nil, type: .singleActionButtonCell, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isInjected: true, isRequired: false, isBordered: false, headerType: nil)
         
         return row
     }
     
     static func paddingInit(groupKey: String?, height: PaddingSize) -> Row {
         
-        let row = Row(groupKey: groupKey, content: nil, title: nil, errorTitle: nil, height: height, type: .paddingCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: false)
+        let row = Row(groupKey: groupKey, content: nil, title: nil, errorTitle: nil, height: height, type: .paddingCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isInjected: true, isRequired: false, isBordered: false, headerType: nil)
         
         return row
     }
@@ -97,7 +99,6 @@ public enum RowType: String, CaseIterable, Decodable {
     case bodyTextCell = "body_text_cell"
     case singleActionButtonCell = "single_action_button_cell"
     case paddingCell = "padding_cell"
-    case subHeaderCell = "sub_header_text_cell"
     case separatorCell = "separator_cell"
     
     func getIdentifier() -> String {
@@ -113,8 +114,6 @@ public enum RowType: String, CaseIterable, Decodable {
              return "SingleActionButtonCell"
         case .paddingCell:
             return "PaddingCell"
-        case .subHeaderCell:
-            return "SubHeaderTextCell"
         case .separatorCell:
             return "SeparatorCell"
         }

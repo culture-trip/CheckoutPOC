@@ -20,7 +20,8 @@
                 {
                     "type": "header_text_cell",
                     "content": "Experiences Checkout",
-                    "alignment": "center"
+                    "alignment": "center",
+                    "header_type": "large_header"
                 },
                 {
                     "type": "padding_cell",
@@ -32,15 +33,17 @@
                 {
                     "type": "header_text_cell",
                     "content": "User info",
-                    "alignment": "left"
+                    "alignment": "left",
+                    "header_type": "large_header"
                 },
                 {
                     "type": "padding_cell",
                     "height": "large"
                 },
                 {
-                    "type": "sub_header_text_cell",
-                    "content": "First name"
+                    "type": "header_text_cell",
+                    "content": "First name",
+                    "header_type": "normal_header"
                 },
                 {
                     "type": "padding_cell",
@@ -59,7 +62,7 @@
                     "height": "medium"
                 },
                 {
-                    "type": "sub_header_text_cell",
+                    "type": "header_text_cell",
                     "content": "Last name"
                 },
                 {
@@ -86,16 +89,6 @@
                     "height": "medium"
                 },
                 {
-                    "type": "sub_header_text_cell",
-                    "content": "Address Information",
-                    "is_bordered": true
-                },
-                {
-                    "type": "body_text_cell",
-                    "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
-                    "is_bordered": true
-                },
-                {
                     "type": "padding_cell",
                     "height": "medium"
                 },
@@ -111,23 +104,7 @@
                     "height": "medium"
                 },
                 {
-                    "type": "sub_header_text_cell",
-                    "content": "Cancellation Policy"
-                },
-                {
-                    "type": "padding_cell",
-                    "height": "medium"
-                },
-                {
-                    "type": "body_text_cell",
-                    "content": "This merchant uses Trust My Travel Ltd to protect and process credit card payments. All credit card payments placed through this website are protected by TMTProtects.Me. Click here for full terms of service.\n\nFor payment questions, please contact:  Tel: 44(0)17small0 43smallsmall2small.  Address: The Cedars, Ryhall PE9 4HL, United Kingdom."
-                },
-                {
-                    "type": "padding_cell",
-                    "height": "medium"
-                },
-                {
-                    "type": "sub_header_text_cell",
+                    "type": "header_text_cell",
                     "content": "How many children?"
                 },
                 {
@@ -153,8 +130,9 @@
                     "height": "large"
                 },
                 {
-                    "type": "sub_header_text_cell",
-                    "content": "Credit card number"
+                    "type": "header_text_cell",
+                    "content": "Credit card number",
+                    "header_type": "normal_header"
                 },
                 {
                     "type": "padding_cell",
@@ -174,8 +152,59 @@
                     "height": "medium"
                 },
                 {
+                    "type": "separator_cell"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "large"
+                },
+                {
+                    "type": "header_text_cell",
+                    "content": "Hotel rules and cancellation policies",
+                    "header_type": "normal_header"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "extra_large"
+                },
+                {
+                    "type": "header_text_cell",
+                    "content": "Non-refundable",
+                    "header_type": "sub_header",
+                    "is_bordered": true
+                },
+                {
+                    "type": "body_text_cell",
+                    "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.",
+                    "is_bordered": true
+                },
+                {
                     "type": "padding_cell",
                     "height": "medium"
+                },
+                {
+                    "type": "header_text_cell",
+                    "content": "Cancellation Policy",
+                    "header_type": "sub_header",
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                },
+                {
+                    "type": "body_text_cell",
+                    "content": "This merchant uses Trust My Travel Ltd to protect and process credit card payments. All credit card payments placed through this website are protected by TMTProtects.Me. Click here for full terms of service.\n\nFor payment questions, please contact:  Tel: 44(0)17small0 43smallsmall2small.  Address: The Cedars, Ryhall PE9 4HL, United Kingdom."
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                },
+                {
+                    "type": "separator_cell"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "large"
                 },
                 {
                     "type": "single_action_button_cell",
@@ -186,7 +215,14 @@
                 },
                 {
                     "type": "padding_cell",
-                    "height": "medium"
+                    "height": "large"
+                },
+                {
+                    "type": "separator_cell"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "large"
                 },
                 {
                     "is_injected": true,

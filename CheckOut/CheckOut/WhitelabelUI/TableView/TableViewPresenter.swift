@@ -92,8 +92,6 @@ public class TableViewPresenter: TableViewPresenting {
             viewModel = BodyTextCellViewModel(row: row, payload: payload)
         case .singleActionButtonCell:
             viewModel = SingleActionButtonCellViewModel(row: row, payload: nil)
-        case .subHeaderCell:
-            viewModel = SubHeaderTextCellViewModel(row: row, payload: nil)
         case .paddingCell:
             viewModel = PaddingCellViewModel(row: row, payload: nil)
         case .separatorCell:

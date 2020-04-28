@@ -5,11 +5,11 @@ import UIKit
 
 public enum PaddingSize: String, Decodable {
     
-    case none
-    case small
-    case medium
-    case large
-    case xtraLarge
+    case none = "none"
+    case small = "small"
+    case medium = "medium"
+    case large = "large"
+    case xtraLarge = "extra_large"
     
     func convertToCGFloat() -> CGFloat {
         switch self {

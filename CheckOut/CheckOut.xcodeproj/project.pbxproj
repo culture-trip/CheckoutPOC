@@ -14,8 +14,6 @@
 		F3053C62242CC22600CBB27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3053C60242CC22600CBB27A /* LaunchScreen.storyboard */; };
 		F3053C6D242CC22600CBB27A /* CheckOutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C6C242CC22600CBB27A /* CheckOutTests.swift */; };
 		F3053C79242CC35A00CBB27A /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = F3053C78242CC35A00CBB27A /* example.json */; };
-		F3053C7C242CC9E000CBB27A /* HeaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C7A242CC9E000CBB27A /* HeaderTextCell.swift */; };
-		F3053C7D242CC9E000CBB27A /* HeaderTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3053C7B242CC9E000CBB27A /* HeaderTextCell.xib */; };
 		F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C7F242CC9F500CBB27A /* InputCell.swift */; };
 		F3053C82242CC9F500CBB27A /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3053C80242CC9F500CBB27A /* InputCell.xib */; };
 		F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C83242CCA1100CBB27A /* SingleActionButtonCell.swift */; };
@@ -40,8 +38,7 @@
 		F37FF8A42451D2E600EB3ABA /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */; };
 		F380E8F5242CEA6600874DE6 /* ApplicationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */; };
 		F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC532443628800D8EFEA /* TableViewPresenter.swift */; };
-		F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */; };
-		F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */; };
+		F38CFC5A24436A1C00D8EFEA /* HeaderTextCellHeaderTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5924436A1C00D8EFEA /* HeaderTextCellHeaderTextCellViewModel.swift */; };
 		F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */; };
 		F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC5F24436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift */; };
 		F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC6224436B0500D8EFEA /* BodyTextCellViewModel.swift */; };
@@ -53,8 +50,8 @@
 		F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D97242E0F61006049B7 /* BodyTextCell.xib */; };
 		F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9A242E1955006049B7 /* PaddingCell.swift */; };
 		F3B89D9D242E1955006049B7 /* PaddingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9B242E1955006049B7 /* PaddingCell.xib */; };
-		F3B89DA0242E1E57006049B7 /* SubHeaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */; };
-		F3B89DA1242E1E57006049B7 /* SubHeaderTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */; };
+		F3B89DA0242E1E57006049B7 /* HeaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9E242E1E57006049B7 /* HeaderTextCell.swift */; };
+		F3B89DA1242E1E57006049B7 /* HeaderTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9F242E1E57006049B7 /* HeaderTextCell.xib */; };
 		F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +77,6 @@
 		F3053C6C242CC22600CBB27A /* CheckOutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutTests.swift; sourceTree = "<group>"; };
 		F3053C6E242CC22600CBB27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3053C78242CC35A00CBB27A /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
-		F3053C7A242CC9E000CBB27A /* HeaderTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCell.swift; sourceTree = "<group>"; };
-		F3053C7B242CC9E000CBB27A /* HeaderTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTextCell.xib; sourceTree = "<group>"; };
 		F3053C7F242CC9F500CBB27A /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		F3053C80242CC9F500CBB27A /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		F3053C83242CCA1100CBB27A /* SingleActionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionButtonCell.swift; sourceTree = "<group>"; };
@@ -106,8 +101,7 @@
 		F37FF8A32451D2E600EB3ABA /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
 		F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationLoader.swift; sourceTree = "<group>"; };
 		F38CFC532443628800D8EFEA /* TableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPresenter.swift; sourceTree = "<group>"; };
-		F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellViewModel.swift; sourceTree = "<group>"; };
-		F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTextCellViewModel.swift; sourceTree = "<group>"; };
+		F38CFC5924436A1C00D8EFEA /* HeaderTextCellHeaderTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCellHeaderTextCellViewModel.swift; sourceTree = "<group>"; };
 		F38CFC5C24436A4B00D8EFEA /* InputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellViewModel.swift; sourceTree = "<group>"; };
 		F38CFC5F24436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionButtonCellViewModel.swift; sourceTree = "<group>"; };
 		F38CFC6224436B0500D8EFEA /* BodyTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextCellViewModel.swift; sourceTree = "<group>"; };
@@ -119,8 +113,8 @@
 		F3B89D97242E0F61006049B7 /* BodyTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyTextCell.xib; sourceTree = "<group>"; };
 		F3B89D9A242E1955006049B7 /* PaddingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCell.swift; sourceTree = "<group>"; };
 		F3B89D9B242E1955006049B7 /* PaddingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaddingCell.xib; sourceTree = "<group>"; };
-		F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTextCell.swift; sourceTree = "<group>"; };
-		F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubHeaderTextCell.xib; sourceTree = "<group>"; };
+		F3B89D9E242E1E57006049B7 /* HeaderTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextCell.swift; sourceTree = "<group>"; };
+		F3B89D9F242E1E57006049B7 /* HeaderTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTextCell.xib; sourceTree = "<group>"; };
 		F3B89DA2242E2B0D006049B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,8 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				F38F8B8924532E730096D7C1 /* Separator */,
-				F38CFC55244368E400D8EFEA /* HeaderTextCell */,
-				F38CFC5824436A0700D8EFEA /* SubHeaderTextCell */,
+				F38CFC5824436A0700D8EFEA /* HeaderTextCell */,
 				F38CFC5B24436A4000D8EFEA /* InputCell */,
 				F38CFC5E24436A9E00D8EFEA /* SingleActionButtonCell */,
 				F38CFC6124436AFB00D8EFEA /* BodyTextCell */,
@@ -313,24 +306,14 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		F38CFC55244368E400D8EFEA /* HeaderTextCell */ = {
+		F38CFC5824436A0700D8EFEA /* HeaderTextCell */ = {
 			isa = PBXGroup;
 			children = (
-				F38CFC56244368F200D8EFEA /* HeaderTextCellViewModel.swift */,
-				F3053C7A242CC9E000CBB27A /* HeaderTextCell.swift */,
-				F3053C7B242CC9E000CBB27A /* HeaderTextCell.xib */,
+				F38CFC5924436A1C00D8EFEA /* HeaderTextCellHeaderTextCellViewModel.swift */,
+				F3B89D9E242E1E57006049B7 /* HeaderTextCell.swift */,
+				F3B89D9F242E1E57006049B7 /* HeaderTextCell.xib */,
 			);
 			path = HeaderTextCell;
-			sourceTree = "<group>";
-		};
-		F38CFC5824436A0700D8EFEA /* SubHeaderTextCell */ = {
-			isa = PBXGroup;
-			children = (
-				F38CFC5924436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift */,
-				F3B89D9E242E1E57006049B7 /* SubHeaderTextCell.swift */,
-				F3B89D9F242E1E57006049B7 /* SubHeaderTextCell.xib */,
-			);
-			path = SubHeaderTextCell;
 			sourceTree = "<group>";
 		};
 		F38CFC5B24436A4000D8EFEA /* InputCell */ = {
@@ -500,14 +483,13 @@
 				F3053C82242CC9F500CBB27A /* InputCell.xib in Resources */,
 				F3053C5F242CC22600CBB27A /* Assets.xcassets in Resources */,
 				F36C70A92452304B006FA29A /* ProximaNova-Semibold.otf in Resources */,
-				F3B89DA1242E1E57006049B7 /* SubHeaderTextCell.xib in Resources */,
+				F3B89DA1242E1E57006049B7 /* HeaderTextCell.xib in Resources */,
 				F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */,
 				F3053C5D242CC22100CBB27A /* Main.storyboard in Resources */,
 				F36C70AA2452304B006FA29A /* ProximaNova-Bold.otf in Resources */,
 				F337AC5B245386000074B3E1 /* chip_checkout.json in Resources */,
 				F3053C86242CCA1100CBB27A /* SingleActionButtonCell.xib in Resources */,
 				F36C70AB2452304B006FA29A /* ProximaNova-Regular.otf in Resources */,
-				F3053C7D242CC9E000CBB27A /* HeaderTextCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,8 +511,6 @@
 				F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */,
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F337AC5E245386B80074B3E1 /* Content.swift in Sources */,
-				F3053C7C242CC9E000CBB27A /* HeaderTextCell.swift in Sources */,
-				F38CFC57244368F200D8EFEA /* HeaderTextCellViewModel.swift in Sources */,
 				F3053C88242CCABB00CBB27A /* Application.swift in Sources */,
 				F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */,
 				F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */,
@@ -548,8 +528,8 @@
 				F36C70A32452094A006FA29A /* TableViewDataSource.swift in Sources */,
 				F38CFC6624436B7E00D8EFEA /* PaddingCellViewModel.swift in Sources */,
 				F38CFC5D24436A4B00D8EFEA /* InputCellViewModel.swift in Sources */,
-				F38CFC5A24436A1C00D8EFEA /* SubHeaderTextCellViewModel.swift in Sources */,
-				F3B89DA0242E1E57006049B7 /* SubHeaderTextCell.swift in Sources */,
+				F38CFC5A24436A1C00D8EFEA /* HeaderTextCellHeaderTextCellViewModel.swift in Sources */,
+				F3B89DA0242E1E57006049B7 /* HeaderTextCell.swift in Sources */,
 				F37FF87C2451BC0800EB3ABA /* Payload.swift in Sources */,
 				F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */,
 				F3431D0124508BB800597691 /* Screen.swift in Sources */,

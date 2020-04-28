@@ -58,7 +58,7 @@ class TableViewController: UIViewController, TableViewing {
         tableView.register(BodyTextCell.nib(), forCellReuseIdentifier: BodyTextCell.className)
         tableView.register(SingleActionButtonCell.nib(), forCellReuseIdentifier: SingleActionButtonCell.className)
         tableView.register(PaddingCell.nib(), forCellReuseIdentifier: PaddingCell.className)
-        tableView.register(SubHeaderTextCell.nib(), forCellReuseIdentifier: SubHeaderTextCell.className)
+        tableView.register(HeaderTextCell.nib(), forCellReuseIdentifier: HeaderTextCell.className)
         tableView.register(SeparatorCell.nib(), forCellReuseIdentifier: SeparatorCell.className)
         
         tableView.tableFooterView = UIView()
