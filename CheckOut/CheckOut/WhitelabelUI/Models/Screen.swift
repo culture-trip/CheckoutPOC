@@ -2,15 +2,22 @@ import Foundation
 
 public struct Screen: Decodable {
     
+    // MARK: Configuration properties
     let id: String?
     let title: String?
     let sections: [Rows]?
-    let content: String?
     let type: String?
+    
+    // MARK: Content
+    
+    let content: String?
     let headerImage: String?
     let headerText: String?
     let footerImage: String?
     let footerText: String?
+    
+    // MARK: UI properties
+    
     let topContentInset: PaddingSize?
     let bottomContentInset: PaddingSize?
     let hasSeparators: Bool?
