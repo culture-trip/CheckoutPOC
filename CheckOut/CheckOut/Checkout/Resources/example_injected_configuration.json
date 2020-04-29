@@ -165,7 +165,7 @@
                         },
                         {
                             "type": "padding_cell",
-                            "height": "medium"
+                            "height": "large"
                         },
                         {
                             "type": "separator_cell"
