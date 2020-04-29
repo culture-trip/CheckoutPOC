@@ -108,6 +108,48 @@ class CheckoutCoordinator: CheckCoordinating {
         
     }
     
+    /* Example of injecting cells
+     * --------------------------
+     *
+     * There will no doubt come a time when data driven requirements are needed.
+     * When that happens, the following code shows an example of how to make groups of related data
+     * that allows content to be dynamically built.
+     *
+     * Each row has a factory method to simplify building basic UI.
+     * However, it is possible to simply use the Row(...) and set any custom configurations through the original
+     * initializer while setting nil for what's not needed.
+     *
+     * This example shows how to make a section with dynamic data. It is emperative to have a groupKey as this is
+     * will be used by the parser to inject the new Rows anywhere the groupKey is within the JSON
+     *
+     * ==========================
+     * Swift code usage:
+     * ==========================
+     *      var injectableSection = Rows()
+     *      var rows = [Row]()
+     *
+     *      firstSection.groupKey = "unique_injection_group_key"
+     *
+     *      let headerRow = RowFactory.headerRowInit(content: ... <arguments omitted> ...)
+     *
+     *      rows.append(headerRow)
+     *
+     * ==========================
+     * JSON file example:
+     * ==========================
+     *      {
+     *            "rows": [
+     *                {
+     *                    "type": "padding_cell",
+     *                    "height": "large"
+     *                } ... <Rows omitted for brevity>
+     *      },
+     *      {
+     *         "group_key": "unique_injection_group_key",
+     *         "is_injected": true
+     *      }
+     * ============================
+     */
     static func mockedAPI() -> [Rows] {
         
         var sections = [Rows]()
