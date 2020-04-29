@@ -16,13 +16,13 @@ struct InjectedProperties {
 public class JSONParserWorker {
     
     static func parseJSON(with name: String?, injectableSections: [Rows]?, completion: ((Application?, Error?)->())?) {
-       
+        
         guard let name = name, let completion = completion else { return }
         
         ApplicationLoader.parseConfiguration(with: name) { application, error  in
-                        
+            
             let newApplication = updateForInjection(with: application, injectableSections: injectableSections)
-
+            
             DispatchQueue.main.async {
                 
                 if let error = error {
@@ -37,45 +37,35 @@ public class JSONParserWorker {
     private static func updateForInjection(with application: Application?, injectableSections: [Rows]?) -> Application? {
         
         guard let application = application,
-              let injectableSections = injectableSections else { return nil }
+            let injectableSections = injectableSections,
+            let screens = application.screens else { return nil }
         
-        guard let rows = application.screens?.first?.sections?.first?.rows else { return nil }
+        var updatedScreens = [Screen]()
         
-        // Updating the application (assuming there is only one section for now)
-        // Need to inject secion, and row if required
-        
-        let currentRows = application.screens?.first?.sections?.first?.rows
-        var updatedRows: [Row] = [Row].init(currentRows!)
-        
-        // Look in the current rows for injectable logic in reverse order to prevent breakage
-        
-        let itemsCount = updatedRows.count > 1 ? updatedRows.count - 1 : updatedRows.count
-        
-        for i in stride(from: itemsCount, through: 0, by: -1) {
+        for screen in screens {
             
-            let row = rows[i]
+            guard let sections = screen.sections else { continue }
             
-            if row.isInjected != nil, row.isInjected == true {
+            var updatedSections = [Rows].init(sections)
+            
+            let sectionsCount = sections.count > 1 ? sections.count - 1 : sections.count
+            
+            for i in stride(from: sectionsCount, through: 0, by: -1) {
                 
-                var relatedRows = [Row]()
+                let section = sections[i]
                 
-                for injectedRow in injectableSections.first!.rows! {
+                if let sectionGroup = injectableSections.filter({ $0.groupKey == section.groupKey }).first {
                     
-                    if injectedRow.groupKey == row.groupKey {
-                        
-                        relatedRows.append(injectedRow)
-                    }
+                    updatedSections[i] = sectionGroup
                 }
-
-                // Either update content here, or replace the object with the injected group
-                
-                updatedRows.replaceSubrange(i...i, with: relatedRows)
             }
+            
+            let updatedScreen = screen.updateSections(updatedSections)
+            
+            updatedScreens.append(updatedScreen)
         }
         
-        let newRows = application.screens?.first?.sections?.first?.updateValues(rows: updatedRows)
-        let newScreen = application.screens?.first?.updateValues(id: nil, title: nil, sections: newRows == nil ? nil : [newRows!], content: nil, type: nil, headerImage: nil, headerText: nil, footerImage: nil, footerText: nil, topContentInset: nil, bottomContentInset: nil, hasSeparators: nil)
-        let newApplication = application.updateValues(screens: [newScreen!])
+        let newApplication = application.updateValues(screens: updatedScreens)
         
         return newApplication
     }

@@ -38,6 +38,11 @@ public struct Screen: Decodable {
         case hasSeparators = "has_seperators"
     }
     
+    public func updateSections(_ sections: [Rows]?) -> Screen {
+        
+        return self.updateValues(id: nil, title: nil, sections: sections, content: nil, type: nil, headerImage: nil, headerText: nil, footerImage: nil, footerText: nil, topContentInset: nil, bottomContentInset: nil, hasSeparators: nil)
+    }
+    
     public func updateValues(id: String?, title: String?, sections: [Rows]?, content: String?, type: String?, headerImage: String?, headerText: String?, footerImage: String?, footerText: String?, topContentInset: PaddingSize?, bottomContentInset: PaddingSize?, hasSeparators: Bool?) -> Screen {
         
         
