@@ -49,10 +49,8 @@ class CheckoutCoordinator: CheckCoordinating {
             fileName = "example_injected_configuration"
             injectableSections = Self.mockedAPI()
         }
-        
-        /**/
-        
-        JSONParserWorker.parseJSON(with: fileName, injectableSections: injectableSections) { [weak self] result, error in
+                
+        JSONUIParser.parseJSON(with: fileName, injectableSections: injectableSections) { [weak self] result, error in
             
             if let error = error {
                 fatalError(error.localizedDescription)

@@ -17,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-Uk-x0y">
-                        <rect key="frame" x="16" y="11" width="288" height="1"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="1"/>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.7843137255" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="f44-nJ-bg3"/>
+                            <constraint firstAttribute="height" constant="1" id="12E-a5-vvr"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="1MV-Uk-x0y" secondAttribute="bottom" id="LIQ-Mc-JM3"/>
-                    <constraint firstItem="1MV-Uk-x0y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bCn-r9-cGY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="1MV-Uk-x0y" secondAttribute="trailing" id="tk4-tf-4mK"/>
-                    <constraint firstItem="1MV-Uk-x0y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vHX-v3-TNM"/>
+                    <constraint firstItem="1MV-Uk-x0y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XMc-mI-Msb"/>
+                    <constraint firstItem="1MV-Uk-x0y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="XQ2-HW-xeb"/>
+                    <constraint firstAttribute="trailing" secondItem="1MV-Uk-x0y" secondAttribute="trailing" constant="16" id="rev-O0-gTk"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1MV-Uk-x0y" secondAttribute="bottom" id="sIZ-sk-4Ko"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

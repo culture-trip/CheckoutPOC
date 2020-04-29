@@ -45,7 +45,7 @@
 		F38CFC6624436B7E00D8EFEA /* PaddingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CFC6524436B7E00D8EFEA /* PaddingCellViewModel.swift */; };
 		F38F8B8C24532E860096D7C1 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F8B8A24532E860096D7C1 /* SeparatorCell.swift */; };
 		F38F8B8D24532E860096D7C1 /* SeparatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38F8B8B24532E860096D7C1 /* SeparatorCell.xib */; };
-		F38F8B8F24533E4E0096D7C1 /* JSONParserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F8B8E24533E4E0096D7C1 /* JSONParserWorker.swift */; };
+		F38F8B8F24533E4E0096D7C1 /* JSONUIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F8B8E24533E4E0096D7C1 /* JSONUIParser.swift */; };
 		F3B89D98242E0F61006049B7 /* BodyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D96242E0F61006049B7 /* BodyTextCell.swift */; };
 		F3B89D99242E0F61006049B7 /* BodyTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D97242E0F61006049B7 /* BodyTextCell.xib */; };
 		F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9A242E1955006049B7 /* PaddingCell.swift */; };
@@ -108,7 +108,7 @@
 		F38CFC6524436B7E00D8EFEA /* PaddingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCellViewModel.swift; sourceTree = "<group>"; };
 		F38F8B8A24532E860096D7C1 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		F38F8B8B24532E860096D7C1 /* SeparatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorCell.xib; sourceTree = "<group>"; };
-		F38F8B8E24533E4E0096D7C1 /* JSONParserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserWorker.swift; sourceTree = "<group>"; };
+		F38F8B8E24533E4E0096D7C1 /* JSONUIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUIParser.swift; sourceTree = "<group>"; };
 		F3B89D96242E0F61006049B7 /* BodyTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTextCell.swift; sourceTree = "<group>"; };
 		F3B89D97242E0F61006049B7 /* BodyTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyTextCell.xib; sourceTree = "<group>"; };
 		F3B89D9A242E1955006049B7 /* PaddingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCell.swift; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */,
-				F38F8B8E24533E4E0096D7C1 /* JSONParserWorker.swift */,
+				F38F8B8E24533E4E0096D7C1 /* JSONUIParser.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 				F38CFC542443628800D8EFEA /* TableViewPresenter.swift in Sources */,
 				F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */,
 				F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */,
-				F38F8B8F24533E4E0096D7C1 /* JSONParserWorker.swift in Sources */,
+				F38F8B8F24533E4E0096D7C1 /* JSONUIParser.swift in Sources */,
 				F38F8B8C24532E860096D7C1 /* SeparatorCell.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,
 				F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */,

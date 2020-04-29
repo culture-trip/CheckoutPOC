@@ -13,7 +13,7 @@ struct InjectedProperties {
     var sections: [Row]
 }
 
-public class JSONParserWorker {
+public class JSONUIParser {
     
     static func parseJSON(with name: String?, injectableSections: [Rows]?, completion: ((Application?, Error?)->())?) {
         
