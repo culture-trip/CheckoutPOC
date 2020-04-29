@@ -256,8 +256,7 @@
                 },
                 {
                     "group_key": "first_injection",
-                    "is_injected": true,
-                    "rows": []
+                    "is_injected": true
                 }
             ]
         }

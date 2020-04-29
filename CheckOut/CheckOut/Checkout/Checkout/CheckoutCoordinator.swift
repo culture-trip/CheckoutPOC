@@ -55,7 +55,7 @@ class CheckoutCoordinator: CheckCoordinating {
         JSONParserWorker.parseJSON(with: fileName, injectableSections: injectableSections) { [weak self] result, error in
             
             if let error = error {
-                print(error.localizedDescription)
+                fatalError(error.localizedDescription)
             } else {
                 self?.application = result
             }
@@ -115,14 +115,14 @@ class CheckoutCoordinator: CheckCoordinating {
         var rows = [Row]()
         
         firstSection.groupKey = "first_injection"
+        
         let firstRow = RowFactory.headerRowInit(content: "Injected Header", alignment: .left, isBordered: false, headerType: .largeHeader)
         let secondRow = RowFactory.paddingInit(height: .medium)
         let thirdRow = RowFactory.bodyTextCellInit(content: "Injected body text", alignment: .left, isBordered: false)
         let fourthRow = RowFactory.paddingInit(height: .large)
         let fifthRow = RowFactory.headerRowInit(content: "Injected subheader", alignment: .left, isBordered: true, headerType: .subHeader)
-        let sixthRow = RowFactory.paddingInit(height: .medium)
-        let seventhRow = RowFactory.bodyTextCellInit(content: "Injected body text beneath subheader", alignment: .center, isBordered: true)
-        let eigthRow = RowFactory.paddingInit(height: .large)
+        let sixthRow = RowFactory.bodyTextCellInit(content: "Injected body text beneath subheader", alignment: .center, isBordered: true)
+        let seventhRow = RowFactory.paddingInit(height: .large)
         
         rows.append(firstRow)
         rows.append(secondRow)
@@ -131,7 +131,6 @@ class CheckoutCoordinator: CheckCoordinating {
         rows.append(fifthRow)
         rows.append(sixthRow)
         rows.append(seventhRow)
-        rows.append(eigthRow)
         
         firstSection.rows = rows
         
