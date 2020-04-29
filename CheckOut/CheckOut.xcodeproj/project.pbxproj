@@ -23,7 +23,7 @@
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
 		F3053C94242CE91E00CBB27A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* Row.swift */; };
 		F337AC5B245386000074B3E1 /* chip_checkout.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC59245386000074B3E1 /* chip_checkout.json */; };
-		F337AC5C245386000074B3E1 /* exampl_injected_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */; };
+		F337AC5C245386000074B3E1 /* example_injected_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC5A245386000074B3E1 /* example_injected_configuration.json */; };
 		F337AC5E245386B80074B3E1 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337AC5D245386B80074B3E1 /* Content.swift */; };
 		F3431D0124508BB800597691 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D0024508BB800597691 /* Screen.swift */; };
 		F3431D032450904B00597691 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3431D022450904B00597691 /* Action.swift */; };
@@ -86,7 +86,7 @@
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F3053C93242CE91E00CBB27A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		F337AC59245386000074B3E1 /* chip_checkout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chip_checkout.json; sourceTree = "<group>"; };
-		F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampl_injected_configuration.json; sourceTree = "<group>"; };
+		F337AC5A245386000074B3E1 /* example_injected_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example_injected_configuration.json; sourceTree = "<group>"; };
 		F337AC5D245386B80074B3E1 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		F3431D0024508BB800597691 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		F3431D022450904B00597691 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				F337AC59245386000074B3E1 /* chip_checkout.json */,
-				F337AC5A245386000074B3E1 /* exampl_injected_configuration.json */,
+				F337AC5A245386000074B3E1 /* example_injected_configuration.json */,
 				F3053C78242CC35A00CBB27A /* example.json */,
 			);
 			path = Resources;
@@ -476,7 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3053C62242CC22600CBB27A /* LaunchScreen.storyboard in Resources */,
-				F337AC5C245386000074B3E1 /* exampl_injected_configuration.json in Resources */,
+				F337AC5C245386000074B3E1 /* example_injected_configuration.json in Resources */,
 				F38F8B8D24532E860096D7C1 /* SeparatorCell.xib in Resources */,
 				F3053C79242CC35A00CBB27A /* example.json in Resources */,
 				F3B89D9D242E1955006049B7 /* PaddingCell.xib in Resources */,

@@ -46,7 +46,7 @@ class CheckoutCoordinator: CheckCoordinating {
         
         if testingInjection {
             
-            fileName = "exampl_injected_configuration"
+            fileName = "example_injected_configuration"
             injectableSections = Self.mockedAPI()
         }
         
