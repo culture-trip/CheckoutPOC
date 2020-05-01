@@ -156,13 +156,13 @@ class CheckoutCoordinator: CheckCoordinating {
         
         firstSection.groupKey = "first_injection"
         
-        let firstRow = RowFactory.headerRowInit(content: "Injected Header", alignment: .left, isBordered: false, headerType: .largeHeader)
-        let secondRow = RowFactory.paddingInit(height: .medium)
-        let thirdRow = RowFactory.bodyTextCellInit(content: "Injected body text", alignment: .left, isBordered: false)
-        let fourthRow = RowFactory.paddingInit(height: .large)
-        let fifthRow = RowFactory.headerRowInit(content: "Injected subheader", alignment: .left, isBordered: true, headerType: .subHeader)
-        let sixthRow = RowFactory.bodyTextCellInit(content: "Injected body text beneath subheader", alignment: .center, isBordered: true)
-        let seventhRow = RowFactory.paddingInit(height: .large)
+        let firstRow = Row.headerRowInit(content: "Injected Header", alignment: .left, isBordered: false, headerType: .largeHeader)
+        let secondRow = Row.paddingInit(height: .medium)
+        let thirdRow = Row.bodyTextInit(content: "Injected body text", alignment: .left, isBordered: false)
+        let fourthRow = Row.paddingInit(height: .large)
+        let fifthRow = Row.headerRowInit(content: "Injected subheader", alignment: .left, isBordered: true, headerType: .subHeader)
+        let sixthRow = Row.bodyTextInit(content: "Injected body text beneath subheader", alignment: .center, isBordered: true)
+        let seventhRow = Row.paddingInit(height: .large)
         
         rows.append(firstRow)
         rows.append(secondRow)

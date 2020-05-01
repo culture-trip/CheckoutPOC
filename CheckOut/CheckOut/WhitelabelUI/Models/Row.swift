@@ -50,7 +50,7 @@ public struct Row: Decodable {
 
 /* This factory must be kept up to date for all new cells */
 
-public struct RowFactory {
+public extension Row {
     
     static func inputRowInit(title: String?, inputKey: String?,  placeholder: String?, errorTitle: String?, isSecure: Bool, inputType: RowInputType, isRequired: Bool?) -> Row {
         
@@ -59,7 +59,7 @@ public struct RowFactory {
         return row
     }
     
-    static func bodyTextCellInit(content: String, alignment: RowAlignmentType, isBordered: Bool) -> Row {
+    static func bodyTextInit(content: String, alignment: RowAlignmentType, isBordered: Bool) -> Row {
         
         let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .bodyTextCell, inputKey: nil, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: isBordered, headerType: nil)
         
