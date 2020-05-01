@@ -6,4 +6,12 @@
 //  Copyright © 2020 Warrd Adlani. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public protocol CheckCoordinating: Coordinator {
+    
+    init(window: UIWindow?)
+    func start()
+    func openSuccesfulPaymentScreen()
+}
+

@@ -1,13 +1,6 @@
 import Foundation
 import UIKit
 
-public protocol CheckCoordinating: Coordinator {
-    
-    init(window: UIWindow?)
-    func start()
-    func openSuccesfulPaymentScreen()
-}
-
 class CheckoutCoordinator: CheckCoordinating {
     
     private weak var window: UIWindow?
