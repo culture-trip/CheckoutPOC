@@ -56,6 +56,7 @@
                         },
                         {
                             "type": "input_cell",
+                            "input_key": "first_name",
                             "title": "Enter first name",
                             "error_title": "Enter a valid email",
                             "content": "Enter info",
@@ -80,6 +81,7 @@
                         },
                         {
                             "type": "input_cell",
+                            "input_key": "last_name",
                             "title": "Enter last name",
                             "error_title": "Enter a valid name",
                             "cell_input_type": "name",
@@ -103,6 +105,7 @@
                         },
                         {
                             "type": "input_cell",
+                            "input_key": "address",
                             "title": "Enter address",
                             "error_title": "Enter a valid address",
                             "cell_input_type": "normal",
@@ -125,6 +128,7 @@
                         },
                         {
                             "type": "input_cell",
+                            "input_key": "number_of_children",
                             "title": "Enter number of children",
                             "cell_input_type": "numerical",
                             "content": "Enter info"
@@ -156,6 +160,7 @@
                         },
                         {
                             "type": "input_cell",
+                            "input_key": "credit_card_number",
                             "title": "Credit card number",
                             "error_title": "Enter a valid credit card number",
                             "is_secure": true,

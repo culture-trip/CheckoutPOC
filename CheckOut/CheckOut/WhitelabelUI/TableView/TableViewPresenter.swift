@@ -124,16 +124,27 @@ public class TableViewPresenter: TableViewPresenting {
     
     public func submit() {
         
-        var dataList = [String]()
+        var dataList = ArrayOfDictionaries()
         
         var scrollToTopIndex: IndexPath? = nil
+        var index = 0
         
         for element in viewModels {
             
             if let viewModel = element?.viewModel as? Inputting {
                 if let data = viewModel.data {
                     
-                    dataList.append(data)
+                    var key = ""
+                    
+                    if let inputKey = viewModel.inputKey {
+                        key = inputKey
+                    } else {
+                        key = "index_\(index)"
+                    }
+                    
+                    dataList.append([key : data])
+                    
+                    index += 1
                 } else if let viewModel = element?.viewModel as? Inputting {
                     
                     if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
@@ -149,11 +160,17 @@ public class TableViewPresenter: TableViewPresenting {
         }
         
         if let scrollToTopIndex = scrollToTopIndex {
+            
             view?.update(with: scrollToTopIndex)
             view?.scrollToIndexPath(scrollToTopIndex)
+            
+            return
         }
-                
-        print(dataList) // Return info here
+        
+        if let jsonData = JSONUtilities.buildJSONStringFromArray(dataList) {
+            
+            coordinator?.returnedData?(jsonData)
+        }
     }
 }
 

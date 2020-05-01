@@ -5,6 +5,7 @@ public protocol Inputting {
     var data: String? { get set }
     var isHighlighted: Bool? { get set }
     var actionBlock: CellActionBlock? { get set }
+    var inputKey: String? { get }
     
     func setHighlighted(_ isHighlighted: Bool)
 }
@@ -18,6 +19,9 @@ public class InputCellViewModel: CellViewModel, Inputting {
     public var isSecure: Bool {
         
         return row?.isSecure ?? false
+    }
+    public var inputKey: String? {
+        return row?.inputKey
     }
     public var title: String? {
         return row?.title

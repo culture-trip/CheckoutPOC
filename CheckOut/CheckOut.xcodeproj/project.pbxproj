@@ -22,6 +22,8 @@
 		F3053C8A242CCAFF00CBB27A /* CellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C89242CCAFF00CBB27A /* CellPresentable.swift */; };
 		F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */; };
 		F3053C94242CE91E00CBB27A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3053C93242CE91E00CBB27A /* Row.swift */; };
+		F328DBC6245C8AF40073ACCE /* JSONUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328DBC5245C8AF40073ACCE /* JSONUtilities.swift */; };
+		F328DBC8245C8DCE0073ACCE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328DBC7245C8DCE0073ACCE /* Coordinator.swift */; };
 		F337AC5B245386000074B3E1 /* chip_checkout.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC59245386000074B3E1 /* chip_checkout.json */; };
 		F337AC5C245386000074B3E1 /* example_injected_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = F337AC5A245386000074B3E1 /* example_injected_configuration.json */; };
 		F337AC5E245386B80074B3E1 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337AC5D245386B80074B3E1 /* Content.swift */; };
@@ -85,6 +87,8 @@
 		F3053C89242CCAFF00CBB27A /* CellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentable.swift; sourceTree = "<group>"; };
 		F3053C8B242CCEC500CBB27A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F3053C93242CE91E00CBB27A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		F328DBC5245C8AF40073ACCE /* JSONUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtilities.swift; sourceTree = "<group>"; };
+		F328DBC7245C8DCE0073ACCE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F337AC59245386000074B3E1 /* chip_checkout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chip_checkout.json; sourceTree = "<group>"; };
 		F337AC5A245386000074B3E1 /* example_injected_configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example_injected_configuration.json; sourceTree = "<group>"; };
 		F337AC5D245386B80074B3E1 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				F36C70A424523025006FA29A /* Resources */,
 				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3035FF0242CEB9300E9B279 /* Shared */,
+				F328DBC7245C8DCE0073ACCE /* Coordinator.swift */,
 			);
 			path = WhitelabelUI;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 			children = (
 				F380E8F4242CEA6600874DE6 /* ApplicationLoader.swift */,
 				F38F8B8E24533E4E0096D7C1 /* JSONUIParser.swift */,
+				F328DBC5245C8AF40073ACCE /* JSONUtilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F337AC5E245386B80074B3E1 /* Content.swift in Sources */,
 				F3053C88242CCABB00CBB27A /* Application.swift in Sources */,
+				F328DBC6245C8AF40073ACCE /* JSONUtilities.swift in Sources */,
 				F3053C8C242CCEC500CBB27A /* UIView+Extensions.swift in Sources */,
 				F38CFC6324436B0500D8EFEA /* BodyTextCellViewModel.swift in Sources */,
 				F3053C5A242CC22100CBB27A /* TableViewController.swift in Sources */,
@@ -522,6 +529,7 @@
 				F3053C85242CCA1100CBB27A /* SingleActionButtonCell.swift in Sources */,
 				F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */,
 				F38F8B8F24533E4E0096D7C1 /* JSONUIParser.swift in Sources */,
+				F328DBC8245C8DCE0073ACCE /* Coordinator.swift in Sources */,
 				F38F8B8C24532E860096D7C1 /* SeparatorCell.swift in Sources */,
 				F3B89D9C242E1955006049B7 /* PaddingCell.swift in Sources */,
 				F38CFC6024436AAD00D8EFEA /* SingleActionButtonCellViewModel.swift in Sources */,

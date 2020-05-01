@@ -1,11 +1,6 @@
 import Foundation
 import UIKit
 
-public protocol Coordinator: AnyObject {
-    
-    func nextScreen()
-}
-
 public protocol CheckCoordinating: Coordinator {
     
     init(window: UIWindow?)
@@ -100,6 +95,11 @@ class CheckoutCoordinator: CheckCoordinating {
         guard let context = context as? UINavigationController else { fatalError() }
         
         context.pushViewController(viewController, animated: false)
+    }
+    
+    func returnedData(_ data: Any) {
+        
+        print(data)
     }
     
     func nextScreen() {

@@ -16,6 +16,7 @@ public struct Row: Decodable {
     let errorTitle: String?
     let height: PaddingSize?
     let type: RowType?
+    let inputKey: String?
     let alignment: RowAlignmentType?
     let cellInputType: RowInputType?
     let action: Action?
@@ -35,14 +36,15 @@ public struct Row: Decodable {
         case isSecure = "is_secure"
         case isRequired = "is_required"
         case title
+        case inputKey = "input_key"
         case errorTitle = "error_title"
         case isBordered = "is_bordered"
         case headerType = "header_type"
     }
     
-    public func updateValues(title: String?, errorTitle: String?, content: String?, height: PaddingSize?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?, isRequired: Bool?, headerType: HeaderType?) -> Row {
+    public func updateValues(title: String?, inputKey: String?, errorTitle: String?, content: String?, height: PaddingSize?, type: RowType?, alignment: RowAlignmentType?, cellInputType: RowInputType?, action: Action?, isSecure: Bool?, isRequired: Bool?, headerType: HeaderType?) -> Row {
         
-        return Row(content: content ?? self.content, title: title ?? self.title, errorTitle: errorTitle ?? self.errorTitle, height: height ?? self.height, type: type ?? self.type, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isRequired: isRequired ?? self.isRequired, isBordered: false, headerType: headerType ?? self.headerType)
+        return Row(content: content ?? self.content, title: title ?? self.title, errorTitle: errorTitle ?? self.errorTitle, height: height ?? self.height, type: type ?? self.type, inputKey: inputKey ?? self.inputKey, alignment: alignment ?? self.alignment, cellInputType: cellInputType ?? self.cellInputType, action: action ?? self.action, isSecure: isSecure ?? self.isSecure, isRequired: isRequired ?? self.isRequired, isBordered: false, headerType: headerType ?? self.headerType)
     }
 }
 
@@ -50,37 +52,37 @@ public struct Row: Decodable {
 
 public struct RowFactory {
     
-    static func inputRowInit(title: String?,  placeholder: String?, errorTitle: String?, isSecure: Bool, inputType: RowInputType, isRequired: Bool?) -> Row {
+    static func inputRowInit(title: String?, inputKey: String?,  placeholder: String?, errorTitle: String?, isSecure: Bool, inputType: RowInputType, isRequired: Bool?) -> Row {
         
-        let row = Row(content: placeholder, title: title, errorTitle: errorTitle, height: nil, type: .inputCell, alignment: nil, cellInputType: inputType, action: nil, isSecure: isSecure, isRequired: isRequired, isBordered: false, headerType: nil)
+        let row = Row(content: placeholder, title: title, errorTitle: errorTitle, height: nil, type: .inputCell, inputKey: inputKey, alignment: nil, cellInputType: inputType, action: nil, isSecure: isSecure, isRequired: isRequired, isBordered: false, headerType: nil)
         
         return row
     }
     
     static func bodyTextCellInit(content: String, alignment: RowAlignmentType, isBordered: Bool) -> Row {
         
-        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .bodyTextCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: isBordered, headerType: nil)
+        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .bodyTextCell, inputKey: nil, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: isBordered, headerType: nil)
         
         return row
     }
     
     static func headerRowInit(content: String, alignment: RowAlignmentType, isBordered: Bool, headerType: HeaderType) -> Row {
         
-        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .headerCell, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: isBordered, headerType: headerType)
+        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .headerCell, inputKey: nil, alignment: alignment, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: isBordered, headerType: headerType)
         
         return row
     }
     
     static func singleActionInit(content: String, action: Action?) -> Row {
         
-        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .singleActionButtonCell, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isRequired: false, isBordered: false, headerType: nil)
+        let row = Row(content: content, title: nil, errorTitle: nil, height: nil, type: .singleActionButtonCell, inputKey: nil, alignment: nil, cellInputType: nil, action: action, isSecure: nil, isRequired: false, isBordered: false, headerType: nil)
         
         return row
     }
     
     static func paddingInit(height: PaddingSize) -> Row {
         
-        let row = Row(content: nil, title: nil, errorTitle: nil, height: height, type: .paddingCell, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: false, headerType: nil)
+        let row = Row(content: nil, title: nil, errorTitle: nil, height: height, type: .paddingCell, inputKey: nil, alignment: nil, cellInputType: nil, action: nil, isSecure: nil, isRequired: false, isBordered: false, headerType: nil)
         
         return row
     }
