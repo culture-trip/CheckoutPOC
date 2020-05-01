@@ -146,9 +146,9 @@
 		F3035FEF242CEB6000E9B279 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				F328DBC9245C95DF0073ACCE /* Protocols.swift */,
 				F37FF8A02451D22B00EB3ABA /* CheckoutCoordinator.swift */,
 				F3053C8D242CE4DD00CBB27A /* Storyboard */,
-				F328DBC9245C95DF0073ACCE /* Protocols.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
