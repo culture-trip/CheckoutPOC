@@ -6,35 +6,88 @@ This framework is intended to allow a developer to create generic views using js
 
 ### Components
 
-`HeaderCell` - Header text
-`SubheaderCell` - Sub header text
+`HeaderTextCell` - Header text
 `InputCell` - Text Input
 `SingleActionButtonCell` - Single Action Button button
 `BodyTextCell` - Body text
 `PaddingCell` - Padding between components
+`SeparatorCell` - Adds a separator aith 16 px leading and trailing padding
 
 
 ### Example of usage
 
-This is a basic, and typical example of creating a component
+This is a basic, and typical example of creating a screen / program
 ```
 {
-    "content": "Experiences Checkout",
-    "header": "header",
-    "footer": "footer",
-    "items" : [
+    "screens": [
         {
-            "type": "PaddingCell",
-            "height": "medium"
+        "id": "checkout",
+        "title": "Experiences Checkout",
+        "type": "table",
+        "header_image": "",
+        "header_text": "header",
+        "footer_image": "",
+        "footer_text": "footer",
+        "top_content_inset" : "none",
+        "bottom_content_inset" : "medium",
+        "has_seperators": false,
+        "sections" : [
+        {
+            "rows": [
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                },
+                {
+                    "type": "header_text_cell",
+                    "content": "Experiences Checkout",
+                    "alignment": "center",
+                    "header_type": "large_header"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "large"
+                },
+                {
+                    "type": "separator_cell"
+                }
+            ]
         },
         {
-            "type": "HeaderTextCell",
-            "content": "Experiences Checkout",
-            "alignment": "center"
-        },
-        {
-            "type": "PaddingCell",
-            "height": "medium"
+            "rows": [
+                {
+                    "type": "header_text_cell",
+                    "content": "User info",
+                    "alignment": "left",
+                    "header_type": "large_header"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "large"
+                },
+                {
+                    "type": "header_text_cell",
+                    "content": "First name",
+                    "header_type": "normal_header"
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                },
+                {
+                    "type": "input_cell",
+                    "input_key": "first_name",
+                    "title": "Enter first name",
+                    "error_title": "Enter a valid email",
+                    "content": "Enter info",
+                    "cell_input_type": "name",
+                    "is_required": true
+                },
+                {
+                    "type": "padding_cell",
+                    "height": "medium"
+                }
+            ]
         }
     ]
 }
@@ -42,14 +95,23 @@ This is a basic, and typical example of creating a component
 
 ### Components with examples
 
-`HeaderCell` 
+`HeaderTextCell` 
 ```
 {
-    "type": "HeaderTextCell",
+    "type": "header_text_cell",
     "content": "Experiences Checkout",
-    "alignment": "center"
+    "alignment": "center",
+    "header_type": "large_header"
 }
 ```
+Variables for header types:
+
+```
+sub_header
+normal_header
+large_header
+```
+
 Variables for alignment:
 
 ```
@@ -58,25 +120,33 @@ left
 right
 ```
 
-`SubheaderCell` 
-```
-{
-    "type": "SubHeaderTextCell",
-    "content": "First name"
-}
-```
 `InputCell` 
 ```
 {
-    "type": "InputCell",
-    "cellInputType": "normal",
-    "content": "Enter info"
+    "type": "input_cell",
+    "input_key": "first_name",
+    "title": "Enter first name",
+    "error_title": "Enter a valid email",
+    "content": "Enter info",
+    "cell_input_type": "name",
+    "is_required": true
 }
 ```
+
+Explanations for Variables
+`
+input_key - The key used to generate JSON data i.e. "name": "john smith"
+title - The title above the input field
+error_title - The title beneath the input field for example "required field"
+content - Currently used for placeholder
+cell_input_type - Sets keyboard and data types e.g. email keyboard
+is_required - Stops operations until this input field is filled
+`
 
 Variables for cellInputType:
 ```
 normal
+name
 secure
 ```
 
@@ -84,8 +154,14 @@ secure
 ```
 {
     "type": "BodyTextCell",
-    "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+    "content": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "is_bordered": true
 }
+```
+
+Variables
+```
+is_bordered = Creates a yellow border around texts and adds 8 points of insets all around the text
 ```
 
 `PaddingCell` 
