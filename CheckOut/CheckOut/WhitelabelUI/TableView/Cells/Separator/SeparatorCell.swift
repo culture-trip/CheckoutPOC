@@ -25,5 +25,5 @@ class SeparatorCell: UITableViewCell {
 
 extension SeparatorCell: CellPresentable {
     
-    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {}
+    func setupCell(with viewModel: CellViewModelling?, delegate: CellDelegate?) {}
 }

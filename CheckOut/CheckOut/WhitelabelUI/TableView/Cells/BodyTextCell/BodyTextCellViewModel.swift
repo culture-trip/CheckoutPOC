@@ -1,6 +1,6 @@
 import Foundation
 
-public class BodyTextCellViewModel: CellViewModel {
+public class BodyTextCellViewModel: CellViewModelling {
     public var payload: Payload?
     public var row: Row?
     public var isBordered: Bool? {

@@ -23,7 +23,7 @@ class BodyTextCell: UITableViewCell {
 }
 
 extension BodyTextCell: CellPresentable {
-    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CellViewModelling?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? BodyTextCellViewModel else { return }
         

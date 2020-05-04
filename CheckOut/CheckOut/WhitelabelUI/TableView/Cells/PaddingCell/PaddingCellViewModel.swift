@@ -1,6 +1,6 @@
 import Foundation
 
-public class PaddingCellViewModel: CellViewModel {
+public class PaddingCellViewModel: CellViewModelling {
     
     public var payload: Payload?
     public var row: Row?

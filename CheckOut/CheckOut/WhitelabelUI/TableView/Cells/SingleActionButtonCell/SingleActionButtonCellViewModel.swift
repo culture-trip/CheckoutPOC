@@ -1,6 +1,6 @@
 import Foundation
 
-public class SingleActionButtonCellViewModel: CellViewModel {
+public class SingleActionButtonCellViewModel: CellViewModelling {
     
     public var payload: Payload?
     public var row: Row?

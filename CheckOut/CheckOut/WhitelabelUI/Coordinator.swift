@@ -11,5 +11,5 @@ import Foundation
 @objc public protocol Coordinator: AnyObject {
     
     @objc optional func nextScreen()
-    @objc optional func returnedData(_ data: Any)
+    @objc optional func returnedData(_ data: Any?)
 }

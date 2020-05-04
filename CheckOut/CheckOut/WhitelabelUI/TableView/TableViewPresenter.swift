@@ -2,12 +2,6 @@ import UIKit
 
 public class TableViewPresenter: TableViewPresenting {
     
-    struct ViewModel {
-        
-        var viewModel: CellViewModel
-        var indexPath: IndexPath
-    }
-    
     public var numberOfSections: Int {
         return screen?.sections?.count ?? 0
     }
@@ -27,9 +21,10 @@ public class TableViewPresenter: TableViewPresenting {
     private var screen: Screen?
     private weak var coordinator: Coordinator?
     private var dataCallbackBlock: DataCallbackBlock?
-    private lazy var viewModels: [ViewModel?] = {
+    private var asyncQueue = OperationQueue()
+    private lazy var rowAttributesList: [RowAttribute?] = {
         
-        return [ViewModel]()
+        return [RowAttribute]()
     }()
     
     required public init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?, dataCallbackBlock: DataCallbackBlock?) {
@@ -77,7 +72,7 @@ public class TableViewPresenter: TableViewPresenting {
         
         guard let cellType = row?.type else { return }
         
-        var viewModel: CellViewModel? = nil
+        var viewModel: CellViewModelling? = nil
         
         let payload = Payload(content: row?.content)
         
@@ -102,14 +97,14 @@ public class TableViewPresenter: TableViewPresenting {
         
         if let viewModel = viewModel, let indexPath = indexPath {
             
-            let result = ViewModel(viewModel: viewModel, indexPath: indexPath)
+            let result = RowAttribute(viewModel: viewModel, indexPath: indexPath)
             
-            if let exists = viewModels.filter({ $0?.indexPath == result.indexPath }).first {
+            if let exists = rowAttributesList.filter({ $0?.indexPath == result.indexPath }).first {
                 
                 cell.setupCell(with: exists?.viewModel, delegate: self)
             } else {
                 
-                viewModels.append(result)
+                rowAttributesList.append(result)
                 
                 cell.setupCell(with: result.viewModel, delegate: self)
             }
@@ -120,26 +115,31 @@ public class TableViewPresenter: TableViewPresenting {
     
     private func updateData() {
         
-        guard let callBack = dataCallbackBlock else { return }
-        
-        let dataList = collectData(from: viewModels)
-        
-        if let jsonData = JSONUtilities.buildJSONStringFromArray(dataList) {
+        asyncQueue.addOperation { [weak self] in
+            
+            guard let callBack = self?.dataCallbackBlock else { return }
+            
+            let dataList = self?.collectData(from: self?.rowAttributesList)
+            
+            if let jsonData = JSONUtilities.buildJSONStringFromArray(dataList) {
                 
-            callBack(jsonData)
+                DispatchQueue.main.async {
+                    callBack(jsonData)
+                }
+            }
         }
     }
     
-    private func collectData(from viewModels: [ViewModel?]?) -> ArrayOfDictionaries? {
+    private func collectData(from rowAttributesList: [RowAttribute?]?) -> ArrayOfDictionaries? {
         
-        guard let viewModels = viewModels, viewModels.count > 0 else { return nil }
+        guard let rowAttributesList = rowAttributesList, rowAttributesList.count > 0 else { return nil }
         
         var dataList = ArrayOfDictionaries()
         var index = 0
         
-        for element in viewModels {
+        for attribute in rowAttributesList {
             
-            if let viewModel = element?.viewModel as? Inputting {
+            if let viewModel = attribute?.viewModel as? Inputting {
                 if let data = viewModel.data {
                     
                     var key = "index_\(index)"
@@ -171,34 +171,39 @@ public class TableViewPresenter: TableViewPresenting {
     public func submit() {
         
         var scrollToTopIndex: IndexPath? = nil
-        let dataList = collectData(from: viewModels)
+        let dataList = self.collectData(from: rowAttributesList)
         
-        for element in viewModels {
+        asyncQueue.addOperation { [unowned self] in
             
-            if let viewModel = element?.viewModel as? Inputting {
+            for attribute in self.rowAttributesList {
                 
-                if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
-                    let indexPath = element?.indexPath, viewModel.data == nil {
+                if let viewModel = attribute?.viewModel as? Inputting {
                     
-                    viewModel.setHighlighted(true)
-                    if scrollToTopIndex == nil {
-                        scrollToTopIndex = indexPath
+                    if let isRequired = attribute?.viewModel.row?.isRequired, isRequired == true,
+                        let indexPath = attribute?.indexPath, viewModel.data == nil {
+                        
+                        viewModel.setHighlighted(true)
+                        if scrollToTopIndex == nil {
+                            scrollToTopIndex = indexPath
+                        }
                     }
                 }
             }
-        }
-        
-        if let scrollToTopIndex = scrollToTopIndex {
             
-            view?.update(with: scrollToTopIndex)
-            view?.scrollToIndexPath(scrollToTopIndex)
+            let jsonData = JSONUtilities.buildJSONStringFromArray(dataList)
             
-            return
-        }
-        
-        if let jsonData = JSONUtilities.buildJSONStringFromArray(dataList) {
-            
-            coordinator?.returnedData?(jsonData)
+            DispatchQueue.main.async { [unowned self] in
+                
+                if let scrollToTopIndex = scrollToTopIndex {
+                    
+                    self.view?.update(with: scrollToTopIndex)
+                    self.view?.scrollToIndexPath(scrollToTopIndex)
+                    
+                    return
+                }
+                
+                self.coordinator?.returnedData?(jsonData)
+            }
         }
     }
 }

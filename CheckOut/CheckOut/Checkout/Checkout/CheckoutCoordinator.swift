@@ -93,9 +93,11 @@ class CheckoutCoordinator: CheckCoordinating {
         context.pushViewController(viewController, animated: false)
     }
     
-    func returnedData(_ data: Any) {
+    func returnedData(_ data: Any?) {
         
-        print(data)
+        if let data = data {
+            print(data)
+        }
     }
     
     func nextScreen() {

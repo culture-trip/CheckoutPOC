@@ -68,8 +68,6 @@ extension InputCell: UITextFieldDelegate {
         
         viewModel?.data = nil
         
-        resetCell()
-                    
         return true
     }
     
@@ -81,7 +79,7 @@ extension InputCell: UITextFieldDelegate {
 
 extension InputCell: CellPresentable {
     
-    func setupCell(with viewModel: CellViewModel?, delegate: CellDelegate?) {
+    func setupCell(with viewModel: CellViewModelling?, delegate: CellDelegate?) {
         
         guard let viewModel = viewModel as? InputCellViewModel else { return }
         

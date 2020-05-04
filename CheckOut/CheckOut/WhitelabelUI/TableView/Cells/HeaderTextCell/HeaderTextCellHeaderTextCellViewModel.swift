@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class HeaderTextCellViewModel: CellViewModel {
+class HeaderTextCellViewModel: CellViewModelling {
     
     var payload: Payload?
     var row: Row?
