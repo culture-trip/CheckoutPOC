@@ -142,12 +142,10 @@ public class TableViewPresenter: TableViewPresenting {
             if let viewModel = element?.viewModel as? Inputting {
                 if let data = viewModel.data {
                     
-                    var key = ""
+                    var key = "index_\(index)"
                     
                     if let inputKey = viewModel.inputKey {
                         key = inputKey
-                    } else {
-                        key = "index_\(index)"
                     }
                     
                     dataList.append([key : data])
