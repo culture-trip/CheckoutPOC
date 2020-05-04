@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol CheckCoordinating: Coordinator {
-    
+        
     init(window: UIWindow?)
     func start()
     func openSuccesfulPaymentScreen()

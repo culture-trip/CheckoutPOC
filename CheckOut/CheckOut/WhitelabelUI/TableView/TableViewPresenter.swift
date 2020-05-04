@@ -1,6 +1,5 @@
 import UIKit
 
-
 public class TableViewPresenter: TableViewPresenting {
     
     struct ViewModel {
@@ -27,16 +26,18 @@ public class TableViewPresenter: TableViewPresenting {
     private weak var view: TableViewing?
     private var screen: Screen?
     private weak var coordinator: Coordinator?
+    private var dataCallbackBlock: DataCallbackBlock?
     private lazy var viewModels: [ViewModel?] = {
         
         return [ViewModel]()
     }()
     
-    required public init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?) {
+    required public init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?, dataCallbackBlock: DataCallbackBlock?) {
         
         self.view = view
         self.coordinator = coordinator
         self.screen = screen
+        self.dataCallbackBlock = dataCallbackBlock
     }
     
     public func viewDidLoad() {
@@ -73,13 +74,13 @@ public class TableViewPresenter: TableViewPresenting {
      */
     
     public func setupCell(_ cell: CellPresentable, row: Row?, indexPath: IndexPath?) {
-    
+        
         guard let cellType = row?.type else { return }
         
         var viewModel: CellViewModel? = nil
         
         let payload = Payload(content: row?.content)
-                
+        
         switch cellType {
             
         case .headerCell:
@@ -87,6 +88,7 @@ public class TableViewPresenter: TableViewPresenting {
         case .inputCell:
             viewModel = InputCellViewModel(row: row, payload: payload, actionBlock: { [weak self] in
                 self?.view?.update(with: indexPath)
+                self?.updateData()
             })
         case .bodyTextCell:
             viewModel = BodyTextCellViewModel(row: row, payload: payload)
@@ -114,19 +116,25 @@ public class TableViewPresenter: TableViewPresenting {
         }
     }
     
-    public func item(at indexPath: IndexPath) -> Row? {
+    // Sends data back in real time (Messaging pattern)
+    
+    private func updateData() {
         
-        let section = indexPath.section
-        let row = indexPath.row
+        guard let callBack = dataCallbackBlock else { return }
         
-        return screen?.sections?[section].rows?[row]
+        let dataList = collectData(from: viewModels)
+        
+        if let jsonData = JSONUtilities.buildJSONStringFromArray(dataList) {
+                
+            callBack(jsonData)
+        }
     }
     
-    public func submit() {
+    private func collectData(from viewModels: [ViewModel?]?) -> ArrayOfDictionaries? {
+        
+        guard let viewModels = viewModels, viewModels.count > 0 else { return nil }
         
         var dataList = ArrayOfDictionaries()
-        
-        var scrollToTopIndex: IndexPath? = nil
         var index = 0
         
         for element in viewModels {
@@ -145,15 +153,38 @@ public class TableViewPresenter: TableViewPresenting {
                     dataList.append([key : data])
                     
                     index += 1
-                } else if let viewModel = element?.viewModel as? Inputting {
+                }
+            }
+        }
+        
+        return dataList.count > 0 ? dataList : nil
+    }
+    
+    public func item(at indexPath: IndexPath) -> Row? {
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        return screen?.sections?[section].rows?[row]
+    }
+    
+    // Sends data back when requested (Polling pattern)
+    
+    public func submit() {
+        
+        var scrollToTopIndex: IndexPath? = nil
+        let dataList = collectData(from: viewModels)
+        
+        for element in viewModels {
+            
+            if let viewModel = element?.viewModel as? Inputting {
+                
+                if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
+                    let indexPath = element?.indexPath, viewModel.data == nil {
                     
-                    if let isRequired = element?.viewModel.row?.isRequired, isRequired == true,
-                        let indexPath = element?.indexPath {
-                        
-                        viewModel.setHighlighted(true)
-                        if scrollToTopIndex == nil {
-                            scrollToTopIndex = indexPath
-                        }
+                    viewModel.setHighlighted(true)
+                    if scrollToTopIndex == nil {
+                        scrollToTopIndex = indexPath
                     }
                 }
             }

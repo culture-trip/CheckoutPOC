@@ -6,7 +6,6 @@
 //  Copyright © 2020 Warrd Adlani. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public protocol TableViewing: AnyObject {
@@ -34,5 +33,5 @@ public protocol TableViewPresenting: AnyObject {
     func numberOfRows(with section: Int) -> Int
     func actionAtIndexPath(_ indexPath: IndexPath)
     
-    init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?)
+    init(screen: Screen?, view: TableViewing?, coordinator: Coordinator?, dataCallbackBlock: DataCallbackBlock?)
 }

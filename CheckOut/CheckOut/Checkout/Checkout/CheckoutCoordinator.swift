@@ -12,7 +12,7 @@ class CheckoutCoordinator: CheckCoordinating {
     }
     private var screens: [Screen]?
     private var context: UIViewController?
-    
+        
     required init(window: UIWindow?) {
         
         self.window = window
@@ -67,7 +67,10 @@ class CheckoutCoordinator: CheckCoordinating {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         guard let view = storyboard.instantiateViewController(identifier: "TableViewController") as? TableViewing else { fatalError() }
         
-        let presenter = TableViewPresenter(screen: currentScreen, view: view, coordinator: self)
+        let presenter = TableViewPresenter(screen: currentScreen, view: view, coordinator: self, dataCallbackBlock: { data in
+            
+            print(data)
+        })
         
         view.presenter = presenter
         

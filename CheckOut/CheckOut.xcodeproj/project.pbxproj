@@ -56,6 +56,7 @@
 		F3B89DA0242E1E57006049B7 /* HeaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89D9E242E1E57006049B7 /* HeaderTextCell.swift */; };
 		F3B89DA1242E1E57006049B7 /* HeaderTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B89D9F242E1E57006049B7 /* HeaderTextCell.xib */; };
 		F3BEEEFD24435DAA00F65226 /* PaddingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */; };
+		F3D61B16246055F1004593CF /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D61B15246055F1004593CF /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		F3B89D9F242E1E57006049B7 /* HeaderTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTextCell.xib; sourceTree = "<group>"; };
 		F3B89DA2242E2B0D006049B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3BEEEFC24435DAA00F65226 /* PaddingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSize.swift; sourceTree = "<group>"; };
+		F3D61B15246055F1004593CF /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 				F37FF8A22451D24500EB3ABA /* TableView */,
 				F3035FF0242CEB9300E9B279 /* Shared */,
 				F328DBC7245C8DCE0073ACCE /* Coordinator.swift */,
+				F3D61B15246055F1004593CF /* Shared.swift */,
 			);
 			path = WhitelabelUI;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				F37FF8A12451D22B00EB3ABA /* CheckoutCoordinator.swift in Sources */,
 				F3053C81242CC9F500CBB27A /* InputCell.swift in Sources */,
 				F328DBCA245C95DF0073ACCE /* Protocols.swift in Sources */,
+				F3D61B16246055F1004593CF /* Shared.swift in Sources */,
 				F337AC5E245386B80074B3E1 /* Content.swift in Sources */,
 				F3053C88242CCABB00CBB27A /* Application.swift in Sources */,
 				F328DBC6245C8AF40073ACCE /* JSONUtilities.swift in Sources */,
