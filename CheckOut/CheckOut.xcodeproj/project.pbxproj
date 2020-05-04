@@ -377,11 +377,11 @@
 		F3BEEEFA24435BE100F65226 /* WhitelabelUI */ = {
 			isa = PBXGroup;
 			children = (
+				F3035FF0242CEB9300E9B279 /* Shared */,
 				F3BEEEFB24435C4300F65226 /* Utilities */,
 				F3053C8E242CE88A00CBB27A /* Models */,
 				F36C70A424523025006FA29A /* Resources */,
 				F37FF8A22451D24500EB3ABA /* TableView */,
-				F3035FF0242CEB9300E9B279 /* Shared */,
 				F328DBC7245C8DCE0073ACCE /* Coordinator.swift */,
 				F3D61B15246055F1004593CF /* Shared.swift */,
 			);

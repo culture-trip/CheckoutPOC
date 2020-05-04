@@ -19,7 +19,7 @@ public class JSONUtilities {
         let componentsString = array.compactMap { dict -> String? in
 
             if let key = dict.keys.first, let value = dict[key] {
-                return "{\"\(key)\":\(value is String ? "\"\(value)\"" : value)}"
+                return "\"\(key)\":\(value is String ? "\"\(value)\"" : value)"
             }
 
             return nil
@@ -27,7 +27,7 @@ public class JSONUtilities {
 
         if componentsString.isEmpty { return nil }
 
-        let result = "[" + componentsString + "]"
+        let result = "{\"payload\": {" + componentsString + "}}"
 
         return result
     }

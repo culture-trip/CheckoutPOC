@@ -81,7 +81,8 @@ public class TableViewPresenter: TableViewPresenting {
         case .headerCell:
             viewModel = HeaderTextCellViewModel(row: row, payload: nil)
         case .inputCell:
-            viewModel = InputCellViewModel(row: row, payload: payload, actionBlock: { [weak self] in
+            viewModel = InputCellViewModel(row: row, payload: payload, inputCallbackBlock: { [weak self] in
+                
                 self?.view?.update(with: indexPath)
                 self?.updateData()
             })

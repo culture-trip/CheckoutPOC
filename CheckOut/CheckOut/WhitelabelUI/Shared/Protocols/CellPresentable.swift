@@ -7,8 +7,7 @@ public protocol CellPresentable: AnyObject {
     func setupCell(with viewModel: CellViewModelling?, delegate: CellDelegate?)
 }
 
-public typealias CellActionBlock = ()->()
-public typealias InputCallbackBlock = (IndexPath, RowAttribute)->()
+public typealias InputCellCallbackBlock = ()->()
 
 public struct RowAttribute {
     

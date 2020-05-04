@@ -4,7 +4,7 @@ public protocol Inputting {
     
     var data: String? { get set }
     var isHighlighted: Bool? { get set }
-    var actionBlock: CellActionBlock? { get set }
+    var inputCallbackBlock: InputCellCallbackBlock? { get set }
     var inputKey: String? { get }
     
     func setHighlighted(_ isHighlighted: Bool)
@@ -33,7 +33,7 @@ public class InputCellViewModel: CellViewModelling, Inputting {
         
         self.isHighlighted = isHighlighted
     }
-    public var actionBlock: CellActionBlock?
+    public var inputCallbackBlock: InputCellCallbackBlock?
     
     public var cellInputType: RowInputType? { return row?.cellInputType }
     public var content: String? {
@@ -51,9 +51,9 @@ public class InputCellViewModel: CellViewModelling, Inputting {
         self.payload = payload
     }
     
-    convenience public required init(row: Row?, payload: Payload?, actionBlock: CellActionBlock?) {
+    convenience public required init(row: Row?, payload: Payload?, inputCallbackBlock: InputCellCallbackBlock?) {
         
         self.init(row: row, payload: payload)
-        self.actionBlock = actionBlock
+        self.inputCallbackBlock = inputCallbackBlock
     }
 }

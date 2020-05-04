@@ -33,7 +33,7 @@ class InputCell: UITableViewCell {
         
         showErrorState(false)
         viewModel?.setHighlighted(false)
-        viewModel?.actionBlock?()
+        viewModel?.inputCallbackBlock?()
     }
     
     fileprivate func showErrorState(_ isErrorState: Bool) {
@@ -84,6 +84,8 @@ extension InputCell: CellPresentable {
         guard let viewModel = viewModel as? InputCellViewModel else { return }
         
         self.viewModel = viewModel
+        
+        inputField.autocorrectionType = .no
         
         switch viewModel.cellInputType {
             
